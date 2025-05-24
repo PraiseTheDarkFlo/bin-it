@@ -1,0 +1,28 @@
+# Godot system folders (do NOT commit)
+.import/
+.export/
+.godot/
+
+# Godot-generated config files
+export_presets.cfg
+*.godot-export
+
+# Temporary files
+*.tmp
+*.log
+
+# OS- or editor-specific
+.DS_Store
+Thumbs.db
+
+# User-specific Godot config (optional – nur ignorieren, wenn jeder eigene Settings nutzt)
+# project.godot
+
+# Builds (optional, wenn ihr Build-Dateien nicht versionieren wollt)
+bin/
+*.exe
+*.pck
+*.apk
+*.wasm
+*.html
+

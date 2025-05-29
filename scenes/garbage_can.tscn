@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://h5k5wkelt5pj"]
+
+[ext_resource type="Texture2D" uid="uid://b78jlge7dtn8e" path="res://assets/sprites/Organic.png" id="1_eci1o"]
+[ext_resource type="Script" uid="uid://du6wuambc8dv8" path="res://scripts/garbage_can.gd" id="1_xc0qr"]
+[ext_resource type="Texture2D" uid="uid://78qeu7qnxjpj" path="res://assets/sprites/Plastic.png" id="2_xc0qr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr8f1"]
+atlas = ExtResource("1_eci1o")
+region = Rect2(0, 0, 984, 1588)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scxuy"]
+atlas = ExtResource("2_xc0qr")
+region = Rect2(0, 0, 984, 1588)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xc0qr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr8f1")
+}],
+"loop": true,
+"name": &"Organic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scxuy")
+}],
+"loop": true,
+"name": &"Plastic",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kr8f1"]
+size = Vector2(110.101, 144.696)
+
+[node name="GarbageCan" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_xc0qr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.699652, -2.78891)
+rotation = 3.14159
+scale = Vector2(0.0603651, -0.0582004)
+sprite_frames = SubResource("SpriteFrames_xc0qr")
+animation = &"Organic"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.300446, 0.210968)
+rotation = -3.14159
+scale = Vector2(0.393467, -0.606646)
+shape = SubResource("RectangleShape2D_kr8f1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

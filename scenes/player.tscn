@@ -18,10 +18,14 @@ var garbage_type
 var garbage
 
 func _ready():
+	#The diffrent kindes of items which the player can be.
+	#The name string must equal the sprite that is used for the player!
+	#Followed by the type of garbage the item is. 
 	garbage = {
 		\"Banana\": level_state.garbage_types.ORGANIC,
 		\"Bottle\": level_state.garbage_types.PLASTIC,
 	}
+	
 	new_item()
 	
 	
@@ -43,8 +47,10 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+#handels the selecting of new items randomly.
 func new_item():
 	if (garbage != null):
+		#selects random an item of the dictionary
 		var random = randi_range(0,garbage.size()-1)
 		var keys = garbage.keys()
 		var random_key = keys[random]
@@ -53,6 +59,7 @@ func new_item():
 		animated_sprite.play(random_key)
 		garbage_type = random_type
 			
+#calls the selection of a random new item and then spawns it at the reset_pos and resets its velocity			
 func respawn():
 	new_item()
 	global_position = level_state.reset_pos

@@ -6,8 +6,10 @@ extends Area2D
 
 @onready var power_ups: Node = $".."
 
+#name of the powerup
 var effect: String = ""
 
+#handels the call of the function of the action if the player enters the powerup
 func _on_body_entered(body: Node2D) -> void:
 	if effect != "":
 		var action = power_ups.get_action(effect)

@@ -8,6 +8,7 @@ extends Area2D
 
 var garbage_type
 
+#methode which handels when the player enters the trashcan
 func _on_body_entered(body: Node2D) -> void:
 	if garbage_type == player.garbage_type:
 		level_state.item_counter += 1

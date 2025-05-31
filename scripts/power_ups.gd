@@ -3,9 +3,11 @@ extends Node
 @onready var level_state: Node = %LevelState
 var PowerUpScene = preload("res://scenes/powerUp.tscn")
 
+#spawnfield of the powerups
 var min_spawn = Vector2(-255,-255)
 var max_spawn = Vector2(185,169)
 
+#the diffrent powerups or downs 
 var powerups = {
 	"slow": {
 		"chance": 0.5, #chance to spawn
@@ -21,11 +23,13 @@ var powerups = {
 	}
 }
 
+#random selects a point in the spawnfield for the new powerup to spawn
 func random_spawn() -> Vector2:
 	var x = randf_range(min_spawn.x, max_spawn.x)
 	var y = randf_range(min_spawn.y, max_spawn.y)
 	return Vector2(x, y)
 	
+#calculatios if a powerup should spawn and if spawns it at a random position	
 func maybe_spawn_powerup():
 	for name in powerups.keys():
 		var data = powerups[name]
@@ -38,9 +42,11 @@ func maybe_spawn_powerup():
 				add_child(newPowerUp)
 				
 
+#timer how often the powerup spawing should be checked
 func _on_timer_timeout() -> void:
 	maybe_spawn_powerup()
-	
+
+#handels the giving of the function which is the action the powerups have
 func get_action(name: String) -> Callable:
 	if powerups != null:
 		if name in powerups.keys():

@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://cv7aen0gn0cpx"]
+
+[ext_resource type="PackedScene" uid="uid://cltg3bcampgmp" path="res://scenes/player.tscn" id="1_w7c3h"]
+[ext_resource type="Script" uid="uid://deepsud6542i3" path="res://scripts/level_state.gd" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://ba8pcu8g1ukgc" path="res://scenes/killzone.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://h5k5wkelt5pj" path="res://scenes/garbage_can.tscn" id="4_mx8sn"]
+[ext_resource type="Script" uid="uid://dabj6gexju4w5" path="res://scripts/label_score.gd" id="4_ppgk2"]
+[ext_resource type="Script" uid="uid://cpix0jyqknvmf" path="res://scripts/power_ups.gd" id="6_klq6b"]
+
+[sub_resource type="TileSet" id="TileSet_mx8sn"]
+physics_layer_0/collision_layer = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_mx8sn"]
+font_size = 91
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mx8sn"]
+distance = -146.0
+
+[node name="Level" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mx8sn")
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(11.1706, 2.56361)
+
+[node name="LevelState" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_w8frs")
+
+[node name="LabelScore" type="Label" parent="LevelState"]
+offset_left = 234.0
+offset_top = -305.0
+offset_right = 825.0
+offset_bottom = -180.0
+scale = Vector2(0.52479, 0.55547)
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_mx8sn")
+text_overrun_behavior = 1
+script = ExtResource("4_ppgk2")
+
+[node name="PlasticCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
+position = Vector2(-59, 279)
+
+[node name="OrganicCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
+position = Vector2(57, 279)
+
+[node name="Killzone" parent="LevelState" instance=ExtResource("3_w8frs")]
+scale = Vector2(3.32, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelState/Killzone"]
+position = Vector2(0.301205, 185)
+shape = SubResource("WorldBoundaryShape2D_mx8sn")
+
+[node name="Timer" type="Timer" parent="LevelState"]
+wait_time = 3.0
+
+[node name="Player" parent="LevelState" instance=ExtResource("1_w7c3h")]
+position = Vector2(-4, -395)
+
+[node name="PowerUps" type="Node" parent="LevelState"]
+script = ExtResource("6_klq6b")
+
+[node name="Timer" type="Timer" parent="LevelState/PowerUps"]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="LevelState/Timer" to="LevelState" method="_on_timer_timeout"]
+[connection signal="timeout" from="LevelState/PowerUps/Timer" to="LevelState/PowerUps" method="_on_timer_timeout"]

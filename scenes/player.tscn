@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://cltg3bcampgmp"]
+
+[ext_resource type="Texture2D" uid="uid://d3w0fn5tfks0b" path="res://assets/sprites/Banana.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dn1f0r0isif8e" path="res://assets/sprites/Bottle.png" id="3_qhqgy"]
+
+[sub_resource type="GDScript" id="GDScript_g2els"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED: float  = 200.0
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready var level_state: Node = %LevelState
+
+var garbage_type
+
+var garbage
+
+func _ready():
+	#The diffrent kindes of items which the player can be.
+	#The name string must equal the sprite that is used for the player!
+	#Followed by the type of garbage the item is. 
+	garbage = {
+		\"Banana\": level_state.garbage_types.ORGANIC,
+		\"Bottle\": level_state.garbage_types.PLASTIC,
+	}
+	
+	new_item()
+	
+	
+func _physics_process(delta: float) -> void:
+	velocity += get_gravity() * delta * level_state.fall_speed
+	
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	if Input.is_action_just_pressed(\"down\"):
+		velocity.y *=2
+	elif Input.is_action_just_released(\"down\"):
+		velocity.y /=2
+		
+	var direction := Input.get_axis(\"left\", \"right\")
+	if direction:
+		velocity.x = direction * (SPEED + 200)
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+
+#handels the selecting of new items randomly.
+func new_item():
+	if (garbage != null):
+		#selects random an item of the dictionary
+		var random = randi_range(0,garbage.size()-1)
+		var keys = garbage.keys()
+		var random_key = keys[random]
+		var random_type = garbage[random_key]
+		
+		animated_sprite.play(random_key)
+		garbage_type = random_type
+			
+#calls the selection of a random new item and then spawns it at the reset_pos and resets its velocity			
+func respawn():
+	new_item()
+	global_position = level_state.reset_pos
+	velocity.y = 0
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 703, 703)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(0, 0, 703, 703)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"Banana",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": true,
+"name": &"Bottle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
+radius = 114.039
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 5
+scale = Vector2(0.199995, 0.24)
+collision_layer = 2
+script = SubResource("GDScript_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, 3.8147e-06)
+scale = Vector2(0.399804, 0.341839)
+sprite_frames = SubResource("SpriteFrames_tuyoq")
+animation = &"Bottle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_fjrip")

@@ -20,7 +20,8 @@ func _ready():
 	
 	
 func _physics_process(delta: float) -> void:
-	velocity += get_gravity() * delta * level_state.fall_speed
+	#velocity += get_gravity() * delta * level_state.fall_speed
+	velocity.y += delta * level_state.fall_speed
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

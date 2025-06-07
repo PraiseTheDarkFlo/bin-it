@@ -4,29 +4,37 @@ extends Node
 var PowerUpScene = preload("res://scenes/powerUp.tscn")
 
 #spawnfield of the powerups
-var min_spawn = Vector2(-255,-255)
-var max_spawn = Vector2(185,169)
+var min_spawn = -200
+var max_spawn = 150
+
+var xPositions = [0,100]
 
 #the diffrent powerups or downs 
 var powerups = {
 	"slow": {
-		"chance": 0.5, #chance to spawn
+		"chance": 0.0, #chance to spawn
 		"lower_bound": 0, #starts spawning after 0 items
 		"sprite": null, #sprite for the power_up
 		"action": func(): level_state.slowdown.emit() #the function which gots called if the power_up takes action
 	},
 	"speed": {
-		"chance": 0.05,
+		"chance": 0.0,
 		"lower_bound": 30,
 		"sprite": null,
 		"action": func(): print("speed!")
+	},
+	"streak": {
+		"chance": 1.0,
+		"lower_bound": 0,
+		"sprite": null,
+		"action": func(): level_state.streak_up.emit()
 	}
 }
 
 #random selects a point in the spawnfield for the new powerup to spawn
 func random_spawn() -> Vector2:
-	var x = randf_range(min_spawn.x, max_spawn.x)
-	var y = randf_range(min_spawn.y, max_spawn.y)
+	var x = xPositions.pick_random()
+	var y = randf_range(min_spawn, max_spawn)
 	return Vector2(x, y)
 	
 #calculatios if a powerup should spawn and if spawns it at a random position	

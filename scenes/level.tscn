@@ -66,5 +66,13 @@ script = ExtResource("6_klq6b")
 wait_time = 10.0
 autostart = true
 
+[node name="TMP_FINISH_BUTTON" type="Button" parent="LevelState"]
+offset_left = -527.0
+offset_top = -277.0
+offset_right = -448.0
+offset_bottom = -241.0
+text = "END"
+
 [connection signal="timeout" from="LevelState/Timer" to="LevelState" method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelState/PowerUps/Timer" to="LevelState/PowerUps" method="_on_timer_timeout"]
+[connection signal="pressed" from="LevelState/TMP_FINISH_BUTTON" to="LevelState" method="_on_tmp_finish_button_pressed"]

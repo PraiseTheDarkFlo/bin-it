@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://m0tnwtvichgr"]
+
+[ext_resource type="Script" uid="uid://5gnewow70r34" path="res://scripts/levelselect.gd" id="1_vttqt"]
+[ext_resource type="Script" uid="uid://cygofseaw8eli" path="res://scripts/levelbutton.gd" id="1_xuh2y"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vttqt")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 98.0
+offset_right = 398.0
+offset_bottom = 263.0
+theme_override_font_sizes/font_size = 30
+text = "1"
+script = ExtResource("1_xuh2y")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 85.0
+offset_right = 925.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 30
+text = "2"
+script = ExtResource("1_xuh2y")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 347.0
+offset_right = 393.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 30
+text = "3"
+script = ExtResource("1_xuh2y")
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 343.0
+offset_right = 932.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 30
+text = "4"
+script = ExtResource("1_xuh2y")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed" binds= [1]]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed" binds= [2]]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed" binds= [3]]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed" binds= [4]]

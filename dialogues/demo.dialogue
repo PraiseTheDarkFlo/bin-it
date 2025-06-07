@@ -1,0 +1,15 @@
+~ start
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one => endinfo
+- Second one => second
+- Start again => start
+- End the conversation => END
+=> END
+~ first
+Nathan: You picked the first one. => endinfo
+~ second
+Nathan: You picked the second one. => endinfo
+~ endinfo
+Nathan: For more information see the online documentation.
+=> END

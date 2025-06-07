@@ -19,6 +19,8 @@ var reset_pos = Vector2(-3.0,-399.0)
 
 signal slowdown
 
+signal level_finished #TODO Emit on level finish
+
 func _ready():
 	#init the diffrent garbagecans with their type and sprite
 	$OrganicCan.garbage_type = garbage_types.ORGANIC
@@ -65,3 +67,7 @@ func _on_timer_timeout() -> void:
 	timer.stop()
 	fall_speed = old_fall_speed
 	
+
+#temporary method to fake the end of an level
+func _on_tmp_finish_button_pressed() -> void:
+	level_finished.emit();

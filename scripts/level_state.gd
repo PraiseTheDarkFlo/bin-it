@@ -6,7 +6,7 @@ extends Node
 
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
-enum garbage_types{PAPER,PLASTIC,REST,BIO}
+enum garbage_types{PAPER,YELLOW,REST,BIO}
 
 var base_fall_speed = 300
 var fall_speed = 300
@@ -32,9 +32,9 @@ func _ready():
 	$OrganicCan.garbage_type = garbage_types.PAPER
 	$OrganicCan.animated_sprite.play("Organic")
 	$OrganicCan.global_position.x=trashCanPositions[0]
-	$PlasticCan.garbage_type = garbage_types.PLASTIC
+	$PlasticCan.garbage_type = garbage_types.YELLOW
 	$PlasticCan.global_position.x=trashCanPositions[1]
-	$PlasticCan.animated_sprite.play("Plastic")
+	$PlasticCan.animated_sprite.play("Yellow")
 	#$PlasticCan.animated_sprite.play("coin")
 	$Player.xPositions=trashCanPositions
 	$PowerUps.xPositions=trashCanPositions

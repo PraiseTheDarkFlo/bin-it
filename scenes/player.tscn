@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://cjwhkmcrwixqp" path="res://assets/sprites/Bio/banana.png" id="3_ujl30"]
 [ext_resource type="Texture2D" uid="uid://daskt7qeqf7h7" path="res://assets/sprites/Rest/bong.png" id="4_31cv2"]
 [ext_resource type="Texture2D" uid="uid://dtpl2hxue87ps" path="res://assets/sprites/Paper/box.png" id="5_pf23h"]
-[ext_resource type="Texture2D" uid="uid://ihjv5hnyhojv" path="res://assets/sprites/Plastic/dose.png" id="6_pf23h"]
+[ext_resource type="Texture2D" uid="uid://ihjv5hnyhojv" path="res://assets/sprites/Yellow/dose.png" id="6_pf23h"]
 [ext_resource type="Texture2D" uid="uid://hguhe5iwnr82" path="res://assets/sprites/Paper/flyers.png" id="7_wqfne"]
-[ext_resource type="Texture2D" uid="uid://bt07yc2uu5w3g" path="res://assets/sprites/Plastic/folie.png" id="8_wnwbv"]
-[ext_resource type="Texture2D" uid="uid://k5ylfdudqf5u" path="res://assets/sprites/Plastic/packaging_gifflar.png" id="9_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://bt07yc2uu5w3g" path="res://assets/sprites/Yellow/folie.png" id="8_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://k5ylfdudqf5u" path="res://assets/sprites/Yellow/packaging_gifflar.png" id="9_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://clxu3ajh4l16" path="res://assets/sprites/Bio/leafs.png" id="10_487ah"]
 [ext_resource type="Texture2D" uid="uid://ddwdhvy86yk3y" path="res://assets/sprites/Bio/loewenzahn.png" id="11_md1ol"]
 [ext_resource type="Texture2D" uid="uid://ctjcil78t7g16" path="res://assets/sprites/Paper/magazine.png" id="12_bj30b"]
-[ext_resource type="Texture2D" uid="uid://bnm13myo8tk1a" path="res://assets/sprites/Plastic/milk.png" id="13_jc3p3"]
-[ext_resource type="Texture2D" uid="uid://dd46xihxgsj18" path="res://assets/sprites/Plastic/packaging_mozzarella.png" id="14_hax0n"]
+[ext_resource type="Texture2D" uid="uid://bnm13myo8tk1a" path="res://assets/sprites/Yellow/milk.png" id="13_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://dd46xihxgsj18" path="res://assets/sprites/Yellow/packaging_mozzarella.png" id="14_hax0n"]
 [ext_resource type="Texture2D" uid="uid://ib3fpc4ovdf8" path="res://assets/sprites/Paper/nudeln.png" id="15_pf23h"]
 [ext_resource type="Texture2D" uid="uid://bkxop86cq1i8a" path="res://assets/sprites/Rest/ordner.png" id="15_t4otl"]
 [ext_resource type="Texture2D" uid="uid://7bgx1h8jkdty" path="res://assets/sprites/Paper/paper_ball.png" id="16_j2b1d"]
@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://8lqooski4yuf" path="res://assets/sprites/Bio/sticks.png" id="20_fdfoy"]
 [ext_resource type="Texture2D" uid="uid://cy6cqgsnfpxte" path="res://assets/sprites/Rest/scherben.png" id="20_wqfne"]
 [ext_resource type="Texture2D" uid="uid://dmkysr7i3kkne" path="res://assets/sprites/Bio/straw.png" id="21_hhpqf"]
-[ext_resource type="Texture2D" uid="uid://dq4oic5tug4l7" path="res://assets/sprites/Plastic/tesa.png" id="22_g5jhy"]
-[ext_resource type="Texture2D" uid="uid://6pu0gihnlpni" path="res://assets/sprites/Plastic/tube.png" id="23_holxr"]
+[ext_resource type="Texture2D" uid="uid://dq4oic5tug4l7" path="res://assets/sprites/Yellow/tesa.png" id="22_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://6pu0gihnlpni" path="res://assets/sprites/Yellow/tube.png" id="23_holxr"]
 [ext_resource type="Texture2D" uid="uid://dd8sa2nni225e" path="res://assets/sprites/Rest/zigarette.png" id="24_mx1m4"]
 [ext_resource type="Texture2D" uid="uid://bklyy3o4qdit1" path="res://assets/sprites/Rest/stifte.png" id="24_wnwbv"]
 
@@ -70,13 +70,13 @@ func _ready():
 		\"Sheet_of_paper\": level_state.garbage_types.PAPER,
 		\"Papier_rollen\": level_state.garbage_types.PAPER,
 		\"Nudeln\": level_state.garbage_types.PAPER,
-		\"Folie\": level_state.garbage_types.PLASTIC,
-		\"Tube\": level_state.garbage_types.PLASTIC,
-		\"Milk\": level_state.garbage_types.PLASTIC,
-		\"Gifflar\": level_state.garbage_types.PLASTIC,
-		\"Mozzarella\": level_state.garbage_types.PLASTIC,
-		\"Tesa\": level_state.garbage_types.PLASTIC,
-		\"Dose\": level_state.garbage_types.PLASTIC,
+		\"Folie\": level_state.garbage_types.YELLOW,
+		\"Tube\": level_state.garbage_types.YELLOW,
+		\"Milk\": level_state.garbage_types.YELLOW,
+		\"Gifflar\": level_state.garbage_types.YELLOW,
+		\"Mozzarella\": level_state.garbage_types.YELLOW,
+		\"Tesa\": level_state.garbage_types.YELLOW,
+		\"Dose\": level_state.garbage_types.YELLOW,
 		\"Backpapier\": level_state.garbage_types.REST,
 		\"Bong\": level_state.garbage_types.REST,
 		\"Ordner\": level_state.garbage_types.REST,

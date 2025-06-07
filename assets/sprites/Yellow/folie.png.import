@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq4oic5tug4l7"
-path="res://.godot/imported/tesa.png-0921363d55e5e99c23e977fcc345b880.ctex"
+uid="uid://bt07yc2uu5w3g"
+path="res://.godot/imported/folie.png-80587f9ce9b2f2a87f9fd729e2369578.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Plastic/tesa.png"
-dest_files=["res://.godot/imported/tesa.png-0921363d55e5e99c23e977fcc345b880.ctex"]
+source_file="res://assets/sprites/Yellow/folie.png"
+dest_files=["res://.godot/imported/folie.png-80587f9ce9b2f2a87f9fd729e2369578.ctex"]
 
 [params]
 

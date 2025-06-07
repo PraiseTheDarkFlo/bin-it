@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnm13myo8tk1a"
-path="res://.godot/imported/milk.png-298e04546eba7befcf89e72b6e9745e1.ctex"
+uid="uid://6pu0gihnlpni"
+path="res://.godot/imported/tube.png-dde3cc8fc4f2b06cbb39d37cf2c330a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Plastic/milk.png"
-dest_files=["res://.godot/imported/milk.png-298e04546eba7befcf89e72b6e9745e1.ctex"]
+source_file="res://assets/sprites/Yellow/tube.png"
+dest_files=["res://.godot/imported/tube.png-dde3cc8fc4f2b06cbb39d37cf2c330a8.ctex"]
 
 [params]
 

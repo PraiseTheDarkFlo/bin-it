@@ -27,7 +27,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_scxuy")
 }],
 "loop": true,
-"name": &"Plastic",
+"name": &"Yellow",
 "speed": 5.0
 }]
 
@@ -44,7 +44,7 @@ position = Vector2(0.699652, -2.78891)
 rotation = 3.14159
 scale = Vector2(0.0603651, -0.0582004)
 sprite_frames = SubResource("SpriteFrames_xc0qr")
-animation = &"Organic"
+animation = &"Yellow"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.300446, 0.210968)

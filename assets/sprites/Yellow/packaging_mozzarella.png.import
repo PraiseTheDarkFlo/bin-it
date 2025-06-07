@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt07yc2uu5w3g"
-path="res://.godot/imported/folie.png-632a27c087086145723fb2288084c98a.ctex"
+uid="uid://dd46xihxgsj18"
+path="res://.godot/imported/packaging_mozzarella.png-10a704b9dbb3512d5177dfc540799a62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Plastic/folie.png"
-dest_files=["res://.godot/imported/folie.png-632a27c087086145723fb2288084c98a.ctex"]
+source_file="res://assets/sprites/Yellow/packaging_mozzarella.png"
+dest_files=["res://.godot/imported/packaging_mozzarella.png-10a704b9dbb3512d5177dfc540799a62.ctex"]
 
 [params]
 

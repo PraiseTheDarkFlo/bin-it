@@ -4,7 +4,7 @@ extends Node
 @onready var timer: Timer = $Timer
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
-enum garbage_types{ORGANIC,PLASTIC}
+enum garbage_types{PAPER,PLASTIC,REST,BIO}
 
 var fall_speed = 0.3
 var old_fall_speed = 0
@@ -21,7 +21,7 @@ signal slowdown
 
 func _ready():
 	#init the diffrent garbagecans with their type and sprite
-	$OrganicCan.garbage_type = garbage_types.ORGANIC
+	$OrganicCan.garbage_type = garbage_types.PAPER
 	$OrganicCan.animated_sprite.play("Organic")
 	$PlasticCan.garbage_type = garbage_types.PLASTIC
 	$PlasticCan.animated_sprite.play("Plastic")

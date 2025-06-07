@@ -23,7 +23,7 @@ tile_set = SubResource("TileSet_mx8sn")
 format = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(11.1706, 2.56361)
+scale = Vector2(13.0506, 3.92361)
 
 [node name="LevelState" type="Node" parent="."]
 unique_name_in_owner = true

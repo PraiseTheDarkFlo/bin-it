@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmmtehl7ix820"]
+
+[ext_resource type="Script" uid="uid://chs0ay431gbkx" path="res://multiplier.gd" id="1_dxqaf"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_kg0ia"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iryne"]
+font = ExtResource("2_kg0ia")
+font_size = 8
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bak1h"]
+load_path = "res://.godot/imported/Number_font (8 x 8).png-a0114cadffa458f19a03ca8f0cf836c7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4sw2"]
+atlas = SubResource("CompressedTexture2D_bak1h")
+region = Rect2(32, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77mri"]
+atlas = SubResource("CompressedTexture2D_bak1h")
+region = Rect2(32, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag8wt"]
+atlas = SubResource("CompressedTexture2D_bak1h")
+region = Rect2(32, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_186a1"]
+atlas = SubResource("CompressedTexture2D_bak1h")
+region = Rect2(32, 8, 8, 8)
+
+[node name="Multiplier" type="HBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+alignment = 2
+script = ExtResource("1_dxqaf")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "x"
+label_settings = SubResource("LabelSettings_iryne")
+
+[node name="Digit0" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a4sw2")
+stretch_mode = 3
+
+[node name="Digit1" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_77mri")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "."
+label_settings = SubResource("LabelSettings_iryne")
+
+[node name="Digit2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ag8wt")
+stretch_mode = 5
+
+[node name="Digit3" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_186a1")
+stretch_mode = 5

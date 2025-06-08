@@ -1,20 +1,16 @@
 [gd_scene load_steps=11 format=3 uid="uid://cv7aen0gn0cpx"]
 
 [ext_resource type="PackedScene" uid="uid://cltg3bcampgmp" path="res://scenes/player.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://rciybdai1bns" path="res://scenes/stars.tscn" id="2_b121j"]
+[ext_resource type="PackedScene" uid="uid://i6b31mrv7v8h" path="res://scenes/score.tscn" id="2_klq6b"]
 [ext_resource type="Script" uid="uid://deepsud6542i3" path="res://scripts/level_state.gd" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://bmmtehl7ix820" path="res://scenes/multiplier.tscn" id="3_klq6b"]
 [ext_resource type="PackedScene" uid="uid://ba8pcu8g1ukgc" path="res://scenes/killzone.tscn" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://h5k5wkelt5pj" path="res://scenes/garbage_can.tscn" id="4_mx8sn"]
-[ext_resource type="Script" uid="uid://dabj6gexju4w5" path="res://scripts/label_score.gd" id="4_ppgk2"]
 [ext_resource type="Script" uid="uid://cpix0jyqknvmf" path="res://scripts/power_ups.gd" id="6_klq6b"]
 
 [sub_resource type="TileSet" id="TileSet_mx8sn"]
 physics_layer_0/collision_layer = 1
-
-[sub_resource type="LabelSettings" id="LabelSettings_mx8sn"]
-font_size = 91
-
-[sub_resource type="LabelSettings" id="LabelSettings_2r41h"]
-font_size = 30
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mx8sn"]
 distance = -146.0
@@ -32,24 +28,26 @@ scale = Vector2(13.0506, 3.92361)
 unique_name_in_owner = true
 script = ExtResource("2_w8frs")
 
-[node name="LabelScore" type="Label" parent="LevelState"]
-offset_left = 240.0
-offset_top = -295.0
-offset_right = 831.0
-offset_bottom = -170.0
-scale = Vector2(0.52479, 0.55547)
-text = "Score: 0"
-label_settings = SubResource("LabelSettings_mx8sn")
-text_overrun_behavior = 1
-script = ExtResource("4_ppgk2")
+[node name="Stars" parent="LevelState" instance=ExtResource("2_b121j")]
+offset_left = -766.0
+offset_top = -196.0
+offset_right = -726.0
+offset_bottom = -156.0
+scale = Vector2(3.51523, 3.7934)
 
-[node name="LabelMultiplier" type="Label" parent="LevelState"]
-offset_left = 240.0
-offset_top = -202.0
-offset_right = 862.0
-offset_bottom = -92.0
-text = "Multiplier: x1.00"
-label_settings = SubResource("LabelSettings_2r41h")
+[node name="Score" parent="LevelState" instance=ExtResource("2_klq6b")]
+offset_left = -890.0
+offset_top = -353.0
+offset_right = -819.0
+offset_bottom = -330.0
+scale = Vector2(4.32, 4.56)
+
+[node name="Multiplier" parent="LevelState" instance=ExtResource("3_klq6b")]
+offset_left = -1069.0
+offset_top = -372.0
+offset_right = -898.0
+offset_bottom = -316.0
+scale = Vector2(2.84, 3.78999)
 
 [node name="PlasticCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
 position = Vector2(-59, 279)

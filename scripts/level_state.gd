@@ -1,8 +1,9 @@
 extends Node
 
-@onready var label_score: Label = $LabelScore
 @onready var timer: Timer = $Timer
-@onready var label_multiplier: Label = $LabelMultiplier
+@onready var score_text: HBoxContainer = $Score
+@onready var multiplier_text: HBoxContainer = $Multiplier
+@onready var stars: HBoxContainer = $Stars
 
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
@@ -15,11 +16,11 @@ var item_counter = 0
 var score = 0
 var correct_sorted = 0
 var correct_score = 100
-#var streak_score = 100
 var streak = 0
 var reset_pos = Vector2(-3.0,-399.0)
+var star_thresholds := [200, 300, 400]
 
-var multiplier = 1
+var multiplier: float = 1.0
 
 var trashCanHeight = 100
 var trashCanPositions = [-100, 100]
@@ -62,8 +63,9 @@ func _process(delta: float) -> void:
 	multiplier = 1+(0.05*streak)
 	fall_speed=base_fall_speed*multiplier
 	
-	label_score.text = "Score: " + str(score)
-	label_multiplier.text = "Multiplier: x" + str(multiplier)
+	score_text.update_score(score)
+	
+	multiplier_text.update_mul(multiplier)
 	
 	if (item_counter % 10) == 0 and item_counter != 0:
 		fall_speed += 0.003 
@@ -71,7 +73,8 @@ func _process(delta: float) -> void:
 #adds the right score fore a right sorted item
 func add_score():	
 	score+=int(correct_score*multiplier)
-		
+	
+	check_stars(score)
 	streak += 1
 	correct_sorted += 1
 	
@@ -86,3 +89,11 @@ func _on_timer_timeout() -> void:
 	timer.stop()
 	fall_speed = old_fall_speed
 	
+
+func check_stars(score: int):
+	var count_stars = 0
+	for threshold in star_thresholds:
+		if score >= threshold:
+			count_stars += 1
+			
+	stars.set_stars(count_stars)		

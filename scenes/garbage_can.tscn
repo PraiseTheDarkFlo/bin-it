@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://h5k5wkelt5pj"]
+[gd_scene load_steps=7 format=3 uid="uid://h5k5wkelt5pj"]
 
 [ext_resource type="Texture2D" uid="uid://b78jlge7dtn8e" path="res://assets/sprites/Organic.png" id="1_eci1o"]
 [ext_resource type="Script" uid="uid://du6wuambc8dv8" path="res://scripts/garbage_can.gd" id="1_xc0qr"]
-[ext_resource type="Texture2D" uid="uid://78qeu7qnxjpj" path="res://assets/sprites/Plastic.png" id="2_xc0qr"]
+[ext_resource type="Texture2D" uid="uid://le6xjbmct8k4" path="res://assets/sprites/bins/gelb.png" id="5_cr84q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kr8f1"]
 atlas = ExtResource("1_eci1o")
-region = Rect2(0, 0, 984, 1588)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_scxuy"]
-atlas = ExtResource("2_xc0qr")
 region = Rect2(0, 0, 984, 1588)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xc0qr"]
@@ -24,7 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_scxuy")
+"texture": ExtResource("5_cr84q")
 }],
 "loop": true,
 "name": &"Yellow",

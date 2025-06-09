@@ -125,16 +125,16 @@ script = ExtResource("1_rkm7s")
 position = Vector2(-12, 0)
 sprite_frames = SubResource("SpriteFrames_u0pr1")
 animation = &"Empty"
-frame_progress = 0.516109
+frame_progress = 0.00621022
 
 [node name="2" type="AnimatedSprite2D" parent="."]
 position = Vector2(15, 0)
 sprite_frames = SubResource("SpriteFrames_u0pr1")
 animation = &"Empty"
-frame_progress = 0.040541
+frame_progress = 0.0214976
 
 [node name="3" type="AnimatedSprite2D" parent="."]
 position = Vector2(42, 0)
 sprite_frames = SubResource("SpriteFrames_u0pr1")
 animation = &"Empty"
-frame_progress = 0.29413
+frame_progress = 0.18465

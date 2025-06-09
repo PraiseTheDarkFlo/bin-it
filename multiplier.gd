@@ -15,10 +15,8 @@ var digit_coords = {
 
 func update_mul(number: float):
 	var score = "%05.2f" % number
-	print(score)
 	for i in range(score.length()):
 		var char = score[i]
-		print(char)
 		if char == ".":
 			continue
 		else:

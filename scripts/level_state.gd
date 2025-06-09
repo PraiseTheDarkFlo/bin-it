@@ -18,7 +18,8 @@ var correct_sorted = 0
 var correct_score = 100
 var streak = 0
 var reset_pos = Vector2(-3.0,-399.0)
-var star_thresholds := [200, 300, 400]
+var star_thresholds := [1000, 5000, 8000]
+var star_count: int = 0
 
 var multiplier: float = 1.0
 
@@ -95,5 +96,5 @@ func check_stars(score: int):
 	for threshold in star_thresholds:
 		if score >= threshold:
 			count_stars += 1
-			
-	stars.set_stars(count_stars)		
+	star_count = count_stars		
+	stars.set_stars(star_count)		

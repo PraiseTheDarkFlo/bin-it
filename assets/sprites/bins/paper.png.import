@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doxdh2fks1evu"
-path="res://.godot/imported/papier.png-683e61ef796263b481cdaf4a412c3b47.ctex"
+uid="uid://dek32mcvcivea"
+path="res://.godot/imported/paper.png-1710e1d71bad7036e5e411e99ee0d091.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bins/papier.png"
-dest_files=["res://.godot/imported/papier.png-683e61ef796263b481cdaf4a412c3b47.ctex"]
+source_file="res://assets/sprites/bins/paper.png"
+dest_files=["res://.godot/imported/paper.png-1710e1d71bad7036e5e411e99ee0d091.ctex"]
 
 [params]
 

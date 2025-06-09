@@ -67,7 +67,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.3,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_uxhsd")
 }, {
 "duration": 1.0,
@@ -125,7 +125,6 @@ script = ExtResource("1_rkm7s")
 position = Vector2(-12, 0)
 sprite_frames = SubResource("SpriteFrames_u0pr1")
 animation = &"Empty"
-frame_progress = 0.00621022
 
 [node name="2" type="AnimatedSprite2D" parent="."]
 position = Vector2(15, 0)

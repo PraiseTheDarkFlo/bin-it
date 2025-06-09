@@ -24,20 +24,25 @@ var star_count: int = 0
 var multiplier: float = 1.0
 
 var trashCanHeight = 100
-var trashCanPositions = [-100, 100]
+var trashCanPositions = [-300,-100, 100,300]
 
 signal slowdown
 signal streak_up
 
 func _ready():
 	#init the diffrent garbagecans with their type and sprite
-	$OrganicCan.garbage_type = garbage_types.PAPER
-	$OrganicCan.animated_sprite.play("Organic")
-	$OrganicCan.global_position.x=trashCanPositions[0]
+	$PaperCan.garbage_type = garbage_types.PAPER
+	$PaperCan.animated_sprite.play("Paper")
+	$PaperCan.global_position.x=trashCanPositions[0]
 	$PlasticCan.garbage_type = garbage_types.YELLOW
 	$PlasticCan.global_position.x=trashCanPositions[1]
 	$PlasticCan.animated_sprite.play("Yellow")
-	#$PlasticCan.animated_sprite.play("coin")
+	$RestCan.garbage_type = garbage_types.REST
+	$RestCan.global_position.x=trashCanPositions[2]
+	$RestCan.animated_sprite.play("Rest")
+	$BioCan.garbage_type = garbage_types.BIO
+	$BioCan.global_position.x=trashCanPositions[3]
+	$BioCan.animated_sprite.play("Bio")
 	$Player.xPositions=trashCanPositions
 	$PowerUps.xPositions=trashCanPositions
 	

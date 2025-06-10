@@ -1,52 +1,63 @@
 [gd_scene load_steps=8 format=3 uid="uid://h5k5wkelt5pj"]
 
-[ext_resource type="Texture2D" uid="uid://b78jlge7dtn8e" path="res://assets/sprites/Organic.png" id="1_eci1o"]
 [ext_resource type="Script" uid="uid://du6wuambc8dv8" path="res://scripts/garbage_can.gd" id="1_xc0qr"]
-[ext_resource type="Texture2D" uid="uid://78qeu7qnxjpj" path="res://assets/sprites/Plastic.png" id="2_xc0qr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kr8f1"]
-atlas = ExtResource("1_eci1o")
-region = Rect2(0, 0, 984, 1588)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_scxuy"]
-atlas = ExtResource("2_xc0qr")
-region = Rect2(0, 0, 984, 1588)
+[ext_resource type="Texture2D" uid="uid://b3baoljsq3j5g" path="res://assets/sprites/bins/bio.png" id="2_scxuy"]
+[ext_resource type="Texture2D" uid="uid://doxdh2fks1evu" path="res://assets/sprites/bins/papier.png" id="3_scxuy"]
+[ext_resource type="Texture2D" uid="uid://cisqxivq2dcmi" path="res://assets/sprites/bins/rest.png" id="4_2gbbr"]
+[ext_resource type="Texture2D" uid="uid://le6xjbmct8k4" path="res://assets/sprites/bins/gelb.png" id="5_cr84q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xc0qr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kr8f1")
+"texture": ExtResource("2_scxuy")
 }],
 "loop": true,
-"name": &"Organic",
+"name": &"Bio",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_scxuy")
+"texture": ExtResource("3_scxuy")
 }],
 "loop": true,
-"name": &"Plastic",
+"name": &"Paper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2gbbr")
+}],
+"loop": true,
+"name": &"Rest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cr84q")
+}],
+"loop": true,
+"name": &"Yellow",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr8f1"]
-size = Vector2(110.101, 144.696)
+size = Vector2(243.985, 128.394)
 
 [node name="GarbageCan" type="Area2D"]
+collision_layer = 5
 collision_mask = 2
 script = ExtResource("1_xc0qr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.699652, -2.78891)
+position = Vector2(6, -102)
 rotation = 3.14159
-scale = Vector2(0.0603651, -0.0582004)
+scale = Vector2(-1.78553, -2.2829)
 sprite_frames = SubResource("SpriteFrames_xc0qr")
-animation = &"Organic"
+animation = &"Paper"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.300446, 0.210968)
+position = Vector2(2, 1.94482)
 rotation = -3.14159
 scale = Vector2(0.393467, -0.606646)
 shape = SubResource("RectangleShape2D_kr8f1")

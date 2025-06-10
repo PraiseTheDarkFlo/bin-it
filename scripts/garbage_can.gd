@@ -11,6 +11,9 @@ var garbage_type
 #methode which handels when the player enters the trashcan
 func _on_body_entered(body: Node2D) -> void:
 	if garbage_type == player.garbage_type:
-		level_state.item_counter += 1
 		level_state.add_score()	
-		body.respawn()
+	else:
+		level_state.reset_streak()
+		
+	level_state.item_counter += 1
+	body.respawn()

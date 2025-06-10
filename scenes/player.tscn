@@ -1,85 +1,56 @@
-[gd_scene load_steps=8 format=3 uid="uid://cltg3bcampgmp"]
+[gd_scene load_steps=32 format=3 uid="uid://cltg3bcampgmp"]
 
-[ext_resource type="Texture2D" uid="uid://d3w0fn5tfks0b" path="res://assets/sprites/Banana.png" id="2_g2els"]
-[ext_resource type="Texture2D" uid="uid://dn1f0r0isif8e" path="res://assets/sprites/Bottle.png" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://dwrfgookl0rg2" path="res://scripts/player.gd" id="1_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://kw1ffjb5m4x3" path="res://assets/sprites/Bio/apple.png" id="1_l71n6"]
+[ext_resource type="Texture2D" uid="uid://cy8esn6i57uc7" path="res://assets/sprites/Rest/backpapier.png" id="2_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://cjwhkmcrwixqp" path="res://assets/sprites/Bio/banana.png" id="3_ujl30"]
+[ext_resource type="Texture2D" uid="uid://daskt7qeqf7h7" path="res://assets/sprites/Rest/bong.png" id="4_31cv2"]
+[ext_resource type="Texture2D" uid="uid://dtpl2hxue87ps" path="res://assets/sprites/Paper/box.png" id="5_pf23h"]
+[ext_resource type="Texture2D" uid="uid://ihjv5hnyhojv" path="res://assets/sprites/Yellow/dose.png" id="6_pf23h"]
+[ext_resource type="Texture2D" uid="uid://hguhe5iwnr82" path="res://assets/sprites/Paper/flyers.png" id="7_wqfne"]
+[ext_resource type="Texture2D" uid="uid://bt07yc2uu5w3g" path="res://assets/sprites/Yellow/folie.png" id="8_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://k5ylfdudqf5u" path="res://assets/sprites/Yellow/packaging_gifflar.png" id="9_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://clxu3ajh4l16" path="res://assets/sprites/Bio/leafs.png" id="10_487ah"]
+[ext_resource type="Texture2D" uid="uid://ddwdhvy86yk3y" path="res://assets/sprites/Bio/loewenzahn.png" id="11_md1ol"]
+[ext_resource type="Texture2D" uid="uid://ctjcil78t7g16" path="res://assets/sprites/Paper/magazine.png" id="12_bj30b"]
+[ext_resource type="Texture2D" uid="uid://bnm13myo8tk1a" path="res://assets/sprites/Yellow/milk.png" id="13_jc3p3"]
+[ext_resource type="Texture2D" uid="uid://dd46xihxgsj18" path="res://assets/sprites/Yellow/packaging_mozzarella.png" id="14_hax0n"]
+[ext_resource type="Texture2D" uid="uid://ib3fpc4ovdf8" path="res://assets/sprites/Paper/nudeln.png" id="15_pf23h"]
+[ext_resource type="Texture2D" uid="uid://bkxop86cq1i8a" path="res://assets/sprites/Rest/ordner.png" id="15_t4otl"]
+[ext_resource type="Texture2D" uid="uid://7bgx1h8jkdty" path="res://assets/sprites/Paper/paper_ball.png" id="16_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://b8ebqcd18o2qr" path="res://assets/sprites/Rest/picture.png" id="17_cs1tg"]
+[ext_resource type="Texture2D" uid="uid://dhp76w16vwwxg" path="res://assets/sprites/Paper/sheet_of_paper.png" id="18_2dvfe"]
+[ext_resource type="Texture2D" uid="uid://dnxyn8luy50vo" path="res://assets/sprites/Paper/papier_rollen.png" id="18_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://7dt24kaxx507" path="res://assets/sprites/Bio/stick.png" id="19_giy8y"]
+[ext_resource type="Texture2D" uid="uid://8lqooski4yuf" path="res://assets/sprites/Bio/sticks.png" id="20_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://cy6cqgsnfpxte" path="res://assets/sprites/Rest/scherben.png" id="20_wqfne"]
+[ext_resource type="Texture2D" uid="uid://dmkysr7i3kkne" path="res://assets/sprites/Bio/straw.png" id="21_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://dq4oic5tug4l7" path="res://assets/sprites/Yellow/tesa.png" id="22_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://6pu0gihnlpni" path="res://assets/sprites/Yellow/tube.png" id="23_holxr"]
+[ext_resource type="Texture2D" uid="uid://dd8sa2nni225e" path="res://assets/sprites/Rest/zigarette.png" id="24_mx1m4"]
+[ext_resource type="Texture2D" uid="uid://bklyy3o4qdit1" path="res://assets/sprites/Rest/stifte.png" id="24_wnwbv"]
 
-[sub_resource type="GDScript" id="GDScript_g2els"]
-script/source = "extends CharacterBody2D
-
-
-const SPEED: float  = 200.0
-
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-@onready var level_state: Node = %LevelState
-
-var garbage_type
-
-var garbage
-
-func _ready():
-	#The diffrent kindes of items which the player can be.
-	#The name string must equal the sprite that is used for the player!
-	#Followed by the type of garbage the item is. 
-	garbage = {
-		\"Banana\": level_state.garbage_types.ORGANIC,
-		\"Bottle\": level_state.garbage_types.PLASTIC,
-	}
-	
-	new_item()
-	
-	
-func _physics_process(delta: float) -> void:
-	velocity += get_gravity() * delta * level_state.fall_speed
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	if Input.is_action_just_pressed(\"down\"):
-		velocity.y *=2
-	elif Input.is_action_just_released(\"down\"):
-		velocity.y /=2
-		
-	var direction := Input.get_axis(\"left\", \"right\")
-	if direction:
-		velocity.x = direction * (SPEED + 200)
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-
-#handels the selecting of new items randomly.
-func new_item():
-	if (garbage != null):
-		#selects random an item of the dictionary
-		var random = randi_range(0,garbage.size()-1)
-		var keys = garbage.keys()
-		var random_key = keys[random]
-		var random_type = garbage[random_key]
-		
-		animated_sprite.play(random_key)
-		garbage_type = random_type
-			
-#calls the selection of a random new item and then spawns it at the reset_pos and resets its velocity			
-func respawn():
-	new_item()
-	global_position = level_state.reset_pos
-	velocity.y = 0
-	
-"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("2_g2els")
-region = Rect2(0, 0, 703, 703)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
-atlas = ExtResource("3_qhqgy")
-region = Rect2(0, 0, 703, 703)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gjji"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qhqgy")
+"texture": ExtResource("1_l71n6")
+}],
+"loop": true,
+"name": &"Apple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ke2ow")
+}],
+"loop": true,
+"name": &"Backpapier",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ujl30")
 }],
 "loop": true,
 "name": &"Banana",
@@ -87,28 +58,226 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dqkch")
+"texture": ExtResource("4_31cv2")
 }],
 "loop": true,
-"name": &"Bottle",
+"name": &"Bong",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pf23h")
+}],
+"loop": true,
+"name": &"Box",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pf23h")
+}],
+"loop": true,
+"name": &"Dose",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wqfne")
+}],
+"loop": true,
+"name": &"Flyer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_wnwbv")
+}],
+"loop": true,
+"name": &"Folie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gl8cc")
+}],
+"loop": true,
+"name": &"Gifflar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_487ah")
+}],
+"loop": true,
+"name": &"Leafs",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_md1ol")
+}],
+"loop": true,
+"name": &"Loewenzahn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_bj30b")
+}],
+"loop": true,
+"name": &"Magazine",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_jc3p3")
+}],
+"loop": true,
+"name": &"Milk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_hax0n")
+}],
+"loop": true,
+"name": &"Mozzarella",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_pf23h")
+}],
+"loop": true,
+"name": &"Nudeln",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_t4otl")
+}],
+"loop": true,
+"name": &"Ordner",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_j2b1d")
+}],
+"loop": true,
+"name": &"Paper_ball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_dt7fs")
+}],
+"loop": true,
+"name": &"Papier_rollen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_cs1tg")
+}],
+"loop": true,
+"name": &"Picture",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_wqfne")
+}],
+"loop": true,
+"name": &"Scherben",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_2dvfe")
+}],
+"loop": true,
+"name": &"Sheet_of_paper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_giy8y")
+}],
+"loop": true,
+"name": &"Stick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_fdfoy")
+}],
+"loop": true,
+"name": &"Sticks",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_wnwbv")
+}],
+"loop": true,
+"name": &"Stifte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_hhpqf")
+}],
+"loop": true,
+"name": &"Straw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_g5jhy")
+}],
+"loop": true,
+"name": &"Tesa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_holxr")
+}],
+"loop": true,
+"name": &"Tube",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_mx1m4")
+}],
+"loop": true,
+"name": &"Zigarette",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
-radius = 114.039
+radius = 79.1118
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
-scale = Vector2(0.199995, 0.24)
+scale = Vector2(0.442321, 0.479999)
 collision_layer = 2
-script = SubResource("GDScript_g2els")
+script = ExtResource("1_dt7fs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3.8147e-06, 3.8147e-06)
-scale = Vector2(0.399804, 0.341839)
-sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"Bottle"
+position = Vector2(-3.8147e-06, -8.33335)
+scale = Vector2(0.35048, 0.331019)
+sprite_frames = SubResource("SpriteFrames_4gjji")
+animation = &"Dose"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_fjrip")
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 2000)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false

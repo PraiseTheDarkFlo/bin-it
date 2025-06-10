@@ -1,47 +1,178 @@
-[gd_scene load_steps=3 format=3 uid="uid://m0tnwtvichgr"]
+[gd_scene load_steps=13 format=3 uid="uid://m0tnwtvichgr"]
 
 [ext_resource type="Script" uid="uid://5gnewow70r34" path="res://scripts/levelselect.gd" id="1_vttqt"]
 [ext_resource type="Script" uid="uid://cygofseaw8eli" path="res://scripts/levelbutton.gd" id="1_xuh2y"]
+[ext_resource type="Texture2D" uid="uid://ct42y2byyu45m" path="res://assets/sprites/Space_BG (2 frames) (64 x 64).png" id="2_nqy8e"]
+[ext_resource type="PackedScene" path="res://scenes/stars.tscn" id="3_4kdbh"]
+[ext_resource type="Texture2D" uid="uid://cp86iaylnq30r" path="res://assets/sprites/lock.png" id="4_nqdjo"]
+[ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/background_level_selection.png" id="5_6rap8"]
+[ext_resource type="Texture2D" uid="uid://bx6elk8o82u1g" path="res://assets/sprites/title.png" id="7_rsw7q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rap8"]
+load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nqy8e"]
+load_path = "res://.godot/imported/Number_font (8 x 8).png-a0114cadffa458f19a03ca8f0cf836c7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rap8"]
+atlas = SubResource("CompressedTexture2D_nqy8e")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqdjo"]
+atlas = SubResource("CompressedTexture2D_nqy8e")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaiik"]
+atlas = SubResource("CompressedTexture2D_nqy8e")
+region = Rect2(16, 0, 8, 8)
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 13.0
+offset_right = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vttqt")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button1" type="Button" parent="."]
+top_level = true
 layout_mode = 0
-offset_left = 98.0
-offset_top = 296.0
-offset_right = 331.0
-offset_bottom = 461.0
+offset_left = 124.0
+offset_top = 106.0
+offset_right = 550.0
+offset_bottom = 323.0
 theme_override_font_sizes/font_size = 30
-text = "1"
+icon = SubResource("CompressedTexture2D_6rap8")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_xuh2y")
+
+[node name="Digit1" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 128.0
+offset_top = 156.0
+offset_right = 486.0
+offset_bottom = 396.0
+scale = Vector2(0.36, 0.48)
+texture = SubResource("AtlasTexture_6rap8")
+stretch_mode = 5
+
+[node name="Stars1" parent="." instance=ExtResource("3_4kdbh")]
+z_index = 1
+layout_mode = 1
+offset_left = -811.0
+offset_top = 217.0
+offset_right = -779.0
+offset_bottom = 256.0
+scale = Vector2(2.99484, 3.20025)
+
+[node name="Lock2" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 770.0
+offset_top = 272.0
+offset_right = 926.0
+offset_bottom = 427.0
+texture = ExtResource("4_nqdjo")
 
 [node name="Button2" type="Button" parent="."]
+top_level = true
 layout_mode = 0
-offset_left = 457.0
-offset_top = 293.0
-offset_right = 690.0
-offset_bottom = 458.0
+offset_left = 602.0
+offset_top = 243.0
+offset_right = 1028.0
+offset_bottom = 460.0
 theme_override_font_sizes/font_size = 30
-text = "2"
+icon = ExtResource("2_nqy8e")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_xuh2y")
+
+[node name="Digit2" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 606.0
+offset_top = 293.0
+offset_right = 964.0
+offset_bottom = 533.0
+scale = Vector2(0.36, 0.48)
+texture = SubResource("AtlasTexture_nqdjo")
+stretch_mode = 5
+
+[node name="Stars2" parent="." instance=ExtResource("3_4kdbh")]
+visible = false
+z_index = 1
+layout_mode = 1
+offset_left = -333.0
+offset_top = 354.0
+offset_right = -301.0
+offset_bottom = 393.0
+scale = Vector2(2.99484, 3.20025)
+
+[node name="Lock3" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 292.0
+offset_top = 410.0
+offset_right = 448.0
+offset_bottom = 565.0
+texture = ExtResource("4_nqdjo")
 
 [node name="Button3" type="Button" parent="."]
+top_level = true
 layout_mode = 0
-offset_left = 796.0
-offset_top = 293.0
-offset_right = 1029.0
-offset_bottom = 458.0
+offset_left = 124.0
+offset_top = 381.0
+offset_right = 550.0
+offset_bottom = 598.0
 theme_override_font_sizes/font_size = 30
-text = "3"
+icon = ExtResource("2_nqy8e")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_xuh2y")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed" binds= [1]]
-[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed" binds= [2]]
+[node name="Digit3" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 128.0
+offset_top = 431.0
+offset_right = 486.0
+offset_bottom = 671.0
+scale = Vector2(0.36, 0.48)
+texture = SubResource("AtlasTexture_aaiik")
+stretch_mode = 5
+
+[node name="Stars3" parent="." instance=ExtResource("3_4kdbh")]
+visible = false
+z_index = 1
+layout_mode = 1
+offset_left = -811.0
+offset_top = 492.0
+offset_right = -779.0
+offset_bottom = 531.0
+scale = Vector2(2.99484, 3.20025)
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -13.0
+offset_top = -479.0
+offset_right = 1148.0
+offset_bottom = 725.0
+texture = ExtResource("5_6rap8")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 7.0
+offset_right = 936.0
+offset_bottom = 202.0
+texture = ExtResource("7_rsw7q")
+expand_mode = 2
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Button1" to="Button2" method="_on_pressed" binds= [1]]
+[connection signal="pressed" from="Button2" to="Button3" method="_on_pressed" binds= [2]]
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed" binds= [3]]

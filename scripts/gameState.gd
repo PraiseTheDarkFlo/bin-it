@@ -6,6 +6,11 @@ var state: game_states = game_states.INTRO;
 var current_level: int = -1;
 var level_select_instance = null;
 var level_instance = null;
+var level_stars = {
+	1: 0,
+	2: 0,
+	3: 0,
+}
 
 signal on_state_change(new_state: game_states);
 
@@ -50,11 +55,18 @@ func on_prelevel_finished(resource: DialogueResource) -> void:
 	level_instance.get_node("LevelState").level_finished.connect(on_level_finished);
 	add_child(level_instance);
 
-func on_level_finished() -> void:
+func on_level_finished(stars: int) -> void:
+	update_stars(current_level,stars)
 	level_instance.get_node("LevelState").level_finished.disconnect(on_level_finished);
 	update_state(game_states.POST_LEVEL);
 	DialogueManager.dialogue_ended.connect(on_postlevel_finished);
 	DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_", current_level, "_post.dialogue")));
+
+func update_stars(level: int, stars: int) -> void:
+	if level in level_stars:
+		if stars > level_stars[level]:
+			level_stars[level] = stars
+	print(level_stars)	
 
 func on_postlevel_finished(resource: DialogueResource) -> void:
 	current_level = -1;

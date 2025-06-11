@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_aehqb"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_xdvsf"]
 [ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="6_b7w7o"]
+[ext_resource type="StyleBox" uid="uid://t5oicmbhybu1" path="res://assets/sprites/balloon_focus.tres" id="7_56jnn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -65,17 +66,6 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7w7o"]
-bg_color = Color(0.275998, 0.332495, 0.476715, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -163,7 +153,9 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_b7w7o")
-theme_override_styles/focus = SubResource("StyleBoxFlat_b7w7o")
+theme_override_styles/focus = ExtResource("7_56jnn")
+theme_override_styles/hover_mirrored = ExtResource("7_56jnn")
+theme_override_styles/hover = ExtResource("7_56jnn")
 theme_override_styles/normal = ExtResource("2_b7w7o")
 text = "Response example"
 

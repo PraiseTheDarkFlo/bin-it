@@ -27,14 +27,14 @@ var powerups = {
 		"chance": 0.8,
 		"lower_bound": 0,
 		"animation_name": "multiplierUp",
-		"action": func(): level_state.streak_up.emit()
+		"action": func(): level_state.increase_score_powerup.emit()
 	},
 	
 	"streak down":{
 		"chance": 0.6,
 		"lower_bound": 0,
 		"animation_name": "multiplierDown",
-		"action": func(): level_state.streak_down.emit()
+		"action": func(): level_state.halve_score_powerup.emit()
 	}
 }
 

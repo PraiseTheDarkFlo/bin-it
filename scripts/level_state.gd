@@ -29,9 +29,10 @@ var trashCanPositions = [-300,-100, 100,300]
 var speed_modifier: float = 1.0
 
 signal slowdown
-signal streak_up
+signal increase_score_powerup
+signal halve_score_powerup
 signal speedup
-signal streak_down
+
 
 func _ready():
 	#init the diffrent garbagecans with their type and sprite
@@ -54,10 +55,9 @@ func _ready():
 	
 	#connect the function _activated_slowdown to the signal slowdown
 	slowdown.connect(_activated_slowdown)
-	streak_up.connect(_activated_streak)
 	speedup.connect(_activated_speedup)
-	streak_down.connect(_activated_streak_down)
-
+	increase_score_powerup.connect(_activated_increase_score) 
+	halve_score_powerup.connect(_activated_half_score) 
 
 #methode which handels the slowdown effect
 func _activated_slowdown() -> void:
@@ -76,13 +76,81 @@ func _activated_speedup():
 func _activated_streak():
 	streak+=4
 
+
+func _play_increase_score_effect(): # Visual for power-up that increases score
+	if not score_text:
+		return
+
+	var tween = get_tree().create_tween()
+
+	var original_scale = score_text.scale # Get actual current scale of score_text
+	var original_color = score_text.modulate
+
+	score_text.is_tweening = true 
+	
+	# Change color to gold
+	tween.tween_property(
+		score_text, "modulate", Color("ffd700"), 0.1 # Gold color
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	# Enlarge number 
+	tween.tween_property(
+		score_text, "scale", original_scale * 1.1, 0.15 # Scale to 1.5x its current size
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	# Back to original size
+	tween.tween_property(
+		score_text, "scale", original_scale, 0.25
+	).set_delay(0.15).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	# Change color back to original
+	tween.tween_property(
+		score_text, "modulate", original_color, 0.4
+	).set_delay(0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	# Reset the is_tweening flag when the tween finishes
+	tween.finished.connect(func(): score_text.is_tweening = false)
+
+
+func _play_half_points_effect(): # Visual for power-up that halves score
+	if not score_text:
+		return
+		
+	var tween = get_tree().create_tween()
+
+	var original_color = score_text.modulate
+	var original_position = score_text.position
+	var original_scale = score_text.scale # Get actual current scale of score_text
+	var shake_amount = 10
+
+	score_text.is_tweening = true # Tell score.gd to pause updates (Crucial!)
+	
+	# Change color to red
+	tween.tween_property(score_text, "modulate", Color("ff4444"), 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	# Shake animation sequence:
+	tween.tween_property(score_text, "position", original_position + Vector2(-shake_amount, 0), 0.05).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(score_text, "position", original_position + Vector2(shake_amount, 0), 0.05).set_delay(0.05).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(score_text, "position", original_position + Vector2(-shake_amount / 2, 0), 0.05).set_delay(0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(score_text, "position", original_position + Vector2(shake_amount / 2, 0), 0.05).set_delay(0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(score_text, "position", original_position, 0.1).set_delay(0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
+	# Back to original color
+	tween.tween_property(score_text, "modulate", original_color, 0.4).set_delay(0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+	# Reset the is_tweening flag when the tween finishes
+	tween.finished.connect(func(): score_text.is_tweening = false)
+	
 #double current streak	
-func _activated_streak_up():
-	streak *= 2
+func _activated_increase_score():
+	score = score * 1.2
+	_play_increase_score_effect() 
+
 	
 # Shalves current streak
-func _activated_streak_down():
-	streak = int(streak / 2)
+func _activated_half_score():
+	score = int(score / 2)
+	_play_half_points_effect()
 	
 
 	

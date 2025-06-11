@@ -28,6 +28,8 @@ var trashCanPositions = [-300,-100, 100,300]
 
 signal slowdown
 signal streak_up
+signal speedup
+signal streak_down
 
 func _ready():
 	#init the diffrent garbagecans with their type and sprite
@@ -51,6 +53,8 @@ func _ready():
 	#connect the function _activated_slowdown to the signal slowdown
 	slowdown.connect(_activated_slowdown)
 	streak_up.connect(_activated_streak)
+	speedup.connect(_activated_speedup)
+	streak_down.connect(_activated_streak_down)
 
 
 #methode which handels the slowdown effect
@@ -59,9 +63,24 @@ func _activated_slowdown() -> void:
 	old_fall_speed = fall_speed
 	fall_speed = 0.1
 	timer.start()
+
+func _activated_speedup():
+	old_fall_speed = fall_speed
+	fall_speed = base_fall_speed * 2 # or another value for "fast"
+	timer.start()
 	
 func _activated_streak():
 	streak+=4
+
+#double current streak	
+func _activated_streak_up():
+	streak *= 2
+	
+# Shalves current streak
+func _activated_streak_down():
+	streak = int(streak / 2)
+	
+
 	
 #called every frame i think
 func _process(delta: float) -> void:		

@@ -14,20 +14,27 @@ var powerups = {
 	"slow": {
 		"chance": 0.0, #chance to spawn
 		"lower_bound": 0, #starts spawning after 0 items
-		"sprite": null, #sprite for the power_up
+		"sprite": "res://assets/sprites/power ups/Slow_Down.png", #sprite for the power_up
 		"action": func(): level_state.slowdown.emit() #the function which gots called if the power_up takes action
 	},
 	"speed": {
 		"chance": 0.0,
 		"lower_bound": 30,
-		"sprite": null,
+		"sprite": "res://assets/sprites/power ups/Speed_Up.png",
 		"action": func(): print("speed!")
 	},
-	"streak": {
+	"streak up": {
 		"chance": 1.0,
 		"lower_bound": 0,
-		"sprite": null,
+		"sprite": "res://assets/sprites/power ups/Multiplier_Up.png",
 		"action": func(): level_state.streak_up.emit()
+	},
+	
+	"streak down":{
+		"chance": 1.0,
+		"lower_bound": 0,
+		"sprite": "res://assets/sprites/power ups/Untitled_Artwork.png",
+		"action": func(): level_state.streak_down.emit()
 	}
 }
 

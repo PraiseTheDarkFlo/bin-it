@@ -12,28 +12,28 @@ var xPositions = [0,100]
 #the diffrent powerups or downs 
 var powerups = {
 	"slow": {
-		"chance": 0.0, #chance to spawn
+		"chance": 0.6, #chance to spawn
 		"lower_bound": 0, #starts spawning after 0 items
-		"sprite": "res://assets/sprites/power ups/Slow_Down.png", #sprite for the power_up
+		"animation_name": "slowdown", #sprite for the power_up
 		"action": func(): level_state.slowdown.emit() #the function which gots called if the power_up takes action
 	},
 	"speed": {
-		"chance": 0.0,
+		"chance": 0.8,
 		"lower_bound": 30,
-		"sprite": "res://assets/sprites/power ups/Speed_Up.png",
-		"action": func(): print("speed!")
+		"animation_name": "speedup",
+		"action": func(): level_state.speedup.emit()
 	},
 	"streak up": {
-		"chance": 1.0,
+		"chance": 0.8,
 		"lower_bound": 0,
-		"sprite": "res://assets/sprites/power ups/Multiplier_Up.png",
+		"animation_name": "multiplierUp",
 		"action": func(): level_state.streak_up.emit()
 	},
 	
 	"streak down":{
-		"chance": 1.0,
+		"chance": 0.6,
 		"lower_bound": 0,
-		"sprite": "res://assets/sprites/power ups/Untitled_Artwork.png",
+		"animation_name": "multiplierDown",
 		"action": func(): level_state.streak_down.emit()
 	}
 }
@@ -51,7 +51,7 @@ func maybe_spawn_powerup():
 		if level_state.item_counter >= data["lower_bound"]:	
 			if randf() < data["chance"]:
 				var newPowerUp = PowerUpScene.instantiate()
-				newPowerUp.change_sprite(data["sprite"])
+				newPowerUp.initial_animation_name=(data["animation_name"])
 				newPowerUp.effect = name
 				newPowerUp.position = random_spawn()
 				add_child(newPowerUp)

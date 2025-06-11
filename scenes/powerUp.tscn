@@ -476,7 +476,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bmm8g")
 }],
 "loop": true,
-"name": &"multiplier down",
+"name": &"multiplierDown",
 "speed": 5.0
 }, {
 "frames": [{
@@ -550,7 +550,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_1mdqg")
 }],
 "loop": true,
-"name": &"multiplier up",
+"name": &"multiplierUp",
 "speed": 5.0
 }, {
 "frames": [{
@@ -631,7 +631,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 1.1,
 "texture": SubResource("AtlasTexture_nkk1v")
 }, {
 "duration": 1.0,
@@ -696,7 +696,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"speedup",
-"speed": 5.0
+"speed": 13.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ssuvv"]
@@ -709,11 +709,11 @@ collision_mask = 2
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(10, -78.9063)
-scale = Vector2(13.5825, 17.0654)
+position = Vector2(143.66, -130.096)
+scale = Vector2(3.47375, 4.36451)
 sprite_frames = SubResource("SpriteFrames_f5b7w")
 animation = &"speedup"
-frame_progress = 0.962902
+frame_progress = 0.505602
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(16.7315, 16.1326)

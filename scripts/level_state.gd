@@ -26,6 +26,8 @@ var multiplier: float = 1.0
 var trashCanHeight = 100
 var trashCanPositions = [-300,-100, 100,300]
 
+var speed_modifier: float = 1.0
+
 signal slowdown
 signal streak_up
 signal speedup
@@ -59,14 +61,16 @@ func _ready():
 
 #methode which handels the slowdown effect
 func _activated_slowdown() -> void:
-	print("test start")
+	print("slowdown activated!")
 	old_fall_speed = fall_speed
-	fall_speed = 0.1
+	speed_modifier = 0.2
 	timer.start()
 
 func _activated_speedup():
+	print("speedup activated!")
 	old_fall_speed = fall_speed
-	fall_speed = base_fall_speed * 2 # or another value for "fast"
+	speed_modifier = 3.0
+
 	timer.start()
 	
 func _activated_streak():
@@ -86,7 +90,7 @@ func _activated_streak_down():
 func _process(delta: float) -> void:		
 	
 	multiplier = 1+(0.05*streak)
-	fall_speed=base_fall_speed*multiplier
+	fall_speed=base_fall_speed*multiplier*speed_modifier
 	
 	score_text.update_score(score)
 	
@@ -112,7 +116,8 @@ func reset_streak():
 #timer that handels when the slow effect should stop
 func _on_timer_timeout() -> void:
 	timer.stop()
-	fall_speed = old_fall_speed
+	speed_modifier = 1.0
+	print("Speed modifier reset to og")
 	
 
 func check_stars(score: int):

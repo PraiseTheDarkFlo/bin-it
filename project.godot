@@ -20,6 +20,10 @@ run/canvas_textures/default_texture_filter=1
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[dialogue_manager]
+
+runtime/balloon_path="res://my_balloon/balloon.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")

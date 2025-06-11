@@ -6,6 +6,8 @@ var state: game_states = game_states.INTRO;
 var current_level: int = -1;
 var level_select_instance = null;
 var level_instance = null;
+var dialoge_instance = null;
+var dialoge_ballon= null;
 var level_stars = {
 	1: 0,
 	2: 0,
@@ -25,10 +27,17 @@ func update_state(new_state: game_states) -> void:
 # Start: Display Intro
 func _on_game_ready() -> void:
 	DialogueManager.dialogue_ended.connect(on_intro_finished);
-	DialogueManager.show_dialogue_balloon(load("res://dialogues/intro.dialogue"));
+	var scene = load("res://scenes/dialoge_scene.tscn");
+	dialoge_instance = scene.instantiate();
+	add_child(dialoge_instance);
+	dialoge_instance.set_background(0)
+	var scene_ballon = load("res://my_balloon/balloon.tscn");
+	dialoge_ballon = scene_ballon.instantiate();
+	add_child(dialoge_ballon);
+	dialoge_ballon.start(load("res://dialogues/intro.dialogue"),"start")
 
 func on_intro_finished(resource: DialogueResource) -> void:
-	print("Intro finished!");
+	print("Intro finished!");#
 	DialogueManager.dialogue_ended.disconnect(on_intro_finished);
 	showLevelSelect();
 
@@ -42,6 +51,7 @@ func showLevelSelect() -> void:
 
 func on_select_level(level: int) -> void:
 	current_level = level;
+	dialoge_instance.set_background(level)
 	update_state(game_states.PRE_LEVEL);
 	remove_child(level_select_instance); # The level selector can be reused, no need to reinstantiate it
 	DialogueManager.dialogue_ended.connect(on_prelevel_finished);

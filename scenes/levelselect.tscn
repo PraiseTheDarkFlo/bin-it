@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://5gnewow70r34" path="res://scripts/levelselect.gd" id="1_vttqt"]
 [ext_resource type="Script" uid="uid://cygofseaw8eli" path="res://scripts/levelbutton.gd" id="1_xuh2y"]
 [ext_resource type="Texture2D" uid="uid://ct42y2byyu45m" path="res://assets/sprites/Space_BG (2 frames) (64 x 64).png" id="2_nqy8e"]
-[ext_resource type="PackedScene" path="res://scenes/stars.tscn" id="3_4kdbh"]
+[ext_resource type="PackedScene" uid="uid://rciybdai1bns" path="res://scenes/stars.tscn" id="3_4kdbh"]
 [ext_resource type="Texture2D" uid="uid://cp86iaylnq30r" path="res://assets/sprites/lock.png" id="4_nqdjo"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/background_level_selection.png" id="5_6rap8"]
 [ext_resource type="Texture2D" uid="uid://bx6elk8o82u1g" path="res://assets/sprites/title.png" id="7_rsw7q"]
@@ -52,6 +52,7 @@ script = ExtResource("1_xuh2y")
 
 [node name="Digit1" type="TextureRect" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 128.0
 offset_top = 156.0
 offset_right = 486.0
@@ -93,6 +94,7 @@ script = ExtResource("1_xuh2y")
 
 [node name="Digit2" type="TextureRect" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 606.0
 offset_top = 293.0
 offset_right = 964.0
@@ -135,6 +137,7 @@ script = ExtResource("1_xuh2y")
 
 [node name="Digit3" type="TextureRect" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 128.0
 offset_top = 431.0
 offset_right = 486.0
@@ -157,17 +160,17 @@ scale = Vector2(2.99484, 3.20025)
 z_index = -1
 layout_mode = 0
 offset_left = -13.0
-offset_top = -479.0
+offset_top = -493.0
 offset_right = 1148.0
-offset_bottom = 725.0
+offset_bottom = 711.0
 texture = ExtResource("5_6rap8")
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 553.0
-offset_top = 7.0
-offset_right = 936.0
-offset_bottom = 202.0
+offset_left = 540.0
+offset_top = -1.0
+offset_right = 923.0
+offset_bottom = 194.0
 texture = ExtResource("7_rsw7q")
 expand_mode = 2
 

@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0iw6hugs6pnh"]
+[gd_scene load_steps=13 format=3 uid="uid://du57tnafxej7h"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://example_balloon/example_balloon.gd" id="1_jnrej"]
+[ext_resource type="StyleBox" uid="uid://db5l1x2e0d2w4" path="res://assets/sprites/balloon.tres" id="2_b7w7o"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_uhmq0"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_aehqb"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_xdvsf"]
+[ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="6_b7w7o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -63,6 +66,17 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7w7o"]
+bg_color = Color(0.275998, 0.332495, 0.476715, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_jnrej")
@@ -91,12 +105,15 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
+theme_override_styles/panel = ExtResource("2_b7w7o")
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -13.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -108,6 +125,7 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("5_xdvsf")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -117,6 +135,7 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("6_b7w7o")
 text = "Dialogue..."
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
@@ -126,10 +145,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -558.0
-offset_right = 494.0
-offset_bottom = -154.0
+offset_left = 41.0
+offset_top = -341.0
+offset_right = 561.0
+offset_bottom = -177.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -143,6 +162,9 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_b7w7o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b7w7o")
+theme_override_styles/normal = ExtResource("2_b7w7o")
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

@@ -696,11 +696,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"speedup",
-"speed": 13.0
+"speed": 11.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ssuvv"]
-radius = 3.97876
+[sub_resource type="CircleShape2D" id="CircleShape2D_c16ma"]
+radius = 3.68041
 
 [node name="PowerUp" type="Area2D"]
 scale = Vector2(0.4, 0.32)
@@ -709,14 +709,14 @@ collision_mask = 2
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(143.66, -130.096)
+position = Vector2(-2.5, -3.12499)
 scale = Vector2(3.47375, 4.36451)
 sprite_frames = SubResource("SpriteFrames_f5b7w")
 animation = &"speedup"
-frame_progress = 0.0291908
+frame_progress = 0.69191
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(16.7315, 16.1326)
-shape = SubResource("CircleShape2D_ssuvv")
+scale = Vector2(24.4826, 36.137)
+shape = SubResource("CircleShape2D_c16ma")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

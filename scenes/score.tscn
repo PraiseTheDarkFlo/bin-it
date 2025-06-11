@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://i6b31mrv7v8h"]
 
-[ext_resource type="Script" uid="uid://dereupikd23ah" path="res://h_box_container.gd" id="1_8juob"]
+[ext_resource type="Script" path="res://h_box_container.gd" id="1_8juob"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8juob"]
 load_path = "res://.godot/imported/Number_font (8 x 8).png-a0114cadffa458f19a03ca8f0cf836c7.ctex"

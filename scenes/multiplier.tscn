@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bmmtehl7ix820"]
 
-[ext_resource type="Script" path="res://multiplier.gd" id="1_dxqaf"]
+[ext_resource type="Script" uid="uid://chs0ay431gbkx" path="res://multiplier.gd" id="1_dxqaf"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_kg0ia"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iryne"]

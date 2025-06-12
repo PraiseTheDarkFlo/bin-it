@@ -16,8 +16,13 @@ func _ready():
 	if initial_animation_name != "":
 		if animated_sprite != null: #safety check
 			animated_sprite.play(initial_animation_name)
+			if initial_animation_name == "multiplierDown" or initial_animation_name == "speedup":
+				# tint it red
+				animated_sprite.modulate = Color(1.0, 0.6, 0.6, 0.8) 
 		else:
 			print("AnimatedSprite2D is null ")
+			
+			
 
 func change_sprite(new_sprite_name: String) -> void:
 	#for changing sprite later if needed

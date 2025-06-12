@@ -75,6 +75,7 @@ wait_time = 3.0
 position = Vector2(-4, -395)
 
 [node name="PowerUps" type="Node" parent="LevelState"]
+unique_name_in_owner = true
 script = ExtResource("6_klq6b")
 
 [node name="Timer" type="Timer" parent="LevelState/PowerUps"]
@@ -82,4 +83,5 @@ wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="LevelState/Timer" to="LevelState" method="_on_timer_timeout"]
+[connection signal="ready" from="LevelState/PowerUps" to="LevelState/PowerUps" method="_on_ready"]
 [connection signal="timeout" from="LevelState/PowerUps/Timer" to="LevelState/PowerUps" method="_on_timer_timeout"]

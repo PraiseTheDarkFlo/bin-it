@@ -14,7 +14,7 @@ var garbage_type
 var garbage
 
 #Valid x-coordinates that the player can moce to. Initial value is only for testing (level manager overwrites this)
-var xPositions = [-50,0,50]
+var xPositions: Array 
 
 #These Vairables encode whether the player is currently moving and where he is trying to move to. (seperated by axis)
 var movingSide = false

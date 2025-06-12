@@ -4,6 +4,7 @@ extends Node
 @onready var score_text: HBoxContainer = $Score
 @onready var multiplier_text: HBoxContainer = $Multiplier
 @onready var stars: HBoxContainer = $Stars
+@onready var power_ups: Node = %PowerUps
 
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
@@ -28,6 +29,11 @@ var trashCanPositions = [-300,-100, 100,300]
 
 var speed_modifier: float = 1.0
 
+
+var original_scale = null
+var original_color = null
+var original_position = null
+	
 signal slowdown
 signal increase_score_powerup
 signal halve_score_powerup
@@ -49,7 +55,8 @@ func _ready():
 	$BioCan.global_position.x=trashCanPositions[3]
 	$BioCan.animated_sprite.play("Bio")
 	$Player.xPositions=trashCanPositions
-	$PowerUps.xPositions=trashCanPositions
+	power_ups.xPositions=trashCanPositions
+	power_ups.init_xPositionsOccupied()
 	
 	
 	
@@ -70,7 +77,6 @@ func _activated_speedup():
 	print("speedup activated!")
 	old_fall_speed = fall_speed
 	speed_modifier = 3.0
-
 	timer.start()
 	
 func _activated_streak():
@@ -82,9 +88,11 @@ func _play_increase_score_effect(): # Visual for power-up that increases score
 		return
 
 	var tween = get_tree().create_tween()
-
-	var original_scale = score_text.scale # Get actual current scale of score_text
-	var original_color = score_text.modulate
+	
+	if original_scale == null:
+		original_scale = score_text.scale # Get actual current scale of score_text
+	if original_color == null:
+		original_color = score_text.modulate
 
 	score_text.is_tweening = true 
 	
@@ -108,8 +116,9 @@ func _play_increase_score_effect(): # Visual for power-up that increases score
 		score_text, "modulate", original_color, 0.4
 	).set_delay(0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 
+
 	# Reset the is_tweening flag when the tween finishes
-	tween.finished.connect(func(): score_text.is_tweening = false)
+	tween.finished.connect(tween_finish)
 
 
 func _play_half_points_effect(): # Visual for power-up that halves score
@@ -118,9 +127,13 @@ func _play_half_points_effect(): # Visual for power-up that halves score
 		
 	var tween = get_tree().create_tween()
 
-	var original_color = score_text.modulate
-	var original_position = score_text.position
-	var original_scale = score_text.scale # Get actual current scale of score_text
+	if original_position == null:
+		original_position = score_text.position
+	if original_scale == null:
+		original_scale = score_text.scale # Get actual current scale of score_text
+	if original_color == null:
+		original_color = score_text.modulate
+
 	var shake_amount = 10
 
 	score_text.is_tweening = true # Tell score.gd to pause updates (Crucial!)
@@ -137,14 +150,19 @@ func _play_half_points_effect(): # Visual for power-up that halves score
 	
 	# Back to original color
 	tween.tween_property(score_text, "modulate", original_color, 0.4).set_delay(0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-
-	# Reset the is_tweening flag when the tween finishes
-	tween.finished.connect(func(): score_text.is_tweening = false)
 	
+	# Reset the is_tweening flag when the tween finishes
+	tween.finished.connect(tween_finish)
+
+func tween_finish() -> void:
+	score_text.is_tweening = false
+	original_position = null
+	original_scale = null
+	original_color = null
 #double current streak	
 func _activated_increase_score():
 	score = score * 1.2
-	_play_increase_score_effect() 
+	_play_increase_score_effect()
 
 	
 # Shalves current streak

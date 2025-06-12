@@ -7,7 +7,9 @@ var PowerUpScene = preload("res://scenes/powerUp.tscn")
 var min_spawn = -200
 var max_spawn = 150
 
-var xPositions = [0,100]
+var xPositions: Array
+
+var xPositionsOccupied: Dictionary
 
 #the diffrent powerups or downs 
 var powerups = {
@@ -39,22 +41,34 @@ var powerups = {
 }
 
 #random selects a point in the spawnfield for the new powerup to spawn
-func random_spawn() -> Vector2:
-	var x = xPositions.pick_random()
+func random_spawn() -> Variant:
+	print(xPositionsOccupied)
+	var possiblexPositions = xPositionsOccupied.keys().filter(func(k): return xPositionsOccupied[k] == false)
+	print(possiblexPositions)
+	if possiblexPositions.is_empty():
+		return null
+	var x = possiblexPositions.pick_random()
 	var y = randf_range(min_spawn, max_spawn)
 	return Vector2(x, y)
 	
 #calculatios if a powerup should spawn and if spawns it at a random position	
 func maybe_spawn_powerup():
-	for name in powerups.keys():
+	var keys = powerups.keys()
+	keys.shuffle()
+	for name in keys:
 		var data = powerups[name]
 		if level_state.item_counter >= data["lower_bound"]:	
 			if randf() < data["chance"]:
 				var newPowerUp = PowerUpScene.instantiate()
 				newPowerUp.initial_animation_name=(data["animation_name"])
 				newPowerUp.effect = name
-				newPowerUp.position = random_spawn()
+				var position = random_spawn()
+				if position == null:
+					return
+				newPowerUp.position = position 
 				add_child(newPowerUp)
+				xPositionsOccupied[int(position.x)] = true
+				return
 				
 
 #timer how often the powerup spawing should be checked
@@ -67,3 +81,8 @@ func get_action(name: String) -> Callable:
 		if name in powerups.keys():
 			return powerups[name]["action"]
 	return Callable()
+
+
+func init_xPositionsOccupied() -> void:
+	for position in xPositions:
+		xPositionsOccupied[position] = false

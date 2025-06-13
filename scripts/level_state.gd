@@ -40,8 +40,8 @@ signal halve_score_powerup
 signal speedup
 
 var trashDistribution = [2,2,2,2] #determines how many pieces of trash from each category will appear. The order is : [paper,yellow,rest,bio]
-var deterministicFirstTrash = false
-var firstTrash = garbage_types.PAPER #determines the type of the very first piece of trash (only if previous variable is true)
+var deterministicFirstTrash = true
+var firstTrash = garbage_types.BIO #determines the type of the very first piece of trash (only if previous variable is true)
 var trashKeyList #stores in what order trash will fall during the level. Automatically filled when the level generates
 
 #The diffrent kindes of items which the player can be.
@@ -81,7 +81,6 @@ var garbage = {
 func _enter_tree(): #runs even earlier than _ready. needed for the player node _ready to function
 	trashKeyList=generateTrash()
 
-
 func _ready():
 	#init the diffrent garbagecans with their type and sprite
 	$PaperCan.garbage_type = garbage_types.PAPER
@@ -119,7 +118,24 @@ func random_dict_key(dict):
 	var random = randi_range(0,dict.size()-1)
 	var keys = dict.keys()
 	return keys[random] 
-
+	
+func swap(i : int, j : int, a : Array) -> Array:
+	var t = a[i]
+	a[i] = a[j]
+	a[j] = t
+	return a
+	
+func pushKeyToFront(keyArr, dict, value):
+	var targetIndex=0 
+	for i in range(keyArr.size()):
+		var currentKey=keyArr[i]
+		var currentValue=dict[currentKey]
+		if currentValue==value:
+			targetIndex=i
+			break
+	var result=swap(0,targetIndex,keyArr)
+	return result
+			
 func generateTrash():
 	var trashListResult=[] 
 	var validDict={}
@@ -137,6 +153,9 @@ func generateTrash():
 		trashListResult.append(random_dict_key(validDict))
 		
 	trashListResult.shuffle()
+	
+	if deterministicFirstTrash:
+		trashListResult=pushKeyToFront(trashListResult,garbage,firstTrash)
 		
 	return trashListResult
 

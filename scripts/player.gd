@@ -26,6 +26,8 @@ var downTarget = 0
 var moveSpeedSide = 2000
 var moveSpeedDown = 3000
 
+signal levelFinished
+
 func _ready():
 	new_item()
 	
@@ -53,7 +55,7 @@ func _physics_process(delta: float) -> void:
 
 #handels the selecting of new items randomly.
 func new_item():
-	print(level_state.trashKeyList)
+	#print(level_state.trashKeyList)
 	var new_key = level_state.trashKeyList[0]
 	var new_type = level_state.garbage[new_key]
 	animated_sprite.play(new_key)

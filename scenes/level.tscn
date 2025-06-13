@@ -50,16 +50,16 @@ offset_bottom = -281.0
 scale = Vector2(2.44556, 2.95885)
 
 [node name="BioCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(293, 279)
+position = Vector2(1012, 279)
 
 [node name="RestCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(175, 279)
+position = Vector2(894, 279)
 
 [node name="PlasticCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(-59, 279)
+position = Vector2(660, 279)
 
 [node name="PaperCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(57, 279)
+position = Vector2(776, 279)
 
 [node name="Killzone" parent="LevelState" instance=ExtResource("3_w8frs")]
 scale = Vector2(3.32, 1)

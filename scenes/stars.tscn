@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://rciybdai1bns"]
 
-[ext_resource type="Script" path="res://stars.gd" id="1_rkm7s"]
+[ext_resource type="Script" uid="uid://qik3va1vi3p8" path="res://stars.gd" id="1_rkm7s"]
 [ext_resource type="Texture2D" uid="uid://oal27symswfw" path="res://assets/sprites/Stars/grey_Star.png" id="2_784ub"]
 [ext_resource type="Texture2D" uid="uid://bhg7r1afghyys" path="res://assets/sprites/Stars/Star.png" id="3_b87vc"]
 

@@ -162,12 +162,14 @@ func tween_finish() -> void:
 #double current streak	
 func _activated_increase_score():
 	score = score * 1.2
+	check_stars(score)
 	_play_increase_score_effect()
 
 	
 # Shalves current streak
 func _activated_half_score():
 	score = int(score / 2)
+	check_stars(score)
 	_play_half_points_effect()
 	
 

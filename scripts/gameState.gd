@@ -31,7 +31,7 @@ func _on_game_ready() -> void:
 	dialoge_instance = scene.instantiate();
 	add_child(dialoge_instance);
 	dialoge_instance.set_background(0)
-	var scene_ballon = load("res://my_balloon/balloon.tscn");
+	var scene_ballon = load("res://scenes/balloon.tscn");
 	dialoge_ballon = scene_ballon.instantiate();
 	add_child(dialoge_ballon);
 	dialoge_ballon.start(load("res://dialogues/intro.dialogue"),"start")
@@ -64,19 +64,33 @@ func on_prelevel_finished(resource: DialogueResource) -> void:
 	level_instance = scene.instantiate();
 	level_instance.get_node("LevelState").level_finished.connect(on_level_finished);
 	add_child(level_instance);
+	match current_level:
+		1:
+			level_instance.init(1,18,1000,2000,5000)
+		2:
+			level_instance.init(2,12,4000,6000,10000)	
+		3:
+			level_instance.init(3,9,2000,3000,8000)	
 
 func on_level_finished(stars: int) -> void:
-	update_stars(current_level,stars)
 	level_instance.get_node("LevelState").level_finished.disconnect(on_level_finished);
-	if stars > 0:
-		update_state(game_states.POST_LEVEL);
-		DialogueManager.dialogue_ended.connect(on_postlevel_finished);
-		DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_", current_level, "_post.dialogue")));
-	else:
-		update_state(game_states.POST_LEVEL);
-		DialogueManager.dialogue_ended.connect(on_postlevel_finished);
-		DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_failed.dialogue")));
-	remove_child(level_instance);
+	level_instance.call_deferred("queue_free")
+	if level_stars[current_level] > 0:
+		update_stars(current_level,stars)
+		current_level = -1;
+		level_instance = null;
+		showLevelSelect();
+	else:	 
+		update_stars(current_level,stars)
+		if stars > 0:
+			update_state(game_states.POST_LEVEL);
+			DialogueManager.dialogue_ended.connect(on_postlevel_finished);
+			DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_", current_level, "_post.dialogue")));
+		else:
+			update_state(game_states.POST_LEVEL);
+			DialogueManager.dialogue_ended.connect(on_postlevel_finished);
+			DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_failed.dialogue")));
+	
 	
 func update_stars(level: int, stars: int) -> void:
 	if level in level_stars:

@@ -270,7 +270,7 @@ script = ExtResource("1_dt7fs")
 position = Vector2(-3.8147e-06, -8.33335)
 scale = Vector2(0.35048, 0.331019)
 sprite_frames = SubResource("SpriteFrames_4gjji")
-animation = &"Dose"
+animation = &"Apple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)

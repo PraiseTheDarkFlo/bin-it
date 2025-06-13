@@ -13,7 +13,12 @@ var digit_coords = {
 	9: Vector2(24,8),
 }
 
+var is_tweening: bool = false
+
 func update_score(number: int):
+	if is_tweening: 
+		return
+		
 	var score = "%08d" % number
 	for i in 8:
 		get_child(i).texture.region = Rect2(digit_coords[int(score[i])],Vector2(8,8))

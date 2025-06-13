@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var level_state: Node = %LevelState
 
-@onready var player: CharacterBody2D = $"../Player"
+@onready var player: CharacterBody2D = %Player
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 

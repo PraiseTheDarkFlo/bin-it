@@ -1,12 +1,12 @@
 [gd_scene load_steps=43 format=3 uid="uid://du57tnafxej7h"]
 
-[ext_resource type="Script" uid="uid://8jpoq8chrck4" path="res://my_balloon/balloon.gd" id="1_56jnn"]
-[ext_resource type="StyleBox" uid="uid://cid0qan43dodt" path="res://assets/sprites/balloon.tres" id="2_b7w7o"]
+[ext_resource type="Script" uid="uid://8jpoq8chrck4" path="res://scripts/balloon.gd" id="1_56jnn"]
+[ext_resource type="StyleBox" uid="uid://cid0qan43dodt" path="res://assets/sprites/design/balloon.tres" id="2_b7w7o"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_uhmq0"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_aehqb"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_xdvsf"]
 [ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="6_b7w7o"]
-[ext_resource type="StyleBox" path="res://assets/sprites/balloon_focus.tres" id="7_56jnn"]
+[ext_resource type="StyleBox" uid="uid://t5oicmbhybu1" path="res://assets/sprites/design/balloon_focus.tres" id="7_56jnn"]
 [ext_resource type="Texture2D" uid="uid://cgjgloossmckd" path="res://assets/sprites/neighbour/neighbour talking spritesheet.png" id="8_cxmav"]
 [ext_resource type="Texture2D" uid="uid://cd6hdnn1tdqs1" path="res://assets/sprites/player/player talking sprite sheet.png" id="9_t1s0i"]
 

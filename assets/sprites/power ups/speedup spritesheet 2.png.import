@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsdumioto4t6u"
-path="res://.godot/imported/background_level03.png-6099d9a83745168f1351b24491b7e8e3.ctex"
+uid="uid://cur4pl855xpos"
+path="res://.godot/imported/speedup spritesheet 2.png-cc6ea11fb77865c2aa30a41ec7972e39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background_level03.png"
-dest_files=["res://.godot/imported/background_level03.png-6099d9a83745168f1351b24491b7e8e3.ctex"]
+source_file="res://assets/sprites/power ups/speedup spritesheet 2.png"
+dest_files=["res://.godot/imported/speedup spritesheet 2.png-cc6ea11fb77865c2aa30a41ec7972e39.ctex"]
 
 [params]
 

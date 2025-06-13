@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsdumioto4t6u"
-path="res://.godot/imported/background_level03.png-6099d9a83745168f1351b24491b7e8e3.ctex"
+uid="uid://bwmxkktqoikn7"
+path="res://.godot/imported/Slow_Down.png-4ff33d70dc630aafcb11aecf62c630a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background_level03.png"
-dest_files=["res://.godot/imported/background_level03.png-6099d9a83745168f1351b24491b7e8e3.ctex"]
+source_file="res://assets/sprites/power ups/Slow_Down.png"
+dest_files=["res://.godot/imported/Slow_Down.png-4ff33d70dc630aafcb11aecf62c630a0.ctex"]
 
 [params]
 

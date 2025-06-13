@@ -29,6 +29,8 @@ var trashCanPositions = [-300,-100, 100,300]
 
 var speed_modifier: float = 1.0
 
+var power_ups_on: bool = true
+var negative_power_ups_on: bool = true
 
 var original_scale = null
 var original_color = null

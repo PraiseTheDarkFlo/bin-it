@@ -1,5 +1,40 @@
 ~ start
-Nathan: Jetzt kommt das erste Level.
-Nathan: Eigentlich müsste hier jetzt einiges erklärt werden.
-Nathan: Aber darauf verzichten wir jetzt mal.
+Nachbar: Fangen wir einfach an. Die blaue Tonne ist für das Altpapier vorgesehen.
+- Weiter
+- Einführung überspringen => END
+SPIELER_NAME: Das heißt zum Beispiel Zeitungen, Pappkartons oder ... einen Pizzakarton?
+Nachbar: Im Prinzip ja. Bei den Pizzakarton musst du jedoch aufpassen, dass dieser sauber ist, das heißt keine Speisereste daran kleben und die Packung auch nur minimale Fettflecken aufweist.
+Nachbar: Generell gehört nämlich nur sauberes Papier in das Altparier. Aber auch zum Beispiel beschichtetes Papier, Tetra Packs (Getränkekartons) oder auch Thermopapier gehört nicht in die blaue Tonne.
+SPIELER_NAME: Thermopapier?
+Nachbar: Weiße, glatte Kassenzettel zum Beispiel sind in der Regel Thermopapier - und gehören daher nicht ins Altpapier.
+Nachbar: Und auch wenn das Papier mit anderen Stoffen verbunden sind, wie zum Beispiel bei einer Brötchentüte mit einem Sichtfenster, muss man aufpassen.
+Nachbar: Je nach Möglichkeit sollte man hier versuchen, die verschiedenen Stoffe vor dem Entsorgen zu trennen. Manchmal gibt es sogar extra einen Entsorgungshinweis auf der Verpackung.
+~ Papier_Abschluss
+Nachbar: Hast du denn jetzt soweit alles zum Altpapier verstanden? Oder soll ich dir noch weitere Beispiel dazu geben, was in die blaue Tonne gehört? Oder eben nicht rein gehört?
+- Alles verstanden => Plastik_Start
+- Beispiele, was rein gehört
+	Nachbar: Gerne nenne ich dir noch ein paar weitere Beispiele für die blaue Tonne.
+	Nachbar: Da wären zum Beispiel Zeitschriften und Prospekte, aber auch zum Beispiel Papiertüten oder Büropapier.
+	Nachbar: Und auch Bücher gehören in die blaue Tonne - zumindest wenn sie keinen Plastikeinband haben.
+	=> Papier_Abschluss
+- Beispiele, was nicht rein gehört
+	Nachbar: Ok, hier sind noch ein paar Beispiele für Dinge, die nicht in die blaue Tonne gehören:
+	Nachbar: Fotopapier zum Beispiel ist beschichtet und gehört daher nicht in die balue Tonne.
+	Nachbar: Und manche Fahrkarten sind ebenso wie Kassenzettel auf Thermopapier gedruckt.
+	=> Papier_Abschluss
+~ Plastik_Start
+Nachbar: Ok, dann kommen wir jetzt zur gelben Tonne, die für Plastik beziehungsweise Verpakungen aus Kunstoff, Metall oder Verbundmaterialen vorgesehen ist.
+SPIELER_NAME: Plastik? Also zum Beispiel eine Plastikflasche? Oder einen Joghurt Becher? Und Verpakungen aus Metall, zählt da zum Beispiel eine Konservendose dazu?
+Nachbar: Genau! Und zum Beispiel ein Joghurt Becher muss auch nicht ausgewaschen werden.
+Nachbar: Aber man muss natürlich auch hier aufpassen, wenn zum Beispiel eine Verpackung aus verschiedenen Stoffen besteht. Dann ist es wichtig, die verschiedenen Teile getrennt voneinander zu entsorgen.
+SPIELER_NAME: Ok, d.h. ich muss immer bei jeder Verpackung zunächst Prüfen, aus welchen Materialien sie besteht, bevor ich sie entsorgen kann?
+Nachbar: An sich schon, aber in der Regel ist es leichter: Auf Verpackungen, die für die gelbe Tonne geeignet sind, befindet sich in der Regel der "grüne Punkt".
+Nachbar: Soll ich dir noch weitere Beispiele für die gelbe Tonne nennen, oder hast du das Thema schon verstanden?
+- Verstanden => Level_Start
+- Weitere Beispiele
+	Nachbar: Alles klar, hier sind noch ein paar weitere Beispiele für die gelbe Tonne:
+	Nachbar: Da wäre zum Beispiel Shampooflaschen oder Frischhaltefolie, Alufolien beziehungsweise Aluschalen oder auch zum Beispiel Verbundverpackungen wie Tetra Packs.
+	Nachbar: Außerdem gehören auch Styropoverpackungen (in kleinen Mengen), Kronkorken oder Scharubverschlüsse in die gelbe Tonne.
+~ Level_Start
+Nachbar: So, ich denke, ich habe jetzt genug erklärt. Versuch doch einfach mal, den folgenden Müll diesen zwei Tonnen zuzuordnen.
 => END

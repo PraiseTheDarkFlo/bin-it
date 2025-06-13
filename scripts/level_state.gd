@@ -39,6 +39,48 @@ signal increase_score_powerup
 signal halve_score_powerup
 signal speedup
 
+var trashDistribution = [2,2,2,2] #determines how many pieces of trash from each category will appear. The order is : [paper,yellow,rest,bio]
+var deterministicFirstTrash = false
+var firstTrash = garbage_types.PAPER #determines the type of the very first piece of trash (only if previous variable is true)
+var trashKeyList #stores in what order trash will fall during the level. Automatically filled when the level generates
+
+#The diffrent kindes of items which the player can be.
+#The name string must equal the sprite that is used for the player!
+#Followed by the type of garbage the item is. 
+var garbage = {
+	"Box": garbage_types.PAPER,
+	"Flyer": garbage_types.PAPER,		
+	"Magazine": garbage_types.PAPER,		
+	"Paper_ball": garbage_types.PAPER,		
+	"Sheet_of_paper": garbage_types.PAPER,
+	"Papier_rollen": garbage_types.PAPER,
+	"Nudeln": garbage_types.PAPER,
+	"Folie": garbage_types.YELLOW,
+	"Tube": garbage_types.YELLOW,
+	"Milk": garbage_types.YELLOW,
+	"Gifflar": garbage_types.YELLOW,
+	"Mozzarella": garbage_types.YELLOW,
+	"Tesa": garbage_types.YELLOW,
+	"Dose": garbage_types.YELLOW,
+	"Backpapier": garbage_types.REST,
+	"Bong": garbage_types.REST,
+	"Ordner": garbage_types.REST,
+	"Picture": garbage_types.REST,
+	"Zigarette": garbage_types.REST,
+	"Scherben": garbage_types.REST,
+	"Stifte": garbage_types.REST,
+	"Apple": garbage_types.BIO,
+	"Banana": garbage_types.BIO,
+	"Leafs": garbage_types.BIO,
+	"Loewenzahn": garbage_types.BIO,
+	"Stick": garbage_types.BIO,
+	"Sticks": garbage_types.BIO,
+	"Straw": garbage_types.BIO,
+}
+
+func _enter_tree(): #runs even earlier than _ready. needed for the player node _ready to function
+	trashKeyList=generateTrash()
+
 
 func _ready():
 	#init the diffrent garbagecans with their type and sprite
@@ -58,13 +100,45 @@ func _ready():
 	power_ups.xPositions=trashCanPositions
 	power_ups.init_xPositionsOccupied()
 	
-	
-	
 	#connect the function _activated_slowdown to the signal slowdown
 	slowdown.connect(_activated_slowdown)
 	speedup.connect(_activated_speedup)
 	increase_score_powerup.connect(_activated_increase_score) 
 	halve_score_powerup.connect(_activated_half_score) 
+	
+#returns a dictionary, filtered by value
+func filter_dict_by_value(dict, target_value):
+	var result = {}
+	for key in dict.keys():
+		if dict[key] == target_value:
+			result[key] = dict[key]
+	return result
+	
+#returns a random key of the dictionary
+func random_dict_key(dict):
+	var random = randi_range(0,dict.size()-1)
+	var keys = dict.keys()
+	return keys[random] 
+
+func generateTrash():
+	var trashListResult=[] 
+	var validDict={}
+	for i in range(trashDistribution[0]): #paper
+		validDict=filter_dict_by_value(garbage,garbage_types.PAPER)
+		trashListResult.append(random_dict_key(validDict))
+	for i in range(trashDistribution[1]): #plastic
+		validDict=filter_dict_by_value(garbage,garbage_types.YELLOW)
+		trashListResult.append(random_dict_key(validDict))
+	for i in range(trashDistribution[2]): #rest
+		validDict=filter_dict_by_value(garbage,garbage_types.REST)
+		trashListResult.append(random_dict_key(validDict))
+	for i in range(trashDistribution[3]): #bio
+		validDict=filter_dict_by_value(garbage,garbage_types.BIO)
+		trashListResult.append(random_dict_key(validDict))
+		
+	trashListResult.shuffle()
+		
+	return trashListResult
 
 #methode which handels the slowdown effect
 func _activated_slowdown() -> void:

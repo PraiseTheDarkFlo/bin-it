@@ -1,11 +1,5 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+Nachbar: [[Sehr gut!|Stark!|Wow!|Glückwunsch!|Toll!]] Du hast das dritte Level geschafft!
+Nachbar: Damit hast du jetzt erfolgreich bewiesen, dass du den Müll sortieren kannst!
+Nachbar: Jetzt bleibt dir nur noch, dich noch weiter zu verbessern, denn ein weiteres Level gibt es nicht.
 => END

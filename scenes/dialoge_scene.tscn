@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccxj4endb0pcv"]
+[gd_scene load_steps=37 format=3 uid="uid://ccxj4endb0pcv"]
 
 [ext_resource type="Script" uid="uid://t7x5a21bv7rg" path="res://scenes/dialoge_scene.gd" id="1_8adw8"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/background_level_selection.png" id="2_yqv1w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bs34ejyow5pq7" path="res://assets/sprites/background_level02.png" id="4_8xjf7"]
 [ext_resource type="Texture2D" uid="uid://cgjgloossmckd" path="res://assets/sprites/neighbour/neighbour talking spritesheet.png" id="4_ri7ji"]
 [ext_resource type="Texture2D" uid="uid://0sas0owvs1aw" path="res://assets/sprites/background_level03.png" id="5_0ojy4"]
+[ext_resource type="Texture2D" uid="uid://cd6hdnn1tdqs1" path="res://assets/sprites/player/player talking sprite sheet.png" id="7_0ojy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_71w5h"]
 atlas = ExtResource("4_ri7ji")
@@ -76,6 +77,147 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgakj"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ru2"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rmsk"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b00q5"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojulk"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho5ji"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5m02"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76ejx"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44vfy"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p4rr"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnlcr"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1000, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84g2t"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auo5w"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j00q7"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loc73"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuaoh"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wg86"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgw3n"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4u46"]
+atlas = ExtResource("7_0ojy4")
+region = Rect2(1800, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ql1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgakj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77ru2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rmsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b00q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojulk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho5ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5m02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76ejx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44vfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p4rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnlcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84g2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auo5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j00q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loc73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuaoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wg86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgw3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4u46")
+}],
+"loop": true,
+"name": &"player talking",
+"speed": 7.0
+}]
+
 [node name="DialogeScene" type="Node2D"]
 script = ExtResource("1_8adw8")
 
@@ -123,3 +265,8 @@ animation = &"neighbour talking"
 autoplay = "neighbour talking"
 
 [node name="player" type="AnimatedSprite2D" parent="."]
+position = Vector2(959, 350)
+scale = Vector2(5.29, 5.22764)
+sprite_frames = SubResource("SpriteFrames_1ql1w")
+animation = &"player talking"
+autoplay = "player talking"

@@ -68,10 +68,15 @@ func on_prelevel_finished(resource: DialogueResource) -> void:
 func on_level_finished(stars: int) -> void:
 	update_stars(current_level,stars)
 	level_instance.get_node("LevelState").level_finished.disconnect(on_level_finished);
-	update_state(game_states.POST_LEVEL);
-	DialogueManager.dialogue_ended.connect(on_postlevel_finished);
-	DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_", current_level, "_post.dialogue")));
-
+	if stars > 0:
+		update_state(game_states.POST_LEVEL);
+		DialogueManager.dialogue_ended.connect(on_postlevel_finished);
+		DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_", current_level, "_post.dialogue")));
+	else:
+		update_state(game_states.POST_LEVEL);
+		DialogueManager.dialogue_ended.connect(on_postlevel_finished);
+		DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_faild.dialogue")));
+		
 func update_stars(level: int, stars: int) -> void:
 	if level in level_stars:
 		if stars > level_stars[level]:

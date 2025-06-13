@@ -22,7 +22,7 @@ var powerups = {
 	},
 	"speed": {
 		"chance": 0.8,
-		"lower_bound": 30,
+		"lower_bound": 0,
 		"animation_name": "speedup",
 		"action": func(): level_state.speedup.emit(),
 		"negative": false

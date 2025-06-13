@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://spes75mo8vpd"
-path="res://.godot/imported/speed up sprite sheet .png-9490044a2442c3f16c1ec0de1f844bc1.ctex"
+uid="uid://cur4pl855xpos"
+path="res://.godot/imported/speedup spritesheet 2.png-cc6ea11fb77865c2aa30a41ec7972e39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/power ups/speed up sprite sheet .png"
-dest_files=["res://.godot/imported/speed up sprite sheet .png-9490044a2442c3f16c1ec0de1f844bc1.ctex"]
+source_file="res://assets/sprites/power ups/speedup spritesheet 2.png"
+dest_files=["res://.godot/imported/speedup spritesheet 2.png-cc6ea11fb77865c2aa30a41ec7972e39.ctex"]
 
 [params]
 

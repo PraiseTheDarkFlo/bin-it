@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv7aen0gn0cpx"]
+[gd_scene load_steps=17 format=3 uid="uid://cv7aen0gn0cpx"]
 
+[ext_resource type="Script" uid="uid://bdxdjw7g2drrh" path="res://scenes/level.gd" id="1_olg7q"]
 [ext_resource type="PackedScene" uid="uid://cltg3bcampgmp" path="res://scenes/player.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://rciybdai1bns" path="res://scenes/stars.tscn" id="2_b121j"]
 [ext_resource type="PackedScene" uid="uid://i6b31mrv7v8h" path="res://scenes/score.tscn" id="2_klq6b"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ba8pcu8g1ukgc" path="res://scenes/killzone.tscn" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://h5k5wkelt5pj" path="res://scenes/garbage_can.tscn" id="4_mx8sn"]
 [ext_resource type="Script" uid="uid://cpix0jyqknvmf" path="res://scripts/power_ups.gd" id="6_klq6b"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_8c41q"]
 
 [sub_resource type="TileSet" id="TileSet_mx8sn"]
 physics_layer_0/collision_layer = 1
@@ -15,7 +17,28 @@ physics_layer_0/collision_layer = 1
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mx8sn"]
 distance = -146.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_b121j"]
+animations = []
+
+[sub_resource type="LabelSettings" id="LabelSettings_olg7q"]
+font = ExtResource("9_8c41q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8iemx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c41q"]
+bg_color = Color(0.0588235, 0.443137, 0.662745, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="Level" type="Node"]
+script = ExtResource("1_olg7q")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mx8sn")
@@ -50,16 +73,16 @@ offset_bottom = -281.0
 scale = Vector2(2.44556, 2.95885)
 
 [node name="BioCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(1012, 279)
+position = Vector2(-692, 279)
 
 [node name="RestCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(894, 279)
+position = Vector2(-810, 279)
 
 [node name="PlasticCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(660, 279)
+position = Vector2(-1044, 279)
 
 [node name="PaperCan" parent="LevelState" instance=ExtResource("4_mx8sn")]
-position = Vector2(776, 279)
+position = Vector2(-928, 279)
 
 [node name="Killzone" parent="LevelState" instance=ExtResource("3_w8frs")]
 scale = Vector2(3.32, 1)
@@ -73,6 +96,30 @@ wait_time = 3.0
 
 [node name="Player" parent="LevelState" instance=ExtResource("1_w7c3h")]
 position = Vector2(-4, -395)
+
+[node name="Preview" type="AnimatedSprite2D" parent="LevelState"]
+unique_name_in_owner = true
+position = Vector2(-476, -200)
+scale = Vector2(0.140106, 0.150637)
+sprite_frames = SubResource("SpriteFrames_b121j")
+animation = &""
+
+[node name="PreviewText" type="Label" parent="LevelState"]
+offset_left = -530.0
+offset_top = -296.0
+offset_right = -420.0
+offset_bottom = -273.0
+text = "PREVIEW"
+label_settings = SubResource("LabelSettings_olg7q")
+
+[node name="Panel" type="Panel" parent="LevelState"]
+z_index = -1
+material = SubResource("ShaderMaterial_8iemx")
+offset_left = -568.0
+offset_top = -312.0
+offset_right = -384.0
+offset_bottom = -112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8c41q")
 
 [node name="PowerUps" type="Node" parent="LevelState"]
 unique_name_in_owner = true

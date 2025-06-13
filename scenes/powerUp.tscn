@@ -721,7 +721,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c16ma"]
-radius = 3.68041
+radius = 3.47185
 
 [node name="PowerUp" type="Area2D"]
 scale = Vector2(0.4, 0.32)
@@ -735,10 +735,11 @@ position = Vector2(-2.5, -3.12499)
 scale = Vector2(3.47375, 4.36451)
 sprite_frames = SubResource("SpriteFrames_f5b7w")
 animation = &"speedup"
-frame_progress = 0.665758
+frame_progress = 0.573008
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(24.4826, 36.137)
+position = Vector2(5, -28.125)
+scale = Vector2(23.9826, 32.177)
 shape = SubResource("CircleShape2D_c16ma")
 
 [node name="Timer" type="Timer" parent="."]

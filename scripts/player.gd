@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 
-#const SPEED: float  = 200.0
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var preview_sprite: AnimatedSprite2D = %Preview
 
 @onready var level_state: Node = %LevelState
 
@@ -29,6 +28,7 @@ var moveSpeedDown = 3000
 signal levelFinished
 
 func _ready():
+	preview_sprite.sprite_frames = animated_sprite.sprite_frames
 	new_item()
 	
 	
@@ -58,10 +58,17 @@ func new_item():
 	#print(level_state.trashKeyList)
 	var new_key = level_state.trashKeyList[0]
 	var new_type = level_state.garbage[new_key]
+	if level_state.trashKeyList.size() > 1:
+		var prev_key = level_state.trashKeyList[1]
+		preview_sprite.visible = true
+		preview_sprite.play(prev_key)
+	else:
+		preview_sprite.visible = false
 	animated_sprite.play(new_key)
 	garbage_type = new_type
 	level_state.trashKeyList.remove_at(0)
 			
+				
 #calls the selection of a random new item and then spawns it at the reset_pos and resets its velocity			
 func respawn():
 	if level_state.trashKeyList.size()==0:

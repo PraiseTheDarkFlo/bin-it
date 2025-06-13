@@ -29,8 +29,8 @@ var trashCanPositions = [-300,-100, 100,300]
 
 var speed_modifier: float = 1.0
 
-var power_ups_on: bool = true
-var negative_power_ups_on: bool = true
+var power_ups_on: bool = false
+var negative_power_ups_on: bool = false
 
 var original_scale = null
 var original_color = null
@@ -254,6 +254,7 @@ func tween_finish() -> void:
 	original_position = null
 	original_scale = null
 	original_color = null
+	
 #double current streak	
 func _activated_increase_score():
 	score = score * 1.2
@@ -309,4 +310,34 @@ func check_stars(score: int):
 		if score >= threshold:
 			count_stars += 1
 	star_count = count_stars		
-	stars.set_stars(star_count)		
+	stars.set_stars(star_count)	
+	
+func set_up_level(level:int, trash_count:int):
+	match level:
+		1:
+			power_ups_on = false
+			negative_power_ups_on = false
+			deterministicFirstTrash = false
+			trashCanPositions = [-100, 100]
+			$PaperCan.global_position.x=trashCanPositions[0]
+			$PlasticCan.global_position.x=trashCanPositions[1]
+			trashDistribution = [trash_count,trash_count,0,0]
+		2:	
+			power_ups_on = true
+			negative_power_ups_on = false
+			firstTrash = garbage_types.BIO
+			trashCanPositions = [-300,0, 300]
+			$PaperCan.global_position.x=trashCanPositions[0]
+			$PlasticCan.global_position.x=trashCanPositions[1]
+			$BioCan.global_position.x=trashCanPositions[2]
+			trashDistribution = [trash_count,trash_count,trash_count,0]
+		3:
+			power_ups_on = true
+			negative_power_ups_on = true
+			firstTrash = garbage_types.REST
+			trashCanPositions = [-300,-100,100, 300]
+			$PaperCan.global_position.x=trashCanPositions[0]
+			$PlasticCan.global_position.x=trashCanPositions[1]
+			$BioCan.global_position.x=trashCanPositions[2]
+			$RestCan.global_position.x=trashCanPositions[3]
+			trashDistribution = [trash_count,trash_count,trash_count,trash_count]

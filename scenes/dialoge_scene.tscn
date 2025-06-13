@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://ccxj4endb0pcv"]
+[gd_scene load_steps=16 format=3 uid="uid://ccxj4endb0pcv"]
 
 [ext_resource type="Script" uid="uid://t7x5a21bv7rg" path="res://scenes/dialoge_scene.gd" id="1_8adw8"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/background_level_selection.png" id="2_yqv1w"]
 [ext_resource type="Texture2D" uid="uid://dxf75syt5xotg" path="res://assets/sprites/background_level01.png" id="3_yqv1w"]
+[ext_resource type="Texture2D" uid="uid://bs34ejyow5pq7" path="res://assets/sprites/background_level02.png" id="4_8xjf7"]
 [ext_resource type="Texture2D" uid="uid://cgjgloossmckd" path="res://assets/sprites/neighbour/neighbour talking spritesheet.png" id="4_ri7ji"]
+[ext_resource type="Texture2D" uid="uid://0sas0owvs1aw" path="res://assets/sprites/background_level03.png" id="5_0ojy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_71w5h"]
 atlas = ExtResource("4_ri7ji")
@@ -93,6 +95,24 @@ offset_right = 1528.0
 offset_bottom = 963.0
 scale = Vector2(0.791127, 0.704751)
 texture = ExtResource("3_yqv1w")
+
+[node name="Level02" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -8.32902
+offset_top = -60.9898
+offset_right = 1527.67
+offset_bottom = 963.01
+scale = Vector2(0.791127, 0.704751)
+texture = ExtResource("4_8xjf7")
+
+[node name="Level03" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -8.32902
+offset_top = -60.9898
+offset_right = 1527.67
+offset_bottom = 963.01
+scale = Vector2(0.791127, 0.704751)
+texture = ExtResource("5_0ojy4")
 
 [node name="neighbour" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

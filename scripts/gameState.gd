@@ -75,8 +75,9 @@ func on_level_finished(stars: int) -> void:
 	else:
 		update_state(game_states.POST_LEVEL);
 		DialogueManager.dialogue_ended.connect(on_postlevel_finished);
-		DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_faild.dialogue")));
-		
+		DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_failed.dialogue")));
+	remove_child(level_instance);
+	
 func update_stars(level: int, stars: int) -> void:
 	if level in level_stars:
 		if stars > level_stars[level]:
@@ -86,6 +87,5 @@ func update_stars(level: int, stars: int) -> void:
 func on_postlevel_finished(resource: DialogueResource) -> void:
 	current_level = -1;
 	DialogueManager.dialogue_ended.disconnect(on_postlevel_finished);
-	remove_child(level_instance);
 	level_instance = null;
 	showLevelSelect();

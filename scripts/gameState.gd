@@ -31,7 +31,7 @@ func _on_game_ready() -> void:
 	dialoge_instance = scene.instantiate();
 	add_child(dialoge_instance);
 	dialoge_instance.set_background(0)
-	var scene_ballon = load("res://my_balloon/balloon.tscn");
+	var scene_ballon = load("res://scenes/balloon.tscn");
 	dialoge_ballon = scene_ballon.instantiate();
 	add_child(dialoge_ballon);
 	dialoge_ballon.start(load("res://dialogues/intro.dialogue"),"start")

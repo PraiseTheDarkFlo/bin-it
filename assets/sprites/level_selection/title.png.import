@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct42y2byyu45m"
-path="res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
+uid="uid://lwbsmhtc32ew"
+path="res://.godot/imported/title.png-d2b556e6dda8b9d63ae03f496b1b7e9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Space_BG (2 frames) (64 x 64).png"
-dest_files=["res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"]
+source_file="res://assets/sprites/level_selection/title.png"
+dest_files=["res://.godot/imported/title.png-d2b556e6dda8b9d63ae03f496b1b7e9a.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://btxnxev7443lk"]
 
-[ext_resource type="Script" path="res://scenes/dialoge_scene.gd" id="1_8adw8"]
-[ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/background_level_selection.png" id="2_yqv1w"]
-[ext_resource type="Texture2D" uid="uid://dxf75syt5xotg" path="res://assets/sprites/background_level01.png" id="3_yqv1w"]
-[ext_resource type="Texture2D" uid="uid://bs34ejyow5pq7" path="res://assets/sprites/background_level02.png" id="4_8xjf7"]
-[ext_resource type="Texture2D" uid="uid://0sas0owvs1aw" path="res://assets/sprites/background_level03.png" id="5_0ojy4"]
+[ext_resource type="Script" uid="uid://t7x5a21bv7rg" path="res://scripts/dialoge_scene.gd" id="1_8adw8"]
+[ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/level_selection/background_level_selection.png" id="2_yqv1w"]
+[ext_resource type="Texture2D" uid="uid://dxf75syt5xotg" path="res://assets/sprites/backgrounds_level/background_level01.png" id="3_yqv1w"]
+[ext_resource type="Texture2D" uid="uid://bs34ejyow5pq7" path="res://assets/sprites/backgrounds_level/background_level02.png" id="4_8xjf7"]
+[ext_resource type="Texture2D" uid="uid://bsdumioto4t6u" path="res://assets/sprites/backgrounds_level/background_level03.png" id="5_0ojy4"]
 
 [node name="DialogeScene" type="Node2D"]
 script = ExtResource("1_8adw8")

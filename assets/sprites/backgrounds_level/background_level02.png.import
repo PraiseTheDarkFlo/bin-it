@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsnwvumvr8prj"
-path="res://.godot/imported/Number_font (8 x 8).png-ead64f7d94b76d8f947d4d73c7eacbb2.ctex"
+uid="uid://bs34ejyow5pq7"
+path="res://.godot/imported/background_level02.png-670db2a13fb1a8d3d630884d22bd041f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Number_font (8 x 8).png"
-dest_files=["res://.godot/imported/Number_font (8 x 8).png-ead64f7d94b76d8f947d4d73c7eacbb2.ctex"]
+source_file="res://assets/sprites/backgrounds_level/background_level02.png"
+dest_files=["res://.godot/imported/background_level02.png-670db2a13fb1a8d3d630884d22bd041f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsdumioto4t6u"
-path="res://.godot/imported/background_level03.png-6099d9a83745168f1351b24491b7e8e3.ctex"
+uid="uid://cp86iaylnq30r"
+path="res://.godot/imported/lock.png-fac8291d134672200711094511da6692.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background_level03.png"
-dest_files=["res://.godot/imported/background_level03.png-6099d9a83745168f1351b24491b7e8e3.ctex"]
+source_file="res://assets/sprites/level_selection/lock.png"
+dest_files=["res://.godot/imported/lock.png-fac8291d134672200711094511da6692.ctex"]
 
 [params]
 

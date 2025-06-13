@@ -51,6 +51,9 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+#The animated charakter
+@onready var charakter: AnimatedSprite2D = $Charakter
+
 
 func _ready() -> void:
 	balloon.hide()
@@ -97,6 +100,15 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
+	print(dialogue_line.character)
+	if dialogue_line.character == "Nachbar":
+		charakter.visible = true
+		charakter.play("neighbour")
+	elif dialogue_line.character == "SPIELER_NAME":
+		charakter.visible = true
+		charakter.play("player")
+	else:
+		charakter.visible = false	
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -113,6 +125,7 @@ func apply_dialogue_line() -> void:
 		dialogue_label.type_out()
 		await dialogue_label.finished_typing
 
+	charakter.pause()
 	# Wait for input
 	if dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE

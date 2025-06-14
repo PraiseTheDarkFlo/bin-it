@@ -6,6 +6,7 @@ extends Node2D
 @onready var level_03: TextureRect = $Level03
 @onready var button_overview: Button = $ButtonOverview
 
+
 var backgrounds = {}  
 
 func _ready():
@@ -21,3 +22,4 @@ func set_background(level: int) -> void:
 		for i in backgrounds.keys():
 			if backgrounds[i] != null:
 				backgrounds[i].visible = (i == level)
+				

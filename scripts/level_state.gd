@@ -5,6 +5,8 @@ extends Node
 @onready var multiplier_text: HBoxContainer = $Multiplier
 @onready var stars: HBoxContainer = $Stars
 @onready var power_ups: Node = %PowerUps
+@onready var camera_2d: Camera2D = $"../Camera2D"
+@onready var red_flash: ColorRect = $RedFlash
 
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
@@ -342,3 +344,33 @@ func set_up_level(level:int, trash_count:int):
 	start_level()		
 	$Player.xPositions=trashCanPositions
 	$Player.start_spawning()
+
+func paperParticles():
+	$PaperCan.feedback()      
+func yellowParticles():    
+	$PlasticCan.feedback()      
+func restParticles():    
+	$RestCan.feedback()
+func bioParticles():    
+	$BioCan.feedback()
+	
+var shake_amount := 6
+var shake_time := 0.2
+
+func shake_screen():
+	var time_passed := 0.0
+	while time_passed < shake_time:
+		var offset = Vector2(
+			randf_range(-shake_amount, shake_amount),
+			randf_range(-shake_amount, shake_amount)
+		)
+		camera_2d.offset = offset
+		await get_tree().create_timer(0.02).timeout
+		time_passed += 0.02
+	camera_2d.offset = Vector2.ZERO
+	
+func flash_background():
+	red_flash.visible = true
+	red_flash.modulate = Color(1, 0, 0, 0.25) 
+	await get_tree().create_timer(0.15).timeout
+	red_flash.visible = false	

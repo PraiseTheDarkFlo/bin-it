@@ -117,3 +117,5 @@ func on_postlevel_finished(resource: DialogueResource) -> void:
 
 func reset_overview():
 	dialoge_instance.button_overview.overview = null
+func set_overview(overview):
+	dialoge_instance.button_overview.overview = overview

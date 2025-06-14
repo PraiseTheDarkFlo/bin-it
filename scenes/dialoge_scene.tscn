@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://btxnxev7443lk"]
+[gd_scene load_steps=10 format=3 uid="uid://btxnxev7443lk"]
 
 [ext_resource type="Script" uid="uid://t7x5a21bv7rg" path="res://scripts/dialoge_scene.gd" id="1_8adw8"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/level_selection/background_level_selection.png" id="2_yqv1w"]
 [ext_resource type="Texture2D" uid="uid://dxf75syt5xotg" path="res://assets/sprites/backgrounds_level/background_level01.png" id="3_yqv1w"]
 [ext_resource type="Texture2D" uid="uid://bs34ejyow5pq7" path="res://assets/sprites/backgrounds_level/background_level02.png" id="4_8xjf7"]
 [ext_resource type="Texture2D" uid="uid://bsdumioto4t6u" path="res://assets/sprites/backgrounds_level/background_level03.png" id="5_0ojy4"]
+[ext_resource type="Script" uid="uid://tr7tl00cvvcg" path="res://scripts/overview_button.gd" id="6_0ojy4"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_uacg4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_obqii"]
+load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_68rle"]
+font = ExtResource("7_uacg4")
 
 [node name="DialogeScene" type="Node2D"]
 script = ExtResource("1_8adw8")
@@ -43,3 +51,29 @@ offset_right = 1527.67
 offset_bottom = 963.01
 scale = Vector2(0.791127, 0.704751)
 texture = ExtResource("5_0ojy4")
+
+[node name="ButtonOverview" type="Button" parent="."]
+process_mode = 3
+top_level = true
+z_index = 1
+offset_left = 969.0
+offset_top = 540.0
+offset_right = 1125.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 30
+icon = SubResource("CompressedTexture2D_obqii")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_0ojy4")
+
+[node name="Label" type="Label" parent="ButtonOverview"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 34.0
+offset_right = 179.0
+offset_bottom = 69.0
+text = "Menü
+"
+label_settings = SubResource("LabelSettings_68rle")
+
+[connection signal="pressed" from="ButtonOverview" to="ButtonOverview" method="_on_pressed"]

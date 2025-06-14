@@ -1,0 +1,333 @@
+[gd_scene load_steps=15 format=3 uid="uid://dapxosusvili4"]
+
+[ext_resource type="Script" uid="uid://deedpi3ax1vmn" path="res://scripts/overview.gd" id="1_64s55"]
+[ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="1_pfq4m"]
+[ext_resource type="PackedScene" uid="uid://cltg3bcampgmp" path="res://scenes/player.tscn" id="2_kmwmr"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_mi4yy"]
+[ext_resource type="PackedScene" uid="uid://h5k5wkelt5pj" path="res://scenes/garbage_can.tscn" id="3_64s55"]
+[ext_resource type="PackedScene" uid="uid://bck41kcpytq7b" path="res://scenes/powerUp.tscn" id="5_kmwmr"]
+[ext_resource type="Script" uid="uid://b4imd0nojou46" path="res://scripts/restart.gd" id="7_poc3d"]
+[ext_resource type="Script" uid="uid://cd58muequqovw" path="res://scripts/overview_exit.gd" id="7_wsv40"]
+[ext_resource type="Script" uid="uid://b5bjdowhkugil" path="res://scripts/get_level_selection.gd" id="8_bmlk8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmwmr"]
+font = ExtResource("1_pfq4m")
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsv40"]
+font = ExtResource("2_mi4yy")
+font_size = 42
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_poc3d"]
+load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_poc3d"]
+font = ExtResource("2_mi4yy")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_bmlk8"]
+font = ExtResource("2_mi4yy")
+
+[node name="Overview" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_64s55")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Paper1" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(81, 234)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Paper2" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(179, 288)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Paper3" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(81, 357)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Paper4" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(179, 426)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Paper5" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(81, 477)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Paper6" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(180, 553)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Paper7" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(81, 598)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Plastic1" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(294, 234)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Plastic2" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(392, 288)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Plastic3" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(294, 357)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Plastic4" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(392, 426)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Plastic5" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(294, 477)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Plastic6" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(393, 553)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Plastic7" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(294, 598)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Bio1" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(502, 234)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Bio2" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(600, 288)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Bio3" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(502, 357)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Bio4" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(600, 426)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Bio5" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(502, 477)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Bio6" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(601, 553)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Bio7" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(502, 598)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Rest1" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(708, 234)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Rest2" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(806, 288)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Rest3" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(708, 357)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Rest4" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(806, 426)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Rest5" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(708, 477)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Rest6" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(807, 553)
+scale = Vector2(0.355975, 0.357016)
+
+[node name="Rest7" parent="CanvasLayer" instance=ExtResource("2_kmwmr")]
+position = Vector2(708, 598)
+scale = Vector2(0.355975, 0.357015)
+
+[node name="Power_up" type="Label" parent="CanvasLayer"]
+offset_left = 906.0
+offset_top = 64.0
+offset_right = 1096.0
+offset_bottom = 107.0
+text = "Power up"
+label_settings = SubResource("LabelSettings_kmwmr")
+
+[node name="Power_down" type="Label" parent="CanvasLayer"]
+offset_left = 886.0
+offset_top = 219.0
+offset_right = 1117.0
+offset_bottom = 276.0
+text = "Power down
+"
+label_settings = SubResource("LabelSettings_kmwmr")
+
+[node name="Titel" type="Label" parent="CanvasLayer"]
+offset_left = 400.0
+offset_top = 9.0
+offset_right = 762.0
+offset_bottom = 52.0
+text = "Übersicht"
+label_settings = SubResource("LabelSettings_wsv40")
+
+[node name="PaperCan" parent="CanvasLayer" instance=ExtResource("3_64s55")]
+position = Vector2(119, 110)
+
+[node name="PlasticCan" parent="CanvasLayer" instance=ExtResource("3_64s55")]
+position = Vector2(327, 110)
+
+[node name="BioCan" parent="CanvasLayer" instance=ExtResource("3_64s55")]
+position = Vector2(536, 110)
+
+[node name="RestCan" parent="CanvasLayer" instance=ExtResource("3_64s55")]
+position = Vector2(744, 110)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+offset_right = 1181.0
+offset_bottom = 667.0
+color = Color(0, 0, 0, 0.751)
+
+[node name="BlitzInfo" type="TextureRect" parent="CanvasLayer"]
+z_index = 1
+offset_left = 880.0
+offset_top = 263.0
+offset_right = 966.0
+offset_bottom = 360.0
+tooltip_text = "Macht dich deutlich schneller wenn es eingesammelt wird"
+
+[node name="PowerDown" type="TextureRect" parent="CanvasLayer"]
+z_index = 1
+offset_left = 875.0
+offset_top = 199.0
+offset_right = 1126.0
+offset_bottom = 255.0
+tooltip_text = "Hat einen negativen effekt auf dein Spielgeschehen"
+
+[node name="PowerUp" type="TextureRect" parent="CanvasLayer"]
+z_index = 1
+offset_left = 891.0
+offset_top = 45.0
+offset_right = 1101.0
+offset_bottom = 99.0
+tooltip_text = "Hat einen positiven effekt auf dein Spielgeschehen"
+
+[node name="MinusInfo" type="TextureRect" parent="CanvasLayer"]
+z_index = 1
+offset_left = 1029.0
+offset_top = 263.0
+offset_right = 1115.0
+offset_bottom = 360.0
+tooltip_text = "Halbiert dir deinen Score"
+
+[node name="FireInfo" type="TextureRect" parent="CanvasLayer"]
+z_index = 1
+offset_left = 880.0
+offset_top = 108.0
+offset_right = 966.0
+offset_bottom = 205.0
+tooltip_text = "Multipliziert deinen Score um den Faktor 1,2"
+
+[node name="SlowInfo" type="TextureRect" parent="CanvasLayer"]
+z_index = 1
+offset_left = 1029.0
+offset_top = 108.0
+offset_right = 1115.0
+offset_bottom = 205.0
+tooltip_text = "Verlangsamt für eine bestimmte Zeit das Fallen der Gegenstände"
+
+[node name="Blitz" parent="CanvasLayer" instance=ExtResource("5_kmwmr")]
+position = Vector2(921, 317)
+
+[node name="Minus" parent="CanvasLayer" instance=ExtResource("5_kmwmr")]
+position = Vector2(1071, 317)
+
+[node name="Fire" parent="CanvasLayer" instance=ExtResource("5_kmwmr")]
+position = Vector2(921, 160)
+
+[node name="Slow" parent="CanvasLayer" instance=ExtResource("5_kmwmr")]
+position = Vector2(1071, 160)
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+top_level = true
+z_index = 1
+offset_left = 878.0
+offset_top = 394.0
+offset_right = 984.0
+offset_bottom = 458.0
+theme_override_font_sizes/font_size = 30
+icon = SubResource("CompressedTexture2D_poc3d")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("7_poc3d")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 26.0
+offset_right = 145.0
+offset_bottom = 61.0
+text = "Neustart"
+label_settings = SubResource("LabelSettings_poc3d")
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+top_level = true
+z_index = 1
+offset_left = 1010.0
+offset_top = 394.0
+offset_right = 1116.0
+offset_bottom = 458.0
+theme_override_font_sizes/font_size = 30
+icon = SubResource("CompressedTexture2D_poc3d")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("8_bmlk8")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Button3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 34.0
+offset_right = 151.0
+offset_bottom = 69.0
+text = "auswahl
+"
+label_settings = SubResource("LabelSettings_poc3d")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button3"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 159.0
+offset_bottom = 51.0
+text = "Level-
+"
+label_settings = SubResource("LabelSettings_poc3d")
+
+[node name="Resume" type="Button" parent="CanvasLayer"]
+top_level = true
+z_index = 1
+offset_left = 969.0
+offset_top = 540.0
+offset_right = 1125.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 30
+icon = SubResource("CompressedTexture2D_poc3d")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("7_wsv40")
+
+[node name="Label" type="Label" parent="CanvasLayer/Resume"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 34.0
+offset_right = 168.0
+offset_bottom = 69.0
+text = "Resume
+"
+label_settings = SubResource("LabelSettings_bmlk8")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="CanvasLayer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="CanvasLayer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Resume" to="CanvasLayer/Resume" method="_on_pressed"]

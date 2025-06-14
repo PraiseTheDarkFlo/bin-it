@@ -10,6 +10,8 @@ extends CharacterBody2D
 
 var garbage_type
 
+var showMode: bool = false
+
 var garbage
 
 #Valid x-coordinates that the player can moce to. Initial value is only for testing (level manager overwrites this)
@@ -32,29 +34,31 @@ func start_spawning():
 	
 
 func _ready():
-	preview_sprite.sprite_frames = animated_sprite.sprite_frames
+	if preview_sprite != null:
+		preview_sprite.sprite_frames = animated_sprite.sprite_frames
 		
 	
 func _physics_process(delta: float) -> void:
-	if !movingDown: #fast drop pauses gravity
-		global_position.y += delta * level_state.fall_speed
-	
-	if Input.is_action_just_pressed("right"):
-		if !movingDown:
-			findClosestRight()
-			movingSide=true
+	if not showMode:
+		if !movingDown: #fast drop pauses gravity
+			global_position.y += delta * level_state.fall_speed
 		
-	if Input.is_action_just_pressed("left"):
-		if !movingDown:
-			findClosestLeft()
-			movingSide=true	
-		
-	if Input.is_action_just_pressed("down"):
-		if !movingSide:
-			findClosestDown()
-			movingDown=true
-		
-	go_there(delta)
+		if Input.is_action_just_pressed("right"):
+			if !movingDown:
+				findClosestRight()
+				movingSide=true
+			
+		if Input.is_action_just_pressed("left"):
+			if !movingDown:
+				findClosestLeft()
+				movingSide=true	
+			
+		if Input.is_action_just_pressed("down"):
+			if !movingSide:
+				findClosestDown()
+				movingDown=true
+			
+		go_there(delta)
 
 #handels the selecting of new items randomly.
 func new_item():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=106 format=3 uid="uid://bck41kcpytq7b"]
 
-[ext_resource type="Script" path="res://scripts/powerUp.gd" id="1_i64fm"]
+[ext_resource type="Script" uid="uid://5e1b3dmmtrnr" path="res://scripts/powerUp.gd" id="1_i64fm"]
 [ext_resource type="Texture2D" uid="uid://bkkjp0qo6nf1k" path="res://assets/sprites/power ups/multiplier down spritesheet.png" id="2_c16ma"]
 [ext_resource type="Texture2D" uid="uid://ci77w0pu6oyu6" path="res://assets/sprites/power ups/multiplier up spritesheet.png" id="3_37n1w"]
 [ext_resource type="Texture2D" uid="uid://c13h0cx8qe1tu" path="res://assets/sprites/power ups/slow down spritesheet.png" id="4_k78xi"]
@@ -734,8 +734,7 @@ texture_filter = 1
 position = Vector2(-2.5, -3.12499)
 scale = Vector2(3.47375, 4.36451)
 sprite_frames = SubResource("SpriteFrames_f5b7w")
-animation = &"speedup"
-frame_progress = 0.573008
+animation = &"multiplierDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -28.125)

@@ -3,6 +3,7 @@ extends Area2D
 @onready var level_state: Node = %LevelState
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var timer: Timer = $Timer
 
 @onready var power_ups: Node = $".."
 

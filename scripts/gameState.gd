@@ -60,6 +60,9 @@ func on_select_level(level: int) -> void:
 func on_prelevel_finished(resource: DialogueResource) -> void:
 	update_state(game_states.INGAME);	
 	DialogueManager.dialogue_ended.disconnect(on_prelevel_finished);
+	load_current_level()
+	
+func load_current_level():
 	var scene = load("res://scenes/level.tscn");
 	level_instance = scene.instantiate();
 	level_instance.get_node("LevelState").level_finished.connect(on_level_finished);
@@ -70,8 +73,16 @@ func on_prelevel_finished(resource: DialogueResource) -> void:
 		2:
 			level_instance.init(2,12,4000,6000,10000)	
 		3:
-			level_instance.init(3,9,2000,3000,8000)	
-
+			level_instance.init(3,9,2000,3000,8000)
+		_:
+			stop_level()			
+			
+func stop_level():
+	if level_instance != null:
+		level_instance.get_node("LevelState").level_finished.disconnect(on_level_finished);
+		level_instance.call_deferred("queue_free")
+		level_instance = null;
+					
 func on_level_finished(stars: int) -> void:
 	level_instance.get_node("LevelState").level_finished.disconnect(on_level_finished);
 	level_instance.call_deferred("queue_free")
@@ -103,3 +114,6 @@ func on_postlevel_finished(resource: DialogueResource) -> void:
 	DialogueManager.dialogue_ended.disconnect(on_postlevel_finished);
 	level_instance = null;
 	showLevelSelect();
+
+func reset_overview():
+	dialoge_instance.button_overview.overview = null

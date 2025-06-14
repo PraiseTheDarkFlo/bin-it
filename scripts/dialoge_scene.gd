@@ -4,6 +4,7 @@ extends Node2D
 @onready var level_01: TextureRect = $Level01
 @onready var level_02: TextureRect = $Level02
 @onready var level_03: TextureRect = $Level03
+@onready var button_overview: Button = $ButtonOverview
 
 var backgrounds = {}  
 

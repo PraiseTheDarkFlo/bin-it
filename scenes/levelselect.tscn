@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://m0tnwtvichgr"]
+[gd_scene load_steps=17 format=3 uid="uid://m0tnwtvichgr"]
 
 [ext_resource type="Script" path="res://scripts/levelselect.gd" id="1_vttqt"]
-[ext_resource type="Script" path="res://scripts/levelbutton.gd" id="1_xuh2y"]
+[ext_resource type="Script" uid="uid://cygofseaw8eli" path="res://scripts/levelbutton.gd" id="1_xuh2y"]
 [ext_resource type="Texture2D" uid="uid://ct42y2byyu45m" path="res://assets/sprites/level_selection/Space_BG (2 frames) (64 x 64).png" id="2_nqy8e"]
 [ext_resource type="PackedScene" uid="uid://rciybdai1bns" path="res://scenes/stars.tscn" id="3_4kdbh"]
 [ext_resource type="Texture2D" uid="uid://cp86iaylnq30r" path="res://assets/sprites/level_selection/lock.png" id="4_nqdjo"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/level_selection/background_level_selection.png" id="5_6rap8"]
 [ext_resource type="Texture2D" uid="uid://lwbsmhtc32ew" path="res://assets/sprites/level_selection/title.png" id="7_rsw7q"]
+[ext_resource type="Script" uid="uid://bqsm2pj1f0006" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_ey6kh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rap8"]
 load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
@@ -25,6 +27,12 @@ region = Rect2(8, 0, 8, 8)
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaiik"]
 atlas = SubResource("CompressedTexture2D_nqy8e")
 region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a4q4k"]
+load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5apk"]
+font = ExtResource("9_ey6kh")
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -174,8 +182,34 @@ offset_bottom = 194.0
 texture = ExtResource("7_rsw7q")
 expand_mode = 2
 
+[node name="ButtonOverview" type="Button" parent="."]
+process_mode = 3
+top_level = true
+z_index = 1
+layout_mode = 0
+offset_left = 969.0
+offset_top = 540.0
+offset_right = 1125.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 30
+icon = SubResource("CompressedTexture2D_a4q4k")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("8_n4sav")
+
+[node name="Label" type="Label" parent="ButtonOverview"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 34.0
+offset_right = 146.0
+offset_bottom = 69.0
+text = "Übersicht
+"
+label_settings = SubResource("LabelSettings_x5apk")
+
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Button1" to="Button2" method="_on_pressed" binds= [1]]
 [connection signal="pressed" from="Button2" to="Button3" method="_on_pressed" binds= [2]]
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed" binds= [3]]
+[connection signal="pressed" from="ButtonOverview" to="ButtonOverview" method="_on_pressed"]

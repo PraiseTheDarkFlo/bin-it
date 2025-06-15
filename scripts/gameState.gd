@@ -69,7 +69,7 @@ func load_current_level():
 	add_child(level_instance);
 	match current_level:
 		1:
-			level_instance.init(1,18,1000,2000,5000)
+			level_instance.init(1,1,1000,2000,5000) #18
 		2:
 			level_instance.init(2,12,4000,6000,10000)	
 		3:
@@ -83,7 +83,18 @@ func stop_level():
 		level_instance.call_deferred("queue_free")
 		level_instance = null;
 					
+					
+
+
 func on_level_finished(stars: int) -> void:
+	var timer := Timer.new()
+	timer.wait_time = 2.0  
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	await timer.timeout
+	timer.queue_free()
+	
 	level_instance.get_node("LevelState").level_finished.disconnect(on_level_finished);
 	level_instance.call_deferred("queue_free")
 	if level_stars[current_level] > 0:
@@ -101,7 +112,8 @@ func on_level_finished(stars: int) -> void:
 			update_state(game_states.POST_LEVEL);
 			DialogueManager.dialogue_ended.connect(on_postlevel_finished);
 			DialogueManager.show_dialogue_balloon(load(str("res://dialogues/level_failed.dialogue")));
-	
+			
+
 	
 func update_stars(level: int, stars: int) -> void:
 	if level in level_stars:

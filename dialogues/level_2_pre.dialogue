@@ -1,43 +1,43 @@
 ~ start
-Nachdem SPIELER_NAME num in seiner Wohnung aufgeräumt und den Müll so wie gelernt entsrogt hatte, ging ER_ODER_SIE in den Garten, um dort ebenfalls Ordnung herzustellen.
+Nachdem Sam num in seiner Wohnung aufgeräumt und den Müll so wie gelernt entsrogt hatte, ging er in den Garten, um dort ebenfalls Ordnung herzustellen.
 - Weiter
 - Einführung überspringen => END
-SPIELER_NAME: Puh! Ich hätte nicht gedacht, dass sich in so einem kleinen Garten so viel Unkraut ansammeln kann.
-SPIELER_NAME: Wie entsorge ich jetzt eigentlich meine Gartenabfälle? Vielleicht sollte ich da auch noch mal den Nachbarn fragen, da gibt es bestimmt auch eine Lösung für.
-Später an diesem Tag ergab sich für SPIELER_NAME tatsächlich die Möglichkeit, den Nachbarn zu fragen.
-Nachbar: Gartenabfälle? Das ist ein Fall für die Biotonne.
-SPIELER_NAME: Biotonne? Welche Tonne ist denn das jetzt schon wieder?
-Nachbar: Das ist tatsächlich unterschiedlich. Meistens ist die Biotonne braun oder grün. Hier bei uns ist es die grüne Tonne.
-SPIELER_NAME: Und was kommt da jetzt alles rein? Nur Gartenabfälle?
-Nachbar: Nein, in die Biotonne kommen verschiedenste biologische Abfälle. Dazu zählen zum Beispiel auch Obst- und Gemüsereste oder Teebeutel.
-SPIELER_NAME: Echt? Teebeutel zählen auch zu den biologischen Abfällen?
-Nachbar: Ja, aber nur, wenn der entsprechende Teebeutel kompostierbar ist.
-Nachbar: Es gibt allerdings auch wieder einige Dinge, die nicht in die Biotonne gehören. Plastiktüten zum Beispiel.
-SPIELER_NAME: Stimmt, die gehören ja in die ...
+Sam: Puh! Ich hätte nicht gedacht, dass sich in so einem kleinen Garten so viel Unkraut ansammeln kann.
+Sam: Wie entsorge ich jetzt eigentlich meine Gartenabfälle? Vielleicht sollte ich da auch noch mal die Nachbarin fragen, da gibt es bestimmt auch eine Lösung für.
+Später an diesem Tag ergab sich für Sam tatsächlich die Möglichkeit, die Nachbarin zu fragen.
+Nachbarin: Gartenabfälle? Das ist ein Fall für die Biotonne.
+Sam: Biotonne? Welche Tonne ist denn das jetzt schon wieder?
+Nachbarin: Das ist tatsächlich unterschiedlich. Meistens ist die Biotonne braun oder grün. Hier bei uns ist es die grüne Tonne.
+Sam: Und was kommt da jetzt alles rein? Nur Gartenabfälle?
+Nachbarin: Nein, in die Biotonne kommen verschiedenste biologische Abfälle. Dazu zählen zum Beispiel auch Obst- und Gemüsereste oder Teebeutel.
+Sam: Echt? Teebeutel zählen auch zu den biologischen Abfällen?
+Nachbarin: Ja, aber nur, wenn der entsprechende Teebeutel kompostierbar ist.
+Nachbarin: Es gibt allerdings auch wieder einige Dinge, die nicht in die Biotonne gehören. Plastiktüten zum Beispiel.
+Sam: Stimmt, die gehören ja in die ...
 - blaue Tonne
-	Nachbar: Nein, auf keinen Fall! Die blaue Tonne ist das Altpapier. Und Plastiktüten sind definitiv kein Altpapier.
-	Nachbar: Plastiktüten gehören in die gelbe Tonne.
+	Nachbarin: Nein, auf keinen Fall! Die blaue Tonne ist das Altpapier. Und Plastiktüten sind definitiv kein Altpapier.
+	Nachbarin: Plastiktüten gehören in die gelbe Tonne.
 - gelbe Tonne
-	Nachbar: Korrekt, Plastiktüten gehören in die gelbe Tonne.
+	Nachbarin: Korrekt, Plastiktüten gehören in die gelbe Tonne.
 - schwarze Tonne
-	Nachbar: Nein, Plastiktüten können wiederverwert werden und gehören daher in die gelbe Tonne.
-Nachbar: Was außerdem nicht in die Biotonne gehört ist gekochtes Fleisch, ebenso wie Milchprodukte.
+	Nachbarin: Nein, Plastiktüten können wiederverwert werden und gehören daher in die gelbe Tonne.
+Nachbarin: Was außerdem nicht in die Biotonne gehört ist gekochtes Fleisch, ebenso wie Milchprodukte.
 ~ Bio_Abschluss
-Nachbar: Hast du denn jetzt soweit alles zur Biotonne verstanden? Oder soll ich dir noch weitere Beispiel dazu geben, was in die Biotonne gehört? Oder eben nicht rein gehört?
+Nachbarin: Hast du denn jetzt soweit alles zur Biotonne verstanden? Oder soll ich dir noch weitere Beispiel dazu geben, was in die Biotonne gehört? Oder eben nicht rein gehört?
 - Alles verstanden => Level_Start
 - Beispiele, was rein gehört
-	Nachbar: Weitere Beispiele für die Biotonne? Gerne!
-	Nachbar: Da hätten wir zum Beispiel Eierschalen, die gehören auch in die Biotonne. Oder auch Kaffesatz beziehungsweise Kaffefilter.
-	Nachbar: Ansonsten können eben auch verschiedenste Gartenabfälle in die Biotonne. Aber Vorsicht. Bei Schittblunen zum Beispiel ist es wichtig, dass du sie ohne Topf in die Biotonne schmeißt.
+	Nachbarin: Weitere Beispiele für die Biotonne? Gerne!
+	Nachbarin: Da hätten wir zum Beispiel Eierschalen, die gehören auch in die Biotonne. Oder auch Kaffesatz beziehungsweise Kaffefilter.
+	Nachbarin: Ansonsten können eben auch verschiedenste Gartenabfälle in die Biotonne. Aber Vorsicht. Bei Schittblunen zum Beispiel ist es wichtig, dass du sie ohne Topf in die Biotonne schmeißt.
 	=> Bio_Abschluss
 - Beispiele, was nicht rein gehört
-	Nachbar: Klar, gerne nenne ich dir auch noch ein paar Beispiele für Dinge, die nicht in die Biotonne gehören.
-	Nachbar: Genau so, wie gekochtes Fleisch nicht in die Biotonne gehört, gehört auch gekochter Fisch nicht in die Biotonne.
-	Nachbar: Auch Öle und Fette gehören nicht in die Biotonne, ebensowenig wie Tierstreu.
-	Nachbar: Und auch Asche und Zigarettenkippen gehören nicht in die Biotonne - erst recht nicht, wenn sie noch heiß sind!
+	Nachbarin: Klar, gerne nenne ich dir auch noch ein paar Beispiele für Dinge, die nicht in die Biotonne gehören.
+	Nachbarin: Genau so, wie gekochtes Fleisch nicht in die Biotonne gehört, gehört auch gekochter Fisch nicht in die Biotonne.
+	Nachbarin: Auch Öle und Fette gehören nicht in die Biotonne, ebensowenig wie Tierstreu.
+	Nachbarin: Und auch Asche und Zigarettenkippen gehören nicht in die Biotonne - erst recht nicht, wenn sie noch heiß sind!
 	=> Bio_Abschluss
 ~ Level_Start
-SPIELER_NAME: Ok, dann denke ich, dass ich es jetzt einfach mal ausprobiere.
-Nachbar: Viel Erfolg!
-Nachbar: Achso, noch etwas: Vielleicht gelingt es dir ja, nicht nur den Müll richtig zu sortieren, sondern zusätzlich auch noch nützliche Power-Ups einzusammeln.
+Sam: Ok, dann denke ich, dass ich es jetzt einfach mal ausprobiere.
+Nachbarin: Viel Erfolg!
+Nachbarin: Achso, noch etwas: Vielleicht gelingt es dir ja, nicht nur den Müll richtig zu sortieren, sondern zusätzlich auch noch nützliche Power-Ups einzusammeln.
 => END

@@ -2,28 +2,28 @@
 Herzlich willkommen zu bin-it!
 - Weiter
 - Intro überspringen => END
-Wir schreiben das Jahr 2025. SPIELER_NAME ist gerade nach Deutschland gezogen, in eine schöne Erdgeschoss-Wohnung, die sogar einen kleinen Garten beinhaltet.
-Nachdem SPIELER_NAME nun mit dem Auspacken und Einrichten der Wohnung halbwegs fertig ist, stellt ER_ODER_SIE fest, dass in der Wohnung überall noch Müll vom Umzug (wie Tüten, Klebeband, Kartons usw.) kreuz und quer verteilt liegen.
-SPIELER_NAME: Es hilft alles nichts, ich muss wohl die Wohnung aufräumen und diesen ganzen Müll entsorgen.
-Gesagt, getan. SPIELER_NAME sammelt die ganzen verschiednen Abfälle zusammen und bringt diese nach draußen zu den Mülltonnen.
-Dort öffnet ER_ODER_SIE die schwarze Tonne und ist gerade im Begriff, SEINE_ODER_IHRE Abfälle hineinzuschmeißen, als IHN_ODER_SIE ein Nachbar anspricht.
-Nachbar: Halt! Das gehört doch gar nicht alles in die schwarze Tonne!
-SPIELER_NAME: Nicht? Wo gehört das denn sonst rein?
-Nachbar: Das kommt drauf an, was du entsorgen willst. Hier in Deutschland muss der Müll getrennt werden. Das ist sogar gesetzlich vorgeschrieben.
-SPIELER_NAME: Gesetzlich vorgeschrieben? Heißt das etwa, dass ich sogar eine Stafe zahlen muss, wenn ich meinen Müll nicht trenne?
-Nachbar: Darauf kann es hinauslaufen. Im Kreislaufwirtschaftsgesetz ist tatsächlich geregelt, dass es eine Ordnungswiedrigkeit darstellt, seinen Müll nicht zu trennen.
-SPIELER_NAME: Oh, ich hatte nicht damit gerechnet, dass Mülltrennung in Deutchland so ernst genommen wird.
-Nachbar: Doch doch! Mülltrennung wird in Deutschland so ernst genommen, dass wir 2022 sogar der größte Recycler von Siedlungsabfällen in der Europäischen Union waren.
-Nachbar: Was schätzt du denn, wie viel Prozent von unserem Müll wir in diesem Jahr recyceln konnten?
+Wir schreiben das Jahr 2025. Sam ist gerade nach Deutschland gezogen, in eine schöne Erdgeschoss-Wohnung, die sogar einen kleinen Garten beinhaltet.
+Nachdem Sam nun mit dem Auspacken und Einrichten der Wohnung halbwegs fertig ist, stellt er fest, dass in der Wohnung überall noch Müll vom Umzug (wie Tüten, Klebeband, Kartons usw.) kreuz und quer verteilt liegen.
+Sam: Es hilft alles nichts, ich muss wohl die Wohnung aufräumen und diesen ganzen Müll entsorgen.
+Gesagt, getan. Sam sammelt die ganzen verschiednen Abfälle zusammen und bringt diese nach draußen zu den Mülltonnen.
+Dort öffnet er die schwarze Tonne und ist gerade im Begriff, seine Abfälle hineinzuschmeißen, als ihn eine Nachbarin anspricht.
+Nachbarin: Halt! Das gehört doch gar nicht alles in die schwarze Tonne!
+Sam: Nicht? Wo gehört das denn sonst rein?
+Nachbarin: Das kommt drauf an, was du entsorgen willst. Hier in Deutschland muss der Müll getrennt werden. Das ist sogar gesetzlich vorgeschrieben.
+Sam: Gesetzlich vorgeschrieben? Heißt das etwa, dass ich sogar eine Stafe zahlen muss, wenn ich meinen Müll nicht trenne?
+Nachbarin: Darauf kann es hinauslaufen. Im Kreislaufwirtschaftsgesetz ist tatsächlich geregelt, dass es eine Ordnungswiedrigkeit darstellt, seinen Müll nicht zu trennen.
+Sam: Oh, ich hatte nicht damit gerechnet, dass Mülltrennung in Deutchland so ernst genommen wird.
+Nachbarin: Doch doch! Mülltrennung wird in Deutschland so ernst genommen, dass wir 2022 sogar der größte Recycler von Siedlungsabfällen in der Europäischen Union waren.
+Nachbarin: Was schätzt du denn, wie viel Prozent von unserem Müll wir in diesem Jahr recyceln konnten?
 - 26,3%
-	Nachbar: Viel zu wenig! Im Jahr 2022 hat Deutschland eine geschätze Recyclingquote von 69,1% erreicht.
+	Nachbarin: Viel zu wenig! Im Jahr 2022 hat Deutschland eine geschätze Recyclingquote von 69,1% erreicht.
 - 48,5%
-	Nachbar: So gar noch mehr! Im Jahr 2022 hat Deutschland eine geschätze Recyclingquote von 69,1% erreicht.
+	Nachbarin: So gar noch mehr! Im Jahr 2022 hat Deutschland eine geschätze Recyclingquote von 69,1% erreicht.
 - 69,1%
-	Nachbar: Richtig! Im Jahr 2022 hat Deutschland eine geschätze Recyclingquote von 69,1% erreicht.
+	Nachbarin: Richtig! Im Jahr 2022 hat Deutschland eine geschätze Recyclingquote von 69,1% erreicht.
 - 81,4%
-	Nachbar: So viel leider nicht! Aber dennoch hat Deutschland im Jahr 2022 eine geschätze Recyclingquote von immerhin 69,1% erreicht.
-SPIELER_NAME: Das ist interessant. Aber wie finde ich denn jetzt herraus, wie ich meinen Müll hier entsoregn muss?
-Nachbar: Wenn du willst, kann ich es dir gerne erklären.
-SPIELER_NAME: Danke, das würde mir tatsächlich helfen.
+	Nachbarin: So viel leider nicht! Aber dennoch hat Deutschland im Jahr 2022 eine geschätze Recyclingquote von immerhin 69,1% erreicht.
+Sam: Das ist interessant. Aber wie finde ich denn jetzt herraus, wie ich meinen Müll hier entsoregn muss?
+Nachbarin: Wenn du willst, kann ich es dir gerne erklären.
+Sam: Danke, das würde mir tatsächlich helfen.
 => END

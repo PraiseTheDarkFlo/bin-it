@@ -1,28 +1,28 @@
 ~ start
-Nachdem SPIELER_NAME schließlich fertig mit dem Einzug ist und Wohnung und Garten in einem ordentlichen Zustand versetzt hat, beschließt ER_ODER_SIE, eine Einweihungsparty zu Veranstalten, zu der ER_ODER_SIE auch den hilfreichen Nachbarn einlädt.
+Nachdem Sam schließlich fertig mit dem Einzug ist und Wohnung und Garten in einem ordentlichen Zustand versetzt hat, beschließt er, eine Einweihungsparty zu Veranstalten, zu der er auch die hilfreiche Nachbarin einlädt.
 - Weiter
 - Einführung überspringen => END
-Im Anschluss an diese Party stellte SPIELER_NAME jedoch fest, dass dadurch die Wohnung natürlich schon wieder mit jede menge Müll verunreinigt war.
-SPIELER_NAME: Tja, so schön die Party auch war, ich fürchte, ich muss schon wieder aufräumen.
-Überraschenderweise klingelte in diesem Moment der Nachbar an der Tür.
-Nachbar: Hi, ich wollte mich noch einmal für die Einladung zu der Party gestern bedanken. Die Party war wirklich großartig.
-SPIELER_NAME: Ich hab zu danken und zwar dafür, dass du mir bei der Mülltrennung geholfen hast.
-Nachbar: Ach, das war do kein Problem. - Oh! Apropos Müll, ich sehe wir haben gestern ganz schöne Spuren in deiner Wohnung hinterlassen. Soll ich dir villeicht beim Aufräumen helfen?
-SPIELER_NAME: Ach, das ist doch nicht notwendig.
-Nachbar: Doch, doch, ich helfe gerne. Bei der Gelegenheit kann ich dir wenigstens auch noch erzählen, wass denn jetzt eigentlich in die schwarze Tonne gehört, darüber haben wir ja noch gar nicht gesprochen.
-SPIELER_NAME: Ach ja stimmt, die Tonne fehlt noch. Was gehört denn jetzt überhaupt noch da rein, wenn wir doch eigentlich alles so schön trennen?
-Nachbar: Naja es gibt leider immer noch Müll, der nicht recycelt werden kann. Und für den ist dann eben die Restmülltonne vorgesehen, die in der Regel grau oder wie bei uns schwarz ist.
-SPIELER_NAME: Aha, das heißt alles, was ich nicht einer anderen Mülltonne zuordnen kann, kommt dann in den Restmüll?
-Nachbar: An sich ja, wobei es dabei immer noch zahlreiche Sonderfälle gibt mit Müll, der dort nicht rein gehört. Aber das kann ich dir vielleicht ein andermal erzählen.
+Im Anschluss an diese Party stellte Sam jedoch fest, dass dadurch die Wohnung natürlich schon wieder mit jede menge Müll verunreinigt war.
+Sam: Tja, so schön die Party auch war, ich fürchte, ich muss schon wieder aufräumen.
+Überraschenderweise klingelte in diesem Moment die Nachbarin an der Tür.
+Nachbarin: Hi, ich wollte mich noch einmal für die Einladung zu der Party gestern bedanken. Die Party war wirklich großartig.
+Sam: Ich hab zu danken und zwar dafür, dass du mir bei der Mülltrennung geholfen hast.
+Nachbarin: Ach, das war do kein Problem. - Oh! Apropos Müll, ich sehe wir haben gestern ganz schöne Spuren in deiner Wohnung hinterlassen. Soll ich dir villeicht beim Aufräumen helfen?
+Sam: Ach, das ist doch nicht notwendig.
+Nachbarin: Doch, doch, ich helfe gerne. Bei der Gelegenheit kann ich dir wenigstens auch noch erzählen, wass denn jetzt eigentlich in die schwarze Tonne gehört, darüber haben wir ja noch gar nicht gesprochen.
+Sam: Ach ja stimmt, die Tonne fehlt noch. Was gehört denn jetzt überhaupt noch da rein, wenn wir doch eigentlich alles so schön trennen?
+Nachbarin: Naja es gibt leider immer noch Müll, der nicht recycelt werden kann. Und für den ist dann eben die Restmülltonne vorgesehen, die in der Regel grau oder wie bei uns schwarz ist.
+Sam: Aha, das heißt alles, was ich nicht einer anderen Mülltonne zuordnen kann, kommt dann in den Restmüll?
+Nachbarin: An sich ja, wobei es dabei immer noch zahlreiche Sonderfälle gibt mit Müll, der dort nicht rein gehört. Aber das kann ich dir vielleicht ein andermal erzählen.
 ~ Rest_Abschluss
-Nachbar: Soll ich dir vielleicth noch ein paar Beispiel dazu geben, was in die Restmülltonne gehört? Oder hast du das schon soweit verstanden?
+Nachbarin: Soll ich dir vielleicth noch ein paar Beispiel dazu geben, was in die Restmülltonne gehört? Oder hast du das schon soweit verstanden?
 - Bereits verstanden => Level_Start
 - Beispiele
-	Nachbar: Die Restmülltonne ist zum Beispiel die richtige Tonne für Hygieneartikel wie zum Beispiel Windeln, aber auch zum Beispiel für Staubsaugerbeutel.
-	Nachbar: Alte Fotos, Backpapier oder zerbrochenes Porzellan wie zum Beispiel Geschirr gehören in den Restmüll.
-	Nachbar: Ebenso gehören Tierstreu, Kassenbonns oder Kugellschreiber in den Restmüll.
+	Nachbarin: Die Restmülltonne ist zum Beispiel die richtige Tonne für Hygieneartikel wie zum Beispiel Windeln, aber auch zum Beispiel für Staubsaugerbeutel.
+	Nachbarin: Alte Fotos, Backpapier oder zerbrochenes Porzellan wie zum Beispiel Geschirr gehören in den Restmüll.
+	Nachbarin: Ebenso gehören Tierstreu, Kassenbonns oder Kugellschreiber in den Restmüll.
 ~ Level_Start
-SPIELER_NAME: Vielen Dank für diese Informationen. Und auch vielen Dank für das Helfen beim Aufräumen. Jetzt muss ich nur noch den Müll rausbringen und in die Tonnen sortieren. Ich denke, dass sollte ich jetzt alleine hinbekommen.
-Nachbar: Alles klar! Dann dir noch viel Erfolg beim Müllsortieren.
-Nachbar: Ach, und an deiner Stelle würde ich aufpassen: Es gibt jetzt nicht mehr nur positive Power-Ups...
+Sam: Vielen Dank für diese Informationen. Und auch vielen Dank für das Helfen beim Aufräumen. Jetzt muss ich nur noch den Müll rausbringen und in die Tonnen sortieren. Ich denke, dass sollte ich jetzt alleine hinbekommen.
+Nachbarin: Alles klar! Dann dir noch viel Erfolg beim Müllsortieren.
+Nachbarin: Ach, und an deiner Stelle würde ich aufpassen: Es gibt jetzt nicht mehr nur positive Power-Ups...
 => END

@@ -48,18 +48,14 @@ var powerups = {
 
 #random selects a point in the spawnfield for the new powerup to spawn
 func random_spawn() -> Variant:
-	if player!=null:
-		print(xPositionsOccupied)
-		var possiblexPositions = xPositionsOccupied.keys().filter(func(k): return xPositionsOccupied[k] == false and k!=int(player.position.x))
-		print(possiblexPositions)
-		if possiblexPositions.is_empty():
-			return null
-		var x = possiblexPositions.pick_random()
-		var y = randf_range(min_spawn, max_spawn)
-		return Vector2(x, y)
-	else:
-		return Vector2(1000000,0) #setzt das Power-Up einfach irgendwo außerhalb des Bildschirms hin
-	
+	print(xPositionsOccupied)
+	var possiblexPositions = xPositionsOccupied.keys().filter(func(k): return xPositionsOccupied[k] == false and k!=int(player.position.x))
+	print(possiblexPositions)
+	if possiblexPositions.is_empty():
+		return null
+	var x = possiblexPositions.pick_random()
+	var y = randf_range(min_spawn, max_spawn)
+	return Vector2(x, y)
 	
 #calculatios if a powerup should spawn and if spawns it at a random position	
 func maybe_spawn_powerup():

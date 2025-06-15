@@ -7,6 +7,7 @@ var overview = null
 func _on_pressed() -> void:
 	overview = preload("res://scenes/overview.tscn").instantiate()
 	get_tree().current_scene.add_child(overview)
+	overview.show_only_level_relevant(game_state.current_level)
 	overview.show_buttons()
 	get_tree().paused = true
 	

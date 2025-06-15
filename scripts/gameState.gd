@@ -9,9 +9,9 @@ var level_instance = null;
 var dialoge_instance = null;
 var dialoge_ballon= null;
 var level_stars = {
-	1: 1,
-	2: 1,
-	3: 1,
+	1: 0,
+	2: 0,
+	3: 0,
 }
 
 signal on_state_change(new_state: game_states);
@@ -87,14 +87,6 @@ func stop_level():
 
 
 func on_level_finished(stars: int) -> void:
-	var timer := Timer.new()
-	timer.wait_time = 2.0  
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
-	await timer.timeout
-	timer.queue_free()
-	
 	level_instance.get_node("LevelState").level_finished.disconnect(on_level_finished);
 	level_instance.call_deferred("queue_free")
 	if level_stars[current_level] > 0:

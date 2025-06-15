@@ -79,15 +79,23 @@ func new_item():
 				
 #calls the selection of a random new item and then spawns it at the reset_pos and resets its velocity			
 func respawn():
+	movingSide = false
+	movingDown = false
+	global_position = level_state.reset_pos
+	velocity.y = 0
 	if level_state.trashKeyList.size()==0:
+		showMode = true
+		var timer := Timer.new()
+		timer.wait_time = 2.0  
+		timer.one_shot = true
+		add_child(timer)
+		timer.start()
+		await timer.timeout
+		timer.queue_free()
 		level_state.level_finished.emit(level_state.star_count);
 		queue_free()
 	else:
 		new_item()
-		movingSide = false
-		movingDown = false
-		global_position = level_state.reset_pos
-		velocity.y = 0
 
 #finds the closest valid (x-)position to the right of the current position	
 func findClosestRight():

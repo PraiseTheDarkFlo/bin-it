@@ -186,7 +186,7 @@ func _activated_slowdown() -> void:
 func _activated_speedup():
 	print("speedup activated!")
 	old_fall_speed = fall_speed
-	speed_modifier = 3.0
+	speed_modifier = 1.5
 	timer.start()
 	
 func _activated_streak():

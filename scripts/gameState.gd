@@ -9,9 +9,9 @@ var level_instance = null;
 var dialoge_instance = null;
 var dialoge_ballon= null;
 var level_stars = {
-	1: 0,
-	2: 0,
-	3: 0,
+	1: 1,
+	2: 1,
+	3: 1,
 }
 
 signal on_state_change(new_state: game_states);
@@ -71,7 +71,7 @@ func load_current_level():
 		1:
 			level_instance.init(1,18,1000,2000,5000) #18
 		2:
-			level_instance.init(2,12,4000,6000,10000)	
+			level_instance.init(2,12,4000,6000,8000)	
 		3:
 			level_instance.init(3,9,2000,3000,8000)
 		_:

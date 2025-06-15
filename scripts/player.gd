@@ -84,6 +84,8 @@ func respawn():
 		queue_free()
 	else:
 		new_item()
+		movingSide = false
+		movingDown = false
 		global_position = level_state.reset_pos
 		velocity.y = 0
 

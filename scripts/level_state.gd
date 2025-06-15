@@ -8,6 +8,8 @@ extends Node
 @onready var camera_2d: Camera2D = $"../Camera2D"
 @onready var red_flash: ColorRect = $RedFlash
 
+@onready var correct_sort_sound: AudioStreamPlayer = $correctlySorted
+@onready var wrong_sort_sound: AudioStreamPlayer = $wronglySorted
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
 enum garbage_types{PAPER,YELLOW,REST,BIO}
@@ -85,6 +87,19 @@ var garbage = {
 	"Sticks": garbage_types.BIO,
 	"Straw": garbage_types.BIO,
 }
+
+#debug
+func _ready():
+	if correct_sort_sound:
+		print("CorrectlySorted AudioStreamPlayer found!")
+	else:
+		print("ERROR: CorrectlySorted AudioStreamPlayer NOT found (check path and unique name if used).")
+	
+	if wrong_sort_sound:
+		print("wronglySorted AudioStreamPlayer found!")
+	else:
+		print("ERROR: wronglySorted AudioStreamPlayer NOT found (check path and unique name if used).")
+
 
 func start_level():
 	trashKeyList=generateTrash()
@@ -290,11 +305,12 @@ func add_score():
 	check_stars(score)
 	streak += 1
 	correct_sorted += 1
-	
+	correct_sort_sound.play()
 	
 #methode which resets the streak	
 func reset_streak():
 	streak = 0	
+	wrong_sort_sound.play()
 	
 
 #timer that handels when the slow effect should stop

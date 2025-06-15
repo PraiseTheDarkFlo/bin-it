@@ -78,7 +78,7 @@ func maybe_spawn_powerup():
 					newPowerUp.position = position 
 					add_child(newPowerUp)
 					xPositionsOccupied[int(position.x)] = true
-					#return
+					return
 				
 
 #timer how often the powerup spawing should be checked

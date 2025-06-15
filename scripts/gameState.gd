@@ -69,7 +69,7 @@ func load_current_level():
 	add_child(level_instance);
 	match current_level:
 		1:
-			level_instance.init(1,1,1000,2000,5000) #18
+			level_instance.init(1,18,1000,2000,5000) #18
 		2:
 			level_instance.init(2,12,4000,6000,10000)	
 		3:

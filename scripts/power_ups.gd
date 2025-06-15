@@ -2,6 +2,7 @@ extends Node
 
 @onready var level_state: Node = %LevelState
 var PowerUpScene = preload("res://scenes/powerUp.tscn")
+@onready var player: CharacterBody2D = %Player
 
 #spawnfield of the powerups
 var min_spawn = 152
@@ -48,7 +49,7 @@ var powerups = {
 #random selects a point in the spawnfield for the new powerup to spawn
 func random_spawn() -> Variant:
 	print(xPositionsOccupied)
-	var possiblexPositions = xPositionsOccupied.keys().filter(func(k): return xPositionsOccupied[k] == false)
+	var possiblexPositions = xPositionsOccupied.keys().filter(func(k): return xPositionsOccupied[k] == false and k!=int(player.position.x))
 	print(possiblexPositions)
 	if possiblexPositions.is_empty():
 		return null
@@ -77,7 +78,7 @@ func maybe_spawn_powerup():
 					newPowerUp.position = position 
 					add_child(newPowerUp)
 					xPositionsOccupied[int(position.x)] = true
-					return
+					#return
 				
 
 #timer how often the powerup spawing should be checked

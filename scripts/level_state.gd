@@ -10,6 +10,8 @@ extends Node
 
 @onready var correct_sort_sound: AudioStreamPlayer = $correctlySorted
 @onready var wrong_sort_sound: AudioStreamPlayer = $wronglySorted
+@onready var score_up_sound: AudioStreamPlayer = $scoreUp
+@onready var score_down_sound: AudioStreamPlayer = $scoreDown
 #track if reminder has popped up
 var has_shown_help_reminder: bool = false
 
@@ -300,6 +302,8 @@ func _activated_increase_score():
 	score = score * 1.2
 	check_stars(score)
 	_play_increase_score_effect()
+	if score_up_sound:
+		score_up_sound.play()
 
 	
 # Shalves current streak
@@ -307,6 +311,8 @@ func _activated_half_score():
 	score = int(score / 2)
 	check_stars(score)
 	_play_half_points_effect()
+	if score_down_sound:
+		score_down_sound.play()
 	
 
 	

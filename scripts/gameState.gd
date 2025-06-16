@@ -60,6 +60,8 @@ func on_select_level(level: int) -> void:
 func on_prelevel_finished(resource: DialogueResource) -> void:
 	update_state(game_states.INGAME);	
 	DialogueManager.dialogue_ended.disconnect(on_prelevel_finished);
+	var start_level = preload("res://scenes/startlevel.tscn").instantiate()
+	get_tree().current_scene.add_child(start_level)
 	load_current_level()
 	
 func load_current_level():
@@ -69,7 +71,7 @@ func load_current_level():
 	add_child(level_instance);
 	match current_level:
 		1:
-			level_instance.init(1,18,1000,2000,5000) #18
+			level_instance.init(1,18,1000,2000,5000) 
 		2:
 			level_instance.init(2,12,4000,6000,8000)	
 		3:

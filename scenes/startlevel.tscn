@@ -1,0 +1,153 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6l5lppj4rnj1"]
+
+[ext_resource type="Texture2D" uid="uid://d2pwmkoyfli61" path="res://assets/sprites/keys/keyboard-arrows.png" id="1_e07ij"]
+[ext_resource type="Script" uid="uid://ba66w3dh1buli" path="res://scripts/startlevel.gd" id="1_k2ubf"]
+[ext_resource type="Texture2D" uid="uid://bxcx6lgjfdl3w" path="res://assets/sprites/keys/keyboard-wasd.png" id="2_eup2d"]
+[ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="3_efl7m"]
+[ext_resource type="Texture2D" uid="uid://cjnkeyqfifj32" path="res://assets/sprites/keys/space.png" id="3_khhbu"]
+[ext_resource type="Texture2D" uid="uid://duvbiawyf510j" path="res://assets/sprites/keys/esc.png" id="4_k2ubf"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_k4s6j"]
+[ext_resource type="Texture2D" uid="uid://tmyt71wj8oyv" path="res://assets/sprites/keys/space_filled.png" id="7_k2ubf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmjok"]
+atlas = ExtResource("1_e07ij")
+region = Rect2(1, 240, 508, 159)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khhbu"]
+atlas = ExtResource("2_eup2d")
+region = Rect2(1, 240, 508, 159)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2csb"]
+atlas = ExtResource("3_khhbu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0qrh"]
+atlas = ExtResource("4_k2ubf")
+
+[sub_resource type="LabelSettings" id="LabelSettings_eup2d"]
+font = ExtResource("3_efl7m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_khhbu"]
+font = ExtResource("4_k4s6j")
+font_size = 42
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0qrh"]
+animations = [{
+"frames": [{
+"duration": 11.0,
+"texture": ExtResource("3_khhbu")
+}, {
+"duration": 11.0,
+"texture": ExtResource("7_k2ubf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="startLevel" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_k2ubf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+offset_right = 1181.0
+offset_bottom = 667.0
+color = Color(0, 0, 0, 0.751)
+
+[node name="arrows" type="TextureRect" parent="CanvasLayer"]
+offset_left = 494.0
+offset_top = 138.0
+offset_right = 1002.0
+offset_bottom = 297.0
+scale = Vector2(0.363639, 0.347008)
+texture = SubResource("AtlasTexture_lmjok")
+
+[node name="wasd" type="TextureRect" parent="CanvasLayer"]
+offset_left = 494.0
+offset_top = 195.0
+offset_right = 1002.0
+offset_bottom = 354.0
+scale = Vector2(0.363639, 0.347008)
+texture = SubResource("AtlasTexture_khhbu")
+
+[node name="space" type="TextureRect" parent="CanvasLayer"]
+offset_left = 561.0
+offset_top = 244.0
+offset_right = 1073.0
+offset_bottom = 756.0
+scale = Vector2(0.100426, 0.098659)
+texture = SubResource("AtlasTexture_e2csb")
+
+[node name="esc" type="TextureRect" parent="CanvasLayer"]
+offset_left = 376.0
+offset_top = 86.0
+offset_right = 888.0
+offset_bottom = 598.0
+scale = Vector2(0.100426, 0.098659)
+texture = SubResource("AtlasTexture_d0qrh")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 673.0
+offset_top = 184.0
+offset_right = 805.0
+offset_bottom = 207.0
+text = "move right"
+label_settings = SubResource("LabelSettings_eup2d")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 383.0
+offset_top = 184.0
+offset_right = 515.0
+offset_bottom = 207.0
+text = "move left"
+label_settings = SubResource("LabelSettings_eup2d")
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 532.0
+offset_top = 291.0
+offset_right = 648.0
+offset_bottom = 314.0
+text = "fast drop"
+label_settings = SubResource("LabelSettings_eup2d")
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 426.0
+offset_top = 101.0
+offset_right = 542.0
+offset_bottom = 124.0
+text = "Menü"
+label_settings = SubResource("LabelSettings_eup2d")
+
+[node name="Titel2" type="Label" parent="CanvasLayer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 376.0
+offset_top = 411.0
+offset_right = 812.0
+offset_bottom = 431.0
+grow_vertical = 2
+text = "Drücke
+zum starten"
+label_settings = SubResource("LabelSettings_khhbu")
+
+[node name="Titel" type="Label" parent="CanvasLayer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 411.0
+offset_top = 27.0
+offset_right = 742.0
+offset_bottom = 47.0
+grow_vertical = 2
+text = "Steuerung"
+label_settings = SubResource("LabelSettings_khhbu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(736, 410)
+scale = Vector2(0.43457, 0.277344)
+sprite_frames = SubResource("SpriteFrames_d0qrh")
+autoplay = "default"
+frame_progress = 0.417971
+
+[connection signal="ready" from="." to="." method="_on_ready"]

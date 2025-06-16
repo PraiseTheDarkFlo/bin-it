@@ -104,6 +104,7 @@ func _ready():
 	else:
 		print("ERROR: wronglySorted AudioStreamPlayer NOT found (check path and unique name if used).")
 
+@onready var gameplay_bgm: AudioStreamPlayer = $BGM
 
 func start_level():
 	trashKeyList=generateTrash()
@@ -125,6 +126,8 @@ func start_level():
 	increase_score_powerup.connect(_activated_increase_score) 
 	halve_score_powerup.connect(_activated_half_score) 
 	
+	if gameplay_bgm and not gameplay_bgm.playing:
+		gameplay_bgm.play()
 	
 #returns a dictionary, filtered by value
 func filter_dict_by_value(dict, target_value):
@@ -186,12 +189,21 @@ func _activated_slowdown() -> void:
 	old_fall_speed = fall_speed
 	speed_modifier = 0.2
 	timer.start()
+	
+	if gameplay_bgm:
+		var tween = create_tween()
+		tween.tween_property(gameplay_bgm, "pitch_scale", 0.8, 0.5) # Slow down to 80% pitch over 0.5s
+	
 
 func _activated_speedup():
 	print("speedup activated!")
 	old_fall_speed = fall_speed
 	speed_modifier = 1.5
 	timer.start()
+	
+	if gameplay_bgm:
+		var tween = create_tween()
+		tween.tween_property(gameplay_bgm, "pitch_scale", 1.2, 0.5)
 	
 func _activated_streak():
 	streak+=4
@@ -330,19 +342,26 @@ func show_help_reminder_popup():
 	
 	# Pause the game when popup 
 	get_tree().paused = true
+	if gameplay_bgm and gameplay_bgm.playing:
+		gameplay_bgm.stop() 
 		
 
 func _on_help_reminder_popup_closed():
 	print("Help reminder popup closed.")
 	# Unpause the game when popup closes
 	get_tree().paused = false
-	
+	if gameplay_bgm and not gameplay_bgm.playing: 
+		gameplay_bgm.play()
+		
 #timer that handels when the slow effect should stop
 func _on_timer_timeout() -> void:
 	timer.stop()
 	speed_modifier = 1.0
 	print("Speed modifier reset to og")
 	
+	if gameplay_bgm:
+		var tween = create_tween()
+		tween.tween_property(gameplay_bgm, "pitch_scale", 1.0, 0.5) #reset
 
 func check_stars(score: int):
 	var count_stars = 0
@@ -357,7 +376,9 @@ func check_level_completion():
 	if item_counter >= total_trash_items and total_trash_items > 0:
 		level_finished.emit(star_count)
 		print("Level completed! Emitting signal with stars: ", star_count)
-		
+		if gameplay_bgm and gameplay_bgm.playing:
+			gameplay_bgm.stop()
+			
 func set_up_level(level:int, trash_count:int):
 	match level:
 		1:

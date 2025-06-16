@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cv7aen0gn0cpx"]
+[gd_scene load_steps=20 format=3 uid="uid://cv7aen0gn0cpx"]
 
 [ext_resource type="Script" uid="uid://bdxdjw7g2drrh" path="res://scripts/level.gd" id="1_olg7q"]
 [ext_resource type="PackedScene" uid="uid://cltg3bcampgmp" path="res://scenes/player.tscn" id="1_w7c3h"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_8c41q"]
 [ext_resource type="AudioStream" uid="uid://c0da6o3i70nm7" path="res://assets/sounds/correctlySorted.mp3" id="11_8iemx"]
 [ext_resource type="AudioStream" uid="uid://d4df2qex5rpe3" path="res://assets/sounds/wronglySorted.mp3" id="12_64w2a"]
+[ext_resource type="AudioStream" uid="uid://dli42qnejlmpd" path="res://assets/sounds/final-level-rebel-337337.mp3" id="13_64w2a"]
 
 [sub_resource type="TileSet" id="TileSet_mx8sn"]
 physics_layer_0/collision_layer = 1
@@ -150,6 +151,9 @@ stream = ExtResource("12_64w2a")
 
 [node name="correctlySorted" type="AudioStreamPlayer" parent="LevelState"]
 stream = ExtResource("11_8iemx")
+
+[node name="BGM" type="AudioStreamPlayer" parent="LevelState"]
+stream = ExtResource("13_64w2a")
 
 [connection signal="timeout" from="LevelState/Timer" to="LevelState" method="_on_timer_timeout"]
 [connection signal="ready" from="LevelState/PowerUps" to="LevelState/PowerUps" method="_on_ready"]

@@ -304,7 +304,6 @@ func _activated_increase_score():
 	_play_increase_score_effect()
 	if score_up_sound:
 		score_up_sound.play()
-
 	
 # Shalves current streak
 func _activated_half_score():
@@ -350,7 +349,7 @@ func reset_streak():
 		has_shown_help_reminder = true
 
 func show_help_reminder_popup():
-	var popup_scene = load("res://scenes/overviewReminderPopup.tscn")
+	var popup_scene = load("res://scenes/overview_reminder_popup.tscn")
 	var popup_instance = popup_scene.instantiate()
 	get_tree().root.add_child(popup_instance)	
 	popup_instance.popup_closed.connect(_on_help_reminder_popup_closed)

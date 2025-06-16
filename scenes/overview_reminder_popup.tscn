@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ba8324mgd4dmt"]
 
-[ext_resource type="Texture2D" uid="uid://bivjjy5aq83uf" path="res://assets/sprites/Arrow (2).png" id="1_5nktv"]
-[ext_resource type="Texture2D" uid="uid://bbxuwa04c6gyn" path="res://assets/sprites/bgForMessage.png" id="2_5nktv"]
+[ext_resource type="Texture2D" uid="uid://bivjjy5aq83uf" path="res://assets/sprites/Arrow (2).png" id="1_81kdw"]
+[ext_resource type="Texture2D" uid="uid://bbxuwa04c6gyn" path="res://assets/sprites/bgForMessage.png" id="2_s5m15"]
 
 [sub_resource type="GDScript" id="GDScript_svktq"]
 script/source = "extends Control
@@ -93,7 +93,7 @@ offset_right = 977.0
 offset_bottom = 608.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5nktv")
+texture = ExtResource("1_81kdw")
 expand_mode = 2
 
 [node name="messageBackground" type="TextureRect" parent="backgroundOverlay/Arrow"]
@@ -107,7 +107,7 @@ offset_right = 169.0
 offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5nktv")
+texture = ExtResource("2_s5m15")
 expand_mode = 2
 
 [node name="reminderMessage" type="Label" parent="backgroundOverlay/Arrow/messageBackground"]
@@ -123,6 +123,15 @@ text = "Falsch sortiert!
  wenn du HIlfe brauchst, 
 öffne das Menü!"
 horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="backgroundOverlay/Arrow"]
+z_index = -1
+layout_mode = 0
+offset_left = -16.5
+offset_top = -84.0
+offset_right = 249.5
+offset_bottom = 129.0
+color = Color(1, 1, 1, 0)
 
 [node name="ok!button" type="Button" parent="backgroundOverlay/Arrow"]
 layout_mode = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://m0tnwtvichgr"]
+[gd_scene load_steps=19 format=3 uid="uid://m0tnwtvichgr"]
 
 [ext_resource type="Script" uid="uid://5gnewow70r34" path="res://scripts/levelselect.gd" id="1_vttqt"]
 [ext_resource type="Script" uid="uid://cygofseaw8eli" path="res://scripts/levelbutton.gd" id="1_xuh2y"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://lwbsmhtc32ew" path="res://assets/sprites/level_selection/title.png" id="7_rsw7q"]
 [ext_resource type="Script" uid="uid://bqsm2pj1f0006" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_ey6kh"]
+[ext_resource type="AudioStream" uid="uid://m4yw2m24q1js" path="res://assets/sounds/menuBGM.mp3" id="10_ey6kh"]
+[ext_resource type="AudioStream" uid="uid://cj2onrf0q2mei" path="res://assets/sounds/dialoghover.mp3" id="11_a4q4k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rap8"]
 load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
@@ -206,6 +208,12 @@ offset_bottom = 69.0
 text = "Übersicht
 "
 label_settings = SubResource("LabelSettings_x5apk")
+
+[node name="menuBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ey6kh")
+
+[node name="LevelHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_a4q4k")
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="ready" from="." to="." method="_on_ready"]

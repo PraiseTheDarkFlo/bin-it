@@ -6,9 +6,9 @@
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_mi4yy"]
 [ext_resource type="PackedScene" uid="uid://h5k5wkelt5pj" path="res://scenes/garbage_can.tscn" id="3_64s55"]
 [ext_resource type="PackedScene" uid="uid://bck41kcpytq7b" path="res://scenes/powerUp.tscn" id="5_kmwmr"]
-[ext_resource type="Script" path="res://scripts/restart.gd" id="7_poc3d"]
-[ext_resource type="Script" path="res://scripts/overview_exit.gd" id="7_wsv40"]
-[ext_resource type="Script" path="res://scripts/get_level_selection.gd" id="8_bmlk8"]
+[ext_resource type="Script" uid="uid://b4imd0nojou46" path="res://scripts/restart.gd" id="7_poc3d"]
+[ext_resource type="Script" uid="uid://cd58muequqovw" path="res://scripts/overview_exit.gd" id="7_wsv40"]
+[ext_resource type="Script" uid="uid://b5bjdowhkugil" path="res://scripts/get_level_selection.gd" id="8_bmlk8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kmwmr"]
 font = ExtResource("1_pfq4m")

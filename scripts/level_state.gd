@@ -10,6 +10,8 @@ extends Node
 
 @onready var correct_sort_sound: AudioStreamPlayer = $correctlySorted
 @onready var wrong_sort_sound: AudioStreamPlayer = $wronglySorted
+#track if reminder has popped up
+var has_shown_help_reminder: bool = false
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
 enum garbage_types{PAPER,YELLOW,REST,BIO}
@@ -41,7 +43,9 @@ var level_started = false
 var original_scale = null
 var original_color = null
 var original_position = null
-	
+
+var total_trash_items: int = 0
+
 signal slowdown
 signal increase_score_powerup
 signal halve_score_powerup
@@ -310,9 +314,29 @@ func add_score():
 #methode which resets the streak	
 func reset_streak():
 	streak = 0	
-	wrong_sort_sound.play()
 	
+	wrong_sort_sound.play()
+	await get_tree().create_timer(0.2).timeout
+	#popup trigger
+	if not has_shown_help_reminder:
+		show_help_reminder_popup()
+		has_shown_help_reminder = true
 
+func show_help_reminder_popup():
+	var popup_scene = load("res://scenes/overviewReminderPopup.tscn")
+	var popup_instance = popup_scene.instantiate()
+	get_tree().root.add_child(popup_instance)	
+	popup_instance.popup_closed.connect(_on_help_reminder_popup_closed)
+	
+	# Pause the game when popup 
+	get_tree().paused = true
+		
+
+func _on_help_reminder_popup_closed():
+	print("Help reminder popup closed.")
+	# Unpause the game when popup closes
+	get_tree().paused = false
+	
 #timer that handels when the slow effect should stop
 func _on_timer_timeout() -> void:
 	timer.stop()
@@ -328,6 +352,12 @@ func check_stars(score: int):
 	star_count = count_stars		
 	stars.set_stars(star_count)	
 	
+func check_level_completion():
+	# Only emit if item_counter has reached the total for the level
+	if item_counter >= total_trash_items and total_trash_items > 0:
+		level_finished.emit(star_count)
+		print("Level completed! Emitting signal with stars: ", star_count)
+		
 func set_up_level(level:int, trash_count:int):
 	match level:
 		1:

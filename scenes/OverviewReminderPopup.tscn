@@ -1,0 +1,143 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm4w6odl853fk"]
+
+[ext_resource type="Texture2D" uid="uid://bivjjy5aq83uf" path="res://assets/sprites/Arrow (2).png" id="1_5nktv"]
+[ext_resource type="Texture2D" uid="uid://bbxuwa04c6gyn" path="res://assets/sprites/bgForMessage.png" id="2_5nktv"]
+
+[sub_resource type="GDScript" id="GDScript_svktq"]
+script/source = "extends Control
+
+signal popup_closed
+@onready var oklbutton: Button = $BackgroundOverlay/ArrowImage/oklbutton 
+@onready var arrow_image: TextureRect = $BackgroundOverlay/Arrow   
+
+func _ready():
+	set_process_mode(PROCESS_MODE_ALWAYS) 
+	
+	start_pulsing_animation()
+	
+	# Connect button signal in code
+	var oklbutton_node = get_node(\"BackgroundOverlay/ArrowImage/oklbutton\")
+	if oklbutton_node:
+		# Disconnect old connections 
+		if oklbutton_node.is_connected(\"pressed\", Callable(self, \"_on_okbutton_pressed\")):
+			oklbutton_node.disconnect(\"pressed\", Callable(self, \"_on_okbutton_pressed\"))
+		# Connect the signal from code
+		oklbutton_node.connect(\"pressed\", Callable(self, \"_on_okbutton_pressed\"))
+		print(\"OK Button signal connected in code!\")
+		
+		# debug
+		if oklbutton_node.is_connected(\"gui_input\", Callable(self, \"_on_oklbutton_gui_input\")):
+			oklbutton_node.disconnect(\"gui_input\", Callable(self, \"_on_oklbutton_gui_input\"))
+		oklbutton_node.connect(\"gui_input\", Callable(self, \"_on_oklbutton_gui_input\"))
+		print(\"OK Button gui_input connected in code!\")
+	else:
+		print(\"ERROR: oklbutton node not found for code connection!\")
+	
+func start_pulsing_animation():
+	if not arrow_image: # Safety check
+		print(\"Error: ArrowImage node not found for pulsing animation!\")
+		return
+
+	var tween = create_tween().set_loop(true) # Create a new tween that loops indefinitely
+	
+	# Scale up slightly
+	tween.tween_property(arrow_image, \"scale\", Vector2(1.05, 1.05), 0.5) # Scale to 105% over 0.5 seconds
+	# Scale back down
+	tween.tween_property(arrow_image, \"scale\", Vector2(1.0, 1.0), 0.5) # Scale back to 100% over 0.5 seconds
+	
+	# Optional: You can add easing for smoother animation
+	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+
+   
+
+func _on_oklbutton_gui_input(event: InputEvent):
+	if event is InputEventMouseButton:
+		print(\"Mouse button event on oklbutton: \", event.button_index, \" pressed: \", event.pressed)
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print(\"Left mouse click detected on oklbutton!\")
+
+func _on_okbutton_pressed():
+	print(\"OK button pressed function triggered (via signal)!\") # This is the original line from button.pressed
+	popup_closed.emit()
+	queue_free()
+
+
+	
+"
+
+[node name="overviewReminderPopup" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = SubResource("GDScript_svktq")
+
+[node name="backgroundOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.00392157)
+
+[node name="Arrow" type="TextureRect" parent="backgroundOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 935.0
+offset_top = 561.0
+offset_right = 977.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5nktv")
+expand_mode = 2
+
+[node name="messageBackground" type="TextureRect" parent="backgroundOverlay/Arrow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -136.0
+offset_right = 169.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5nktv")
+expand_mode = 2
+
+[node name="reminderMessage" type="Label" parent="backgroundOverlay/Arrow/messageBackground"]
+z_index = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 14.0
+offset_right = 200.0
+offset_bottom = 89.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Falsch sortiert!
+ wenn du HIlfe brauchst, 
+öffne das Menü!"
+horizontal_alignment = 1
+
+[node name="ok!button" type="Button" parent="backgroundOverlay/Arrow"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 57.5
+offset_top = -88.0
+offset_right = 115.5
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "OK!"
+
+[connection signal="pressed" from="backgroundOverlay/Arrow/ok!button" to="." method="_on_okbutton_pressed"]

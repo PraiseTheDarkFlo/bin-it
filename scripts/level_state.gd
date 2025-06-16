@@ -103,8 +103,13 @@ func _ready():
 		print("wronglySorted AudioStreamPlayer found!")
 	else:
 		print("ERROR: wronglySorted AudioStreamPlayer NOT found (check path and unique name if used).")
+		
+	if gameplay_bgm:
+		original_bgm_volume = gameplay_bgm.volume_db
 
 @onready var gameplay_bgm: AudioStreamPlayer = $BGM
+var original_bgm_volume: float = -10.0
+const BGM_FADE_DURATION = 0.8
 
 func start_level():
 	trashKeyList=generateTrash()
@@ -127,7 +132,11 @@ func start_level():
 	halve_score_powerup.connect(_activated_half_score) 
 	
 	if gameplay_bgm and not gameplay_bgm.playing:
+		gameplay_bgm.volume_db = -60.0 # Start from silent
 		gameplay_bgm.play()
+		var tween = create_tween()
+		tween.tween_property(gameplay_bgm, "volume_db", original_bgm_volume, BGM_FADE_DURATION)
+	#
 	
 #returns a dictionary, filtered by value
 func filter_dict_by_value(dict, target_value):
@@ -345,13 +354,22 @@ func show_help_reminder_popup():
 	if gameplay_bgm and gameplay_bgm.playing:
 		gameplay_bgm.stop() 
 		
+	if gameplay_bgm and gameplay_bgm.playing:
+		var tween = create_tween()
+		tween.tween_property(gameplay_bgm, "volume_db", -60.0, BGM_FADE_DURATION)
+		await tween.finished 
+		gameplay_bgm.stop() # Stop only after fading out
 
 func _on_help_reminder_popup_closed():
 	print("Help reminder popup closed.")
 	# Unpause the game when popup closes
 	get_tree().paused = false
-	if gameplay_bgm and not gameplay_bgm.playing: 
+	if gameplay_bgm and not gameplay_bgm.playing:
+		gameplay_bgm.volume_db = -60.0 # Start from silent
 		gameplay_bgm.play()
+		var tween = create_tween()
+		tween.tween_property(gameplay_bgm, "volume_db", original_bgm_volume, BGM_FADE_DURATION)
+	
 		
 #timer that handels when the slow effect should stop
 func _on_timer_timeout() -> void:
@@ -376,7 +394,11 @@ func check_level_completion():
 	if item_counter >= total_trash_items and total_trash_items > 0:
 		level_finished.emit(star_count)
 		print("Level completed! Emitting signal with stars: ", star_count)
-		if gameplay_bgm and gameplay_bgm.playing:
+		
+	if gameplay_bgm and gameplay_bgm.playing:
+			var tween = create_tween()
+			tween.tween_property(gameplay_bgm, "volume_db", -60.0, BGM_FADE_DURATION)
+			await tween.finished 
 			gameplay_bgm.stop()
 			
 func set_up_level(level:int, trash_count:int):

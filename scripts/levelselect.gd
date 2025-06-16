@@ -27,10 +27,10 @@ func _exit_tree() -> void:
 	if menu_bgm and menu_bgm.playing:
 		var fade_out_duration = 0.5 # Duration of the fade-out in seconds
 		var tween = create_tween()
-		# Tween volume_db to a very low value (-60 dB is effectively silent)
+		# Tween volume to low
 		tween.tween_property(menu_bgm, "volume_db", -60.0, fade_out_duration)
-		await tween.finished # Wait for the fade to complete
-		menu_bgm.stop() # Stop the music after it has faded out
+		await tween.finished 
+		menu_bgm.stop() # Stop the music after fade out
 		
 func set_stars(level: int, count: int) -> void:
 	match level:

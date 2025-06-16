@@ -9,10 +9,11 @@ var level_instance = null;
 var dialoge_instance = null;
 var dialoge_ballon= null;
 var level_stars = {
-	1: 1,
-	2: 1,
-	3: 1,
+	1: 0,
+	2: 0,
+	3: 0,
 }
+var overlay: bool = false;
 
 signal on_state_change(new_state: game_states);
 

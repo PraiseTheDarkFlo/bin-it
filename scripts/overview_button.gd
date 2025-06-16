@@ -23,10 +23,11 @@ func resume():
 		
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):
-		if overview:
-			resume()
-		else:
-			if game_state.state == game_state.game_states.LEVEL_SELECT:
-				press_without_buttons()
+		if not game_state.overlay:
+			if overview:
+				resume()
 			else:
-				$".".pressed.emit()
+				if game_state.state == game_state.game_states.LEVEL_SELECT:
+					press_without_buttons()
+				else:
+					$".".pressed.emit()

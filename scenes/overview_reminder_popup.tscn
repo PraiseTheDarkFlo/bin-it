@@ -9,11 +9,13 @@ script/source = "extends Control
 signal popup_closed
 @onready var oklbutton: Button = $BackgroundOverlay/ArrowImage/oklbutton 
 @onready var arrow_image: TextureRect = $BackgroundOverlay/Arrow   
+@onready var game_state = get_node(\"/root/Game/GameState\")  
 
 func _ready():
 	set_process_mode(PROCESS_MODE_ALWAYS) 
 	
 	start_pulsing_animation()
+	game_state.overlay = true
 	
 	# Connect button signal in code
 	var oklbutton_node = get_node(\"BackgroundOverlay/ArrowImage/oklbutton\")
@@ -58,6 +60,7 @@ func _on_oklbutton_gui_input(event: InputEvent):
 
 func _on_okbutton_pressed():
 	print(\"OK button pressed function triggered (via signal)!\") # This is the original line from button.pressed
+	game_state.overlay = false
 	popup_closed.emit()
 	queue_free()
 

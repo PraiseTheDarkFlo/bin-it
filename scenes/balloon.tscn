@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://du57tnafxej7h"]
+[gd_scene load_steps=45 format=3 uid="uid://du57tnafxej7h"]
 
 [ext_resource type="Script" uid="uid://8jpoq8chrck4" path="res://scripts/balloon.gd" id="1_56jnn"]
 [ext_resource type="StyleBox" uid="uid://cid0qan43dodt" path="res://assets/sprites/design/balloon.tres" id="2_b7w7o"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_aehqb"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_xdvsf"]
 [ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="6_b7w7o"]
+[ext_resource type="AudioStream" uid="uid://beg5561sqh838" path="res://assets/sounds/typing-keyboard-asmr-356116.mp3" id="6_x4oq6"]
 [ext_resource type="StyleBox" uid="uid://t5oicmbhybu1" path="res://assets/sprites/design/balloon_focus.tres" id="7_56jnn"]
 [ext_resource type="Texture2D" uid="uid://cgjgloossmckd" path="res://assets/sprites/neighbour/neighbour talking spritesheet.png" id="8_cxmav"]
 [ext_resource type="AudioStream" uid="uid://cj2onrf0q2mei" path="res://assets/sounds/dialoghover.mp3" id="8_lc4cd"]
@@ -332,6 +333,9 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("6_b7w7o")
 text = "Dialogue..."
+
+[node name="typingSound" type="AudioStreamPlayer" parent="Balloon/Panel/Dialogue/VBoxContainer"]
+stream = ExtResource("6_x4oq6")
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1

@@ -58,6 +58,8 @@ var is_typing: bool = false:
 		var is_finished: bool = is_typing != value and value == false
 		is_typing = value
 		if is_finished:
+			if typing_sound and typing_sound.playing: # Use typing_sound
+				typing_sound.stop()
 			finished_typing.emit()
 	get:
 		return is_typing
@@ -66,6 +68,16 @@ var _last_wait_index: int = -1
 var _last_mutation_index: int = -1
 var _waiting_seconds: float = 0
 var _is_awaiting_mutation: bool = false
+
+@onready var typing_sound: AudioStreamPlayer = $"../typingSound"
+
+func _ready():
+	#debug
+	if typing_sound: # Use typing_sound
+		print("TypingSound AudioStreamPlayer found in DialogueLabel!") # Debug print for clarity
+	else:
+		print("ERROR: TypingSound AudioStreamPlayer NOT found in DialogueLabel!") # Debug print for clarity
+	
 
 
 func _process(delta: float) -> void:
@@ -104,6 +116,9 @@ func type_out() -> void:
 	_already_mutated_indices.clear()
 
 	self.is_typing = true
+	
+	if typing_sound and not typing_sound.playing: # Use typing_sound
+		typing_sound.play()
 
 	# Allow typing listeners a chance to connect
 	await get_tree().process_frame
@@ -114,6 +129,9 @@ func type_out() -> void:
 		_mutate_remaining_mutations()
 		visible_characters = get_total_character_count()
 		self.is_typing = false
+		
+	if not self.is_typing and typing_sound and typing_sound.playing: # Use typing_sound
+		typing_sound.stop()
 
 
 ## Stop typing out the text and jump right to the end
@@ -129,6 +147,8 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 	if _is_awaiting_mutation: return
 
 	if visible_characters == get_total_character_count():
+		if typing_sound and typing_sound.playing: # Use typing_sound
+			typing_sound.stop()
 		return
 
 	if _last_mutation_index != visible_characters:

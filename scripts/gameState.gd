@@ -9,8 +9,8 @@ var level_instance = null;
 var dialoge_instance = null;
 var dialoge_ballon= null;
 var level_stars = {
-	1: 0,
-	2: 0,
+	1: 1,
+	2: 1,
 	3: 0,
 }
 var overlay: bool = false;

@@ -18,6 +18,7 @@ font = ExtResource("7_uacg4")
 script = ExtResource("1_8adw8")
 
 [node name="Level00" type="TextureRect" parent="."]
+visible = false
 z_index = -1
 offset_left = -1.0
 offset_top = -493.0

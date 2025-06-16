@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://du57tnafxej7h"]
+[gd_scene load_steps=44 format=3 uid="uid://du57tnafxej7h"]
 
 [ext_resource type="Script" uid="uid://8jpoq8chrck4" path="res://scripts/balloon.gd" id="1_56jnn"]
 [ext_resource type="StyleBox" uid="uid://cid0qan43dodt" path="res://assets/sprites/design/balloon.tres" id="2_b7w7o"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="6_b7w7o"]
 [ext_resource type="StyleBox" uid="uid://t5oicmbhybu1" path="res://assets/sprites/design/balloon_focus.tres" id="7_56jnn"]
 [ext_resource type="Texture2D" uid="uid://cgjgloossmckd" path="res://assets/sprites/neighbour/neighbour talking spritesheet.png" id="8_cxmav"]
+[ext_resource type="AudioStream" uid="uid://cj2onrf0q2mei" path="res://assets/sounds/dialoghover.mp3" id="8_lc4cd"]
 [ext_resource type="Texture2D" uid="uid://cd6hdnn1tdqs1" path="res://assets/sprites/player/player talking sprite sheet.png" id="9_t1s0i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -362,6 +363,9 @@ theme_override_styles/hover_mirrored = ExtResource("7_56jnn")
 theme_override_styles/hover = ExtResource("7_56jnn")
 theme_override_styles/normal = ExtResource("2_b7w7o")
 text = "Response example"
+
+[node name="dialogHover" type="AudioStreamPlayer" parent="Balloon"]
+stream = ExtResource("8_lc4cd")
 
 [node name="Charakter" type="AnimatedSprite2D" parent="."]
 z_index = -1

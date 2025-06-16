@@ -54,6 +54,7 @@ var mutation_cooldown: Timer = Timer.new()
 #The animated charakter
 @onready var charakter: AnimatedSprite2D = $Charakter
 
+@onready var dialog_hover_sound: AudioStreamPlayer = $Balloon/dialogHover
 
 func _ready() -> void:
 	balloon.hide()
@@ -115,7 +116,11 @@ func apply_dialogue_line() -> void:
 
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
-
+	
+	for response_item in responses_menu.get_menu_items():
+		if not response_item.is_connected("mouse_entered", Callable(self, "_on_dialog_option_mouse_entered")):
+			response_item.mouse_entered.connect(_on_dialog_option_mouse_entered)
+	
 	# Show our balloon
 	balloon.show()
 	will_hide_balloon = false
@@ -147,6 +152,9 @@ func next(next_id: String) -> void:
 
 #region Signals
 
+func _on_dialog_option_mouse_entered():
+	if dialog_hover_sound and !dialog_hover_sound.playing:
+		dialog_hover_sound.play()
 
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:

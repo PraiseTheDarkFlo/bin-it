@@ -41,7 +41,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [node name="startLevel" type="Node2D"]
@@ -148,6 +148,6 @@ position = Vector2(736, 410)
 scale = Vector2(0.43457, 0.277344)
 sprite_frames = SubResource("SpriteFrames_d0qrh")
 autoplay = "default"
-frame_progress = 0.417971
+frame_progress = 0.566698
 
 [connection signal="ready" from="." to="." method="_on_ready"]

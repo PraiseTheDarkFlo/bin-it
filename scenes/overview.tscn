@@ -224,7 +224,7 @@ offset_left = 1029.0
 offset_top = 263.0
 offset_right = 1115.0
 offset_bottom = 360.0
-tooltip_text = "Halbiert dir deinen Score"
+tooltip_text = "Verringert deinen Score"
 
 [node name="FireInfo" type="TextureRect" parent="CanvasLayer"]
 z_index = 1
@@ -232,7 +232,7 @@ offset_left = 880.0
 offset_top = 108.0
 offset_right = 966.0
 offset_bottom = 205.0
-tooltip_text = "Multipliziert deinen Score um den Faktor 1,2"
+tooltip_text = "Erhöht deinen Score"
 
 [node name="SlowInfo" type="TextureRect" parent="CanvasLayer"]
 z_index = 1

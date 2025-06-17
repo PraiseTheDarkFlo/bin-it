@@ -14,7 +14,8 @@ var level_stars = {
 	3: 0,
 }
 var overlay: bool = false;
-
+var has_shown_help_reminder_global: bool = false
+#flag for popup
 signal on_state_change(new_state: game_states);
 
 func update_state(new_state: game_states) -> void:

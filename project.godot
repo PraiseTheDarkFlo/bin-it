@@ -19,6 +19,7 @@ run/canvas_textures/default_texture_filter=1
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameState="*res://scripts/gameState.gd"
 
 [dialogue_manager]
 

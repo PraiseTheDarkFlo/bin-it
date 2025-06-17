@@ -12,8 +12,6 @@ extends Node
 @onready var wrong_sort_sound: AudioStreamPlayer = $wronglySorted
 @onready var score_up_sound: AudioStreamPlayer = $scoreUp
 @onready var score_down_sound: AudioStreamPlayer = $scoreDown
-#track if reminder has popped up
-var has_shown_help_reminder: bool = false
 
 #enum for the different garbage types is used for the trashcans and for the items to check if they are qual types
 enum garbage_types{PAPER,YELLOW,REST,BIO}
@@ -344,10 +342,10 @@ func reset_streak():
 	wrong_sort_sound.play()
 	await get_tree().create_timer(0.2).timeout
 	#popup trigger
-	if not has_shown_help_reminder:
+	if not GameState.has_shown_help_reminder_global: # Access global flag via Autoload
 		show_help_reminder_popup()
-		has_shown_help_reminder = true
-
+		GameState.has_shown_help_reminder_global = true
+		
 func show_help_reminder_popup():
 	var popup_scene = load("res://scenes/overview_reminder_popup.tscn")
 	var popup_instance = popup_scene.instantiate()

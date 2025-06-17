@@ -299,15 +299,15 @@ func tween_finish() -> void:
 	
 #double current streak	
 func _activated_increase_score():
-	score = score * 1.2
+	score = score * 1.1
 	check_stars(score)
 	_play_increase_score_effect()
 	if score_up_sound:
 		score_up_sound.play()
 	
 # Shalves current streak
-func _activated_half_score():
-	score = int(score / 2)
+func _activated_half_score(): #no longer halves score (too punishing!)
+	score = int(score*0.9)
 	check_stars(score)
 	_play_half_points_effect()
 	if score_down_sound:

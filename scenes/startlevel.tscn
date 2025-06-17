@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://b6l5lppj4rnj1"]
 
 [ext_resource type="Texture2D" uid="uid://d2pwmkoyfli61" path="res://assets/sprites/keys/keyboard-arrows.png" id="1_e07ij"]
-[ext_resource type="Script" uid="uid://ba66w3dh1buli" path="res://scripts/startlevel.gd" id="1_k2ubf"]
+[ext_resource type="Script" path="res://scripts/startlevel.gd" id="1_k2ubf"]
 [ext_resource type="Texture2D" uid="uid://bxcx6lgjfdl3w" path="res://assets/sprites/keys/keyboard-wasd.png" id="2_eup2d"]
 [ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="3_efl7m"]
 [ext_resource type="Texture2D" uid="uid://cjnkeyqfifj32" path="res://assets/sprites/keys/space.png" id="3_khhbu"]

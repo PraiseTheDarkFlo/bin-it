@@ -7,13 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cp86iaylnq30r" path="res://assets/sprites/level_selection/lock.png" id="4_nqdjo"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/level_selection/background_level_selection.png" id="5_6rap8"]
 [ext_resource type="Texture2D" uid="uid://lwbsmhtc32ew" path="res://assets/sprites/level_selection/title.png" id="7_rsw7q"]
-[ext_resource type="Script" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
+[ext_resource type="Script" uid="uid://bqsm2pj1f0006" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_ey6kh"]
 [ext_resource type="AudioStream" uid="uid://m4yw2m24q1js" path="res://assets/sounds/menuBGM.mp3" id="10_ey6kh"]
 [ext_resource type="AudioStream" uid="uid://cj2onrf0q2mei" path="res://assets/sounds/dialoghover.mp3" id="11_a4q4k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rap8"]
-load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nqy8e"]
 load_path = "res://.godot/imported/Number_font (8 x 8).png-a0114cadffa458f19a03ca8f0cf836c7.ctex"
@@ -31,7 +30,6 @@ atlas = SubResource("CompressedTexture2D_nqy8e")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a4q4k"]
-load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5apk"]
 font = ExtResource("9_ey6kh")

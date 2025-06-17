@@ -72,11 +72,11 @@ func load_current_level():
 	add_child(level_instance);
 	match current_level:
 		1:
-			level_instance.init(1,18,1000,2000,5000) 
+			level_instance.init(1,18,2500,4000,6000) 
 		2:
-			level_instance.init(2,12,4000,6000,8000)	
+			level_instance.init(2,12,3000,4500,6500) #Mehr Müll und Score-Up machen das Level minimal leichter
 		3:
-			level_instance.init(3,9,2000,3000,8000)
+			level_instance.init(3,9,2000,4000,6000) #3. Stern ist extrem schwierig zu erreichen
 		_:
 			stop_level()			
 			

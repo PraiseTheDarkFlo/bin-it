@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cp86iaylnq30r" path="res://assets/sprites/level_selection/lock.png" id="4_nqdjo"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/level_selection/background_level_selection.png" id="5_6rap8"]
 [ext_resource type="Texture2D" uid="uid://lwbsmhtc32ew" path="res://assets/sprites/level_selection/title.png" id="7_rsw7q"]
-[ext_resource type="Script" uid="uid://bqsm2pj1f0006" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
+[ext_resource type="Script" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_ey6kh"]
 [ext_resource type="AudioStream" uid="uid://m4yw2m24q1js" path="res://assets/sounds/menuBGM.mp3" id="10_ey6kh"]
 [ext_resource type="AudioStream" uid="uid://cj2onrf0q2mei" path="res://assets/sounds/dialoghover.mp3" id="11_a4q4k"]
@@ -211,7 +211,7 @@ stream = ExtResource("11_a4q4k")
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="pressed" from="Button1" to="Button3" method="_on_pressed" binds= [2]]
+[connection signal="pressed" from="Button1" to="Button3" method="_on_pressed" binds= [1]]
 [connection signal="pressed" from="Button2" to="Button3" method="_on_pressed" binds= [2]]
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed" binds= [3]]
 [connection signal="pressed" from="ButtonOverview" to="ButtonOverview" method="_on_pressed"]

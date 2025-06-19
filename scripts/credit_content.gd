@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 	var next_headline = 0;
 	var next_text = 0;
-	var next_pos_y = 1025.0;
+	var next_pos_y = 925.0;
 	
 	game_state.hide_menu_button()
 	game_state.overlay = true

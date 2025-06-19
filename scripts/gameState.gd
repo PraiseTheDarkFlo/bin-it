@@ -10,8 +10,8 @@ var dialoge_instance = null;
 var dialoge_ballon= null;
 var credits_instance = null;
 var level_stars = {
-	1: 1,
-	2: 1,
+	1: 0,
+	2: 0,
 	3: 0,
 }
 var overlay: bool = false;

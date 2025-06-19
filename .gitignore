@@ -18,11 +18,4 @@ Thumbs.db
 # User-specific Godot config (optional – nur ignorieren, wenn jeder eigene Settings nutzt)
 # project.godot
 
-# Builds (optional, wenn ihr Build-Dateien nicht versionieren wollt)
-bin/
-*.exe
-*.pck
-*.apk
-*.wasm
-*.html
 

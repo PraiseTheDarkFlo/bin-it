@@ -1,5 +1,5 @@
 ~ start
-Nachdem Sam schließlich fertig mit dem Einzug ist und Wohnung und Garten in einem ordentlichen Zustand versetzt hat, beschließt er, eine Einweihungsparty zu Veranstalten, zu der er auch die hilfreiche Nachbarin einlädt.
+Nachdem Sam schließlich fertig mit dem Einzug ist und Wohnung und Garten in einen ordentlichen Zustand versetzt hat, beschließt er, eine Einweihungsparty zu Veranstalten, zu der er auch die hilfreiche Nachbarin einlädt.
 - Weiter
 - Einführung überspringen => END
 Im Anschluss an diese Party stellte Sam jedoch fest, dass dadurch die Wohnung natürlich schon wieder mit jede menge Müll verunreinigt war.
@@ -19,7 +19,7 @@ Nachbarin: Soll ich dir vielleicth noch ein paar Beispiel dazu geben, was in die
 - Bereits verstanden => Level_Start
 - Beispiele
 	Nachbarin: Die Restmülltonne ist zum Beispiel die richtige Tonne für Hygieneartikel wie zum Beispiel Windeln, aber auch zum Beispiel für Staubsaugerbeutel.
-	Nachbarin: Alte Fotos, Backpapier oder zerbrochenes Porzellan wie zum Beispiel Geschirr gehören in den Restmüll.
+	Nachbarin: Alte Fotos, Backpapier oder zerbrochenes Porzellan wie zum Beispiel Geschirr gehören ebenfalls in den Restmüll.
 	Nachbarin: Ebenso gehören Tierstreu, Kassenbonns oder Kugellschreiber in den Restmüll.
 ~ Level_Start
 Sam: Vielen Dank für diese Informationen. Und auch vielen Dank für das Helfen beim Aufräumen. Jetzt muss ich nur noch den Müll rausbringen und in die Tonnen sortieren. Ich denke, dass sollte ich jetzt alleine hinbekommen.

@@ -17,7 +17,7 @@
 
 ## 🚀 Play
 
-[Link]()
+[Link](https://praisethedarkflo.itch.io/bin-it)
 
 ## ✍️ Authoren
 

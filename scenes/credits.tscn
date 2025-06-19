@@ -35,10 +35,10 @@ texture = ExtResource("1_2ckv8")
 script = ExtResource("2_8gwij")
 
 [node name="Title" type="TextureRect" parent="CreditContent"]
-offset_left = 384.5
-offset_top = 773.0
-offset_right = 767.5
-offset_bottom = 968.0
+offset_left = 388.0
+offset_top = 634.0
+offset_right = 771.0
+offset_bottom = 829.0
 texture = ExtResource("2_0ctdu")
 expand_mode = 2
 

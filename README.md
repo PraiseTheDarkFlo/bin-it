@@ -1,6 +1,6 @@
 # 🕹 BIN IT! – MOVE IT. SORT IT. BIN IT. 🕹
 
-> **BIN IT! Ist ein Serious Games welches neben Spielspaß den Fokus auf das Thema Mültrenung legt. Es bedint sicht der Spielidee von Tetris und etwickelt diese zu einem eigenen packenden Gameplayloop mit einer intressanten Geschichte rund um Mülltrenung. Innerhalb von drei Level Erfährt der Spiele interessante Infos über das deutsche Mülltrennsystem und wie man den Müll richtig zu trennen hat.**
+> **BIN IT! Ist ein Serious Games welches neben Spielspaß den Fokus auf das Thema Mülltrenung legt. Es bedint sicht der Spielidee von Tetris und etwickelt diese zu einem eigenen packenden Gameplayloop mit einer intressanten Geschichte rund um Mülltrenung. Innerhalb von drei Level Erfährt der Spiele interessante Infos über das deutsche Mülltrennsystem und wie man den Müll richtig zu trennen hat.**
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6ae03a17-18b4-4f21-aeb2-f993a79f471c" width="45%" />

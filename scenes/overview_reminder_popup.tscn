@@ -116,14 +116,14 @@ expand_mode = 2
 [node name="reminderMessage" type="Label" parent="backgroundOverlay/Arrow/messageBackground"]
 z_index = 1
 layout_mode = 0
-offset_left = 7.0
+offset_left = 14.0
 offset_top = 14.0
-offset_right = 200.0
+offset_right = 207.0
 offset_bottom = 89.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Falsch sortiert!
- wenn du HIlfe brauchst, 
+Wenn du Hilfe brauchst, 
 öffne das Menü!"
 horizontal_alignment = 1
 

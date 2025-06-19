@@ -150,11 +150,11 @@ autostart = true
 
 [node name="wronglySorted" type="AudioStreamPlayer" parent="LevelState"]
 stream = ExtResource("12_64w2a")
-volume_db = -20.938
+volume_db = -15.0
 
 [node name="correctlySorted" type="AudioStreamPlayer" parent="LevelState"]
 stream = ExtResource("11_8iemx")
-volume_db = -27.0
+volume_db = -25.0
 
 [node name="BGM" type="AudioStreamPlayer" parent="LevelState"]
 stream = ExtResource("13_64w2a")

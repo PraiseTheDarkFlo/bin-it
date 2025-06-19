@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://m0tnwtvichgr"]
+[gd_scene load_steps=18 format=3 uid="uid://m0tnwtvichgr"]
 
 [ext_resource type="Script" uid="uid://5gnewow70r34" path="res://scripts/levelselect.gd" id="1_vttqt"]
 [ext_resource type="Script" uid="uid://cygofseaw8eli" path="res://scripts/levelbutton.gd" id="1_xuh2y"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_ey6kh"]
 [ext_resource type="AudioStream" uid="uid://m4yw2m24q1js" path="res://assets/sounds/menuBGM.mp3" id="10_ey6kh"]
+[ext_resource type="Script" uid="uid://g55w4ds4jbay" path="res://scripts/button_credits.gd" id="10_x5apk"]
 [ext_resource type="AudioStream" uid="uid://cj2onrf0q2mei" path="res://assets/sounds/dialoghover.mp3" id="11_a4q4k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nqy8e"]
@@ -203,6 +204,32 @@ text = "Übersicht
 "
 label_settings = SubResource("LabelSettings_x5apk")
 
+[node name="ButtonCredits" type="Button" parent="."]
+process_mode = 3
+top_level = true
+z_index = 1
+layout_mode = 0
+offset_left = 780.0
+offset_top = 540.0
+offset_right = 936.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("2_nqy8e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("10_x5apk")
+
+[node name="Label" type="Label" parent="ButtonCredits"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 34.0
+offset_right = 146.0
+offset_bottom = 69.0
+text = "Credits
+"
+label_settings = SubResource("LabelSettings_x5apk")
+horizontal_alignment = 1
+
 [node name="menuBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ey6kh")
 
@@ -215,3 +242,4 @@ stream = ExtResource("11_a4q4k")
 [connection signal="pressed" from="Button2" to="Button3" method="_on_pressed" binds= [2]]
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed" binds= [3]]
 [connection signal="pressed" from="ButtonOverview" to="ButtonOverview" method="_on_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="ButtonCredits" method="_on_pressed"]

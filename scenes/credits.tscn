@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dc8c1rtvd8qtv"]
+
+[ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/level_selection/background_level_selection.png" id="1_2ckv8"]
+[ext_resource type="Texture2D" uid="uid://lwbsmhtc32ew" path="res://assets/sprites/level_selection/title.png" id="2_0ctdu"]
+[ext_resource type="Script" uid="uid://tjr4eagqwypa" path="res://scripts/credit_content.gd" id="2_8gwij"]
+[ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_mah5v"]
+[ext_resource type="FontFile" uid="uid://bbaxs3diwft1n" path="res://assets/fonts/PixelOperator8.ttf" id="5_kyhnv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ooihk"]
+font = ExtResource("4_mah5v")
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_ih6pn"]
+font = ExtResource("5_kyhnv")
+
+[node name="Credits" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -13.0
+offset_top = -493.0
+offset_right = 1148.0
+offset_bottom = 711.0
+texture = ExtResource("1_2ckv8")
+
+[node name="CreditContent" type="Node2D" parent="."]
+script = ExtResource("2_8gwij")
+
+[node name="Title" type="TextureRect" parent="CreditContent"]
+offset_left = 384.5
+offset_top = 773.0
+offset_right = 767.5
+offset_bottom = 968.0
+texture = ExtResource("2_0ctdu")
+expand_mode = 2
+
+[node name="Headline" type="Label" parent="CreditContent"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 1075.0
+offset_right = 1102.0
+offset_bottom = 1118.0
+grow_vertical = 2
+text = "Some Headline"
+label_settings = SubResource("LabelSettings_ooihk")
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="CreditContent"]
+offset_left = 50.0
+offset_top = 1153.0
+offset_right = 1102.0
+offset_bottom = 1173.0
+text = "Some Text"
+label_settings = SubResource("LabelSettings_ih6pn")
+horizontal_alignment = 1
+autowrap_mode = 3

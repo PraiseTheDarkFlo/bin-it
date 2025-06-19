@@ -1,6 +1,6 @@
 extends Node
 
-enum game_states{INTRO,LEVEL_SELECT,PRE_LEVEL,INGAME,POST_LEVEL,OUTTRO}
+enum game_states{INTRO,LEVEL_SELECT,PRE_LEVEL,INGAME,POST_LEVEL,CREDITS}
 
 var state: game_states = game_states.INTRO;
 var current_level: int = -1;
@@ -8,6 +8,7 @@ var level_select_instance = null;
 var level_instance = null;
 var dialoge_instance = null;
 var dialoge_ballon= null;
+var credits_instance = null;
 var level_stars = {
 	1: 1,
 	2: 1,
@@ -49,6 +50,7 @@ func showLevelSelect() -> void:
 		var scene = load("res://scenes/levelselect.tscn");
 		level_select_instance = scene.instantiate();
 		level_select_instance.level_selected.connect(on_select_level);
+		level_select_instance.open_credits.connect(show_credits);
 	add_child(level_select_instance);
 
 func on_select_level(level: int) -> void:
@@ -118,12 +120,30 @@ func update_stars(level: int, stars: int) -> void:
 	print(level_stars)	
 
 func on_postlevel_finished(resource: DialogueResource) -> void:
-	current_level = -1;
 	DialogueManager.dialogue_ended.disconnect(on_postlevel_finished);
 	level_instance = null;
-	showLevelSelect();
+	if current_level == 3:
+		current_level = -1;
+		show_credits();
+	else:
+		current_level = -1;
+		showLevelSelect();
 
 func reset_overview():
 	dialoge_instance.button_overview.overview = null
 func set_overview(overview):
 	dialoge_instance.button_overview.overview = overview
+
+func show_credits():
+	update_state(game_states.CREDITS);
+	var scene = load("res://scenes/credits.tscn");
+	credits_instance = scene.instantiate();
+	credits_instance.get_node("CreditContent").exit.connect(finish_credits);
+	remove_child(level_select_instance);
+	add_child(credits_instance);
+	
+func finish_credits():
+	remove_child(credits_instance);
+	credits_instance.get_node("CreditContent").exit.disconnect(finish_credits);
+	credits_instance = null;
+	showLevelSelect();

@@ -1,6 +1,7 @@
 extends Control
 
 signal level_selected(level: int);
+signal open_credits();
 @onready var menu_bgm: AudioStreamPlayer = $menuBGM
 @onready var level_hover_sound: AudioStreamPlayer = $LevelHoverSound
 

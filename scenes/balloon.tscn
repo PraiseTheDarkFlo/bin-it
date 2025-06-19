@@ -370,6 +370,7 @@ text = "Response example"
 
 [node name="dialogHover" type="AudioStreamPlayer" parent="Balloon"]
 stream = ExtResource("8_lc4cd")
+volume_db = -21.937
 
 [node name="Charakter" type="AnimatedSprite2D" parent="."]
 z_index = -1

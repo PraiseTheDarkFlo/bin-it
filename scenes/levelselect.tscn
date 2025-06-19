@@ -236,6 +236,7 @@ volume_db = -22.749
 
 [node name="LevelHoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_a4q4k")
+volume_db = -21.937
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="ready" from="." to="." method="_on_ready"]

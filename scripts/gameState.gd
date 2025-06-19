@@ -23,7 +23,6 @@ func update_state(new_state: game_states) -> void:
 	var debug_str = str("Game State: ", game_states.keys()[new_state]);
 	if(current_level > 0):
 		debug_str = str(debug_str, " (", current_level, ")");
-	print(debug_str);
 	state = new_state;
 	on_state_change.emit(new_state);
 	
@@ -40,7 +39,6 @@ func _on_game_ready() -> void:
 	dialoge_ballon.start(load("res://dialogues/intro.dialogue"),"start")
 
 func on_intro_finished(resource: DialogueResource) -> void:
-	print("Intro finished!");#
 	DialogueManager.dialogue_ended.disconnect(on_intro_finished);
 	showLevelSelect();
 
@@ -117,8 +115,7 @@ func update_stars(level: int, stars: int) -> void:
 	if level in level_stars:
 		if stars > level_stars[level]:
 			level_stars[level] = stars
-	print(level_stars)	
-
+	
 func on_postlevel_finished(resource: DialogueResource) -> void:
 	DialogueManager.dialogue_ended.disconnect(on_postlevel_finished);
 	level_instance = null;

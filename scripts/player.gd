@@ -62,7 +62,6 @@ func _physics_process(delta: float) -> void:
 
 #handels the selecting of new items randomly.
 func new_item():
-	#print(level_state.trashKeyList)
 	var new_key = level_state.trashKeyList[0]
 	var new_type = level_state.garbage[new_key]
 	if level_state.trashKeyList.size() > 1:
@@ -73,7 +72,6 @@ func new_item():
 		preview_sprite.visible = false
 	animated_sprite.play(new_key)
 	garbage_type = new_type
-	print(garbage_type)
 	level_state.trashKeyList.remove_at(0)
 			
 				
@@ -123,9 +121,7 @@ func findClosestDown():
 	downTarget=global_position.y
 	if ray_cast_down.is_colliding():
 		downTarget=ray_cast_down.get_collision_point().y
-	print(downTarget)
-	print(ray_cast_down.get_collider())
-
+	
 #moves player to target position (linear interpolation)
 func go_there(delta):
 	if movingDown:

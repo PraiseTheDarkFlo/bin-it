@@ -94,15 +94,6 @@ var garbage = {
 
 #debug
 func _ready():
-	if correct_sort_sound:
-		print("CorrectlySorted AudioStreamPlayer found!")
-	else:
-		print("ERROR: CorrectlySorted AudioStreamPlayer NOT found (check path and unique name if used).")
-	
-	if wrong_sort_sound:
-		print("wronglySorted AudioStreamPlayer found!")
-	else:
-		print("ERROR: wronglySorted AudioStreamPlayer NOT found (check path and unique name if used).")
 		
 	if gameplay_bgm:
 		original_bgm_volume = gameplay_bgm.volume_db
@@ -194,7 +185,6 @@ func generateTrash():
 
 #methode which handels the slowdown effect
 func _activated_slowdown() -> void:
-	print("slowdown activated!")
 	old_fall_speed = fall_speed
 	speed_modifier = 0.2
 	timer.start()
@@ -205,7 +195,6 @@ func _activated_slowdown() -> void:
 	
 
 func _activated_speedup():
-	print("speedup activated!")
 	old_fall_speed = fall_speed
 	speed_modifier = 1.5
 	timer.start()
@@ -364,7 +353,6 @@ func show_help_reminder_popup():
 		gameplay_bgm.stop() # Stop only after fading out
 
 func _on_help_reminder_popup_closed():
-	print("Help reminder popup closed.")
 	# Unpause the game when popup closes
 	get_tree().paused = false
 	if gameplay_bgm and not gameplay_bgm.playing:
@@ -378,7 +366,6 @@ func _on_help_reminder_popup_closed():
 func _on_timer_timeout() -> void:
 	timer.stop()
 	speed_modifier = 1.0
-	print("Speed modifier reset to og")
 	
 	if gameplay_bgm:
 		var tween = create_tween()
@@ -396,7 +383,6 @@ func check_level_completion():
 	# Only emit if item_counter has reached the total for the level
 	if item_counter >= total_trash_items and total_trash_items > 0:
 		level_finished.emit(star_count)
-		print("Level completed! Emitting signal with stars: ", star_count)
 		
 	if gameplay_bgm and gameplay_bgm.playing:
 			var tween = create_tween()

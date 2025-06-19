@@ -25,9 +25,6 @@ func _ready():
 			
 			var tween = create_tween()
 			tween.tween_property(animated_sprite, "modulate:a", 1.0, 0.5)	
-		else:
-			print("AnimatedSprite2D is null ")
-			
 			
 
 func change_sprite(new_sprite_name: String) -> void:
@@ -35,9 +32,7 @@ func change_sprite(new_sprite_name: String) -> void:
 	if new_sprite_name != "":
 		if animated_sprite != null:
 			animated_sprite.play(new_sprite_name)
-		else:
-			print("Warning: Attempted to change sprite on null animated_sprite for PowerUp")
-
+	
 #handels the call of the function of the action if the player enters the powerup
 func _on_body_entered(body: Node2D) -> void:
 	if effect != "":

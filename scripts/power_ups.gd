@@ -48,9 +48,7 @@ var powerups = {
 
 #random selects a point in the spawnfield for the new powerup to spawn
 func random_spawn() -> Variant:
-	print(xPositionsOccupied)
 	var possiblexPositions = xPositionsOccupied.keys().filter(func(k): return xPositionsOccupied[k] == false and k!=int(player.position.x))
-	print(possiblexPositions)
 	if possiblexPositions.is_empty():
 		return null
 	var x = possiblexPositions.pick_random()

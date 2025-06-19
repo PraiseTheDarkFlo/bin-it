@@ -101,7 +101,6 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	print(dialogue_line.character)
 	if dialogue_line.character == "Nachbarin":
 		charakter.visible = true
 		charakter.play("neighbour")

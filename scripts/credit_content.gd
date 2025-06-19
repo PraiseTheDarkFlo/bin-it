@@ -1,5 +1,8 @@
 extends Node2D
 
+
+@onready var game_state = get_node("/root/Game/GameState") 
+
 signal exit();
 
 var final_size = 0;
@@ -15,6 +18,8 @@ func _ready() -> void:
 	var next_text = 0;
 	var next_pos_y = 1025.0;
 	
+	game_state.hide_menu_button()
+	game_state.overlay = true
 	while not file.eof_reached():
 		var line = file.get_line();
 		var node = null;
@@ -48,8 +53,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	position += Vector2(0, -1);
 	if (position.y + final_size) < -30:
+		game_state.show_menu_button()
+		game_state.overlay = false
 		exit.emit();
 
 func _process(delta):
 	if Input.is_action_just_pressed("skip_credits") and position.y < -20:
+		game_state.show_menu_button()
+		game_state.overlay = false
 		exit.emit();

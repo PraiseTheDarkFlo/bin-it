@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cp86iaylnq30r" path="res://assets/sprites/level_selection/lock.png" id="4_nqdjo"]
 [ext_resource type="Texture2D" uid="uid://elqppedhjny3" path="res://assets/sprites/level_selection/background_level_selection.png" id="5_6rap8"]
 [ext_resource type="Texture2D" uid="uid://lwbsmhtc32ew" path="res://assets/sprites/level_selection/title.png" id="7_rsw7q"]
-[ext_resource type="Script" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
+[ext_resource type="Script" uid="uid://bqsm2pj1f0006" path="res://scripts/button_overview_sel.gd" id="8_n4sav"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_ey6kh"]
 [ext_resource type="AudioStream" uid="uid://m4yw2m24q1js" path="res://assets/sounds/menuBGM.mp3" id="10_ey6kh"]
 [ext_resource type="Script" uid="uid://g55w4ds4jbay" path="res://scripts/button_credits.gd" id="10_x5apk"]
@@ -232,6 +232,7 @@ horizontal_alignment = 1
 
 [node name="menuBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ey6kh")
+volume_db = -22.749
 
 [node name="LevelHoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_a4q4k")

@@ -110,6 +110,7 @@ texture = ExtResource("1_81kdw")
 expand_mode = 2
 
 [node name="messageBackground" type="TextureRect" parent="backgroundOverlay/Arrow"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -124,7 +125,7 @@ texture = ExtResource("2_s5m15")
 expand_mode = 2
 
 [node name="reminderMessage" type="Label" parent="backgroundOverlay/Arrow/messageBackground"]
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = 27.0
 offset_top = 33.0
@@ -148,6 +149,7 @@ offset_bottom = 92.0
 color = Color(1, 1, 1, 0)
 
 [node name="ok!button" type="Button" parent="backgroundOverlay/Arrow"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

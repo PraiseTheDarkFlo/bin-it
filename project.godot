@@ -25,6 +25,10 @@ GameState="*res://scripts/gameState.gd"
 
 runtime/balloon_path="res://scenes/balloon.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")

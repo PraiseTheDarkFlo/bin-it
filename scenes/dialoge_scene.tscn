@@ -6,10 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bs34ejyow5pq7" path="res://assets/sprites/backgrounds_level/background_level02.png" id="4_8xjf7"]
 [ext_resource type="Texture2D" uid="uid://bsdumioto4t6u" path="res://assets/sprites/backgrounds_level/background_level03.png" id="5_0ojy4"]
 [ext_resource type="Script" uid="uid://tr7tl00cvvcg" path="res://scripts/overview_button.gd" id="6_0ojy4"]
+[ext_resource type="Texture2D" uid="uid://ct42y2byyu45m" path="res://assets/sprites/level_selection/Space_BG (2 frames) (64 x 64).png" id="6_uacg4"]
 [ext_resource type="FontFile" uid="uid://dkmdasfvij2ng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_uacg4"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_obqii"]
-load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_68rle"]
 font = ExtResource("7_uacg4")
@@ -18,7 +16,6 @@ font = ExtResource("7_uacg4")
 script = ExtResource("1_8adw8")
 
 [node name="Level00" type="TextureRect" parent="."]
-visible = false
 z_index = -1
 offset_left = -1.0
 offset_top = -493.0
@@ -27,6 +24,7 @@ offset_bottom = 711.0
 texture = ExtResource("2_yqv1w")
 
 [node name="Level01" type="TextureRect" parent="."]
+visible = false
 z_index = -1
 offset_left = -8.0
 offset_top = -61.0
@@ -36,6 +34,7 @@ scale = Vector2(0.791127, 0.704751)
 texture = ExtResource("3_yqv1w")
 
 [node name="Level02" type="TextureRect" parent="."]
+visible = false
 z_index = -1
 offset_left = -8.32902
 offset_top = -60.9898
@@ -45,6 +44,7 @@ scale = Vector2(0.791127, 0.704751)
 texture = ExtResource("4_8xjf7")
 
 [node name="Level03" type="TextureRect" parent="."]
+visible = false
 z_index = -1
 offset_left = -8.32902
 offset_top = -60.9898
@@ -62,7 +62,7 @@ offset_top = 540.0
 offset_right = 1125.0
 offset_bottom = 626.0
 theme_override_font_sizes/font_size = 30
-icon = SubResource("CompressedTexture2D_obqii")
+icon = ExtResource("6_uacg4")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("6_0ojy4")

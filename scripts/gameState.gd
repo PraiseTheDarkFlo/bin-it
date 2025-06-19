@@ -122,7 +122,7 @@ func update_stars(level: int, stars: int) -> void:
 func on_postlevel_finished(resource: DialogueResource) -> void:
 	DialogueManager.dialogue_ended.disconnect(on_postlevel_finished);
 	level_instance = null;
-	if current_level == 3:
+	if current_level == 3 and level_stars[3] > 0:
 		current_level = -1;
 		show_credits();
 	else:

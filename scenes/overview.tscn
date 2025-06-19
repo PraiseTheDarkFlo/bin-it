@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c11amrrjo76ph" path="res://scripts/h_slider.gd" id="7_aoocy"]
 [ext_resource type="Script" path="res://scripts/restart.gd" id="7_poc3d"]
 [ext_resource type="Script" path="res://scripts/overview_exit.gd" id="7_wsv40"]
+[ext_resource type="Texture2D" uid="uid://ct42y2byyu45m" path="res://assets/sprites/level_selection/Space_BG (2 frames) (64 x 64).png" id="8_61f77"]
 [ext_resource type="Script" path="res://scripts/get_level_selection.gd" id="8_bmlk8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kmwmr"]
@@ -22,9 +23,6 @@ font_size = 42
 [sub_resource type="LabelSettings" id="LabelSettings_aoocy"]
 font = ExtResource("1_pfq4m")
 font_size = 15
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_poc3d"]
-load_path = "res://.godot/imported/Space_BG (2 frames) (64 x 64).png-e4746a5d82b0133fbde3d5f4d7acde84.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_poc3d"]
 font = ExtResource("2_mi4yy")
@@ -280,7 +278,7 @@ offset_top = 394.0
 offset_right = 984.0
 offset_bottom = 458.0
 theme_override_font_sizes/font_size = 30
-icon = SubResource("CompressedTexture2D_poc3d")
+icon = ExtResource("8_61f77")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("7_poc3d")
@@ -302,7 +300,7 @@ offset_top = 394.0
 offset_right = 1116.0
 offset_bottom = 458.0
 theme_override_font_sizes/font_size = 30
-icon = SubResource("CompressedTexture2D_poc3d")
+icon = ExtResource("8_61f77")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("8_bmlk8")
@@ -335,7 +333,7 @@ offset_top = 540.0
 offset_right = 1125.0
 offset_bottom = 626.0
 theme_override_font_sizes/font_size = 30
-icon = SubResource("CompressedTexture2D_poc3d")
+icon = ExtResource("8_61f77")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("7_wsv40")

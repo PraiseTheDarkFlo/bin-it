@@ -12,12 +12,13 @@ Godot 4.4.1 (https://godotengine.org/)
 Ergänzt um das Plugin "Dialogue Manager 3.6.2" (https://godotengine.org/asset-library/asset/1207)
 
 # Assets
-https://creativity103.com/
-https://www.pexels.com/
-https://soulofkiran.itch.io/
-https://grafxkid.itch.io/
-https://brackeysgames.itch.io/
-https://amanz.itch.io/
+https://creativity103.com/collections/Cardboard/slides/emptied_box.html
+https://www.creativity103.com/collections/Paper/slides/paper_sheet.html
+https://www.pexels.com/photo/close-up-of-broken-plate-17377916/
+https://soulofkiran.itch.io/pixel-art-animated-star
+https://grafxkid.itch.io/mini-pixel-pack-3
+https://brackeysgames.itch.io/brackeys-platformer-bundle
+https://amanz.itch.io/keyboard-mouse-icon-pack-free
 
 # Müll Fotos
 Erstellt von ZGruppe3
@@ -27,4 +28,11 @@ mit freundlicher Unterstützung von Nike und Nico
 Erstellt von ChatGPT
 
 # Sounds
-https://pixabay.com/
+https://pixabay.com/music/upbeat-final-level-rebel-337337/
+https://pixabay.com/sound-effects/button-202966/
+https://pixabay.com/sound-effects/wronganswer-37702/
+https://pixabay.com/sound-effects/correct-choice-43861/
+https://pixabay.com/music/beats-corporate-ambient-uplifting-background-upbeat-357749/
+https://pixabay.com/sound-effects/game-over-arcade-6435/
+https://pixabay.com/sound-effects/8-bit-video-game-points-version-1-145826/
+https://pixabay.com/sound-effects/keyboard-typing-sound-effect-335503/
